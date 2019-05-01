@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,800" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/queries.css" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>Sabkaa Bazaar</title>
+
+    <script>
+    $(function() {
+    $('#main__dropdown-list').change(function(){
+      $('.option-content').hide();
+      $('#' + $(this).val()).show();
+    });
+  });
+    </script>
+</head>
+<body>
+    <header class="header bottom-shadow">
+        <nav>
+            <div class="nav--left float-left">
+                <div class="nav--left__img-div">
+                    <img class="img-small-logo" src="static/images/logo.png"  />
+                    <img class="img-big-logo" src="static/images/logo_2x.png" />
+                </div>
+
+                <div class="nav--left-menu-div">
+                    <ul class="menu-list" >
+                        <li><a href="home.html">home</a></li>
+                        <li><a href="plp.html">products</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="nav--right float-right">
+                <ul class="menu-list text-right" >
+                    <li><a href="index.html">sign in</a></li>
+                    <li><a href="register.html">register</a></li>
+                </ul>
+
+                <div class="float-right">
+                   <a href="cart.html" class="nav--right__cart-div">
+                        <img class="cart__img cart-svg-alternate" src="static/images/cart.svg">
+                        <span class="cart__count">0 items</span>
+                   </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+
+    <main class="main plp-main">
+    
+        <div class="main-content plp-main-content">
+
+            <div class="list-container bg-color-change">
+                <div class="dropdown-container hide-on-tablet">
+                    <select id="main__dropdown-list" class="main__dropdown-list">
+                        <option value="fruits" selected>Fruits &amp; Vegetables</option>
+                        <option value="bakery">Bakery Cakes and Dairy</option>
+                        <option value="beverages">Beverages</option>
+                        <option value="beauty">Beauty and Hygiene</option>
+                        <option value="baby">Baby Care</option>
+                    </select>
+                    <i class="fa fa-angle-down"></i>
+                </div>
+                <div class="sidemenu-container show-on-tablet">
+                    <ul class="menu-list side-menu">
+                        <li><a href="#">Fruits &amp; Vegetables</a></li>
+                        <li><a href="#">Bakery Cakes and Dairy</a></li>
+                        <li><a href="#">Beverages</a></li>
+                        <li><a href="#">Beauty and Hygiene</a></li>
+                        <li><a href="#">Baby Care</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+                
+
+            <div class="main-content__cards">
+                <!-- fruits and vegetables cards -->
+
+                <div id="fruits" class="option-content option-content-tab-display">
+
+                        <div class="plp-card">
+                            <h2>fresho kiwi - green, 3pcs</h2>
+                            
+                            <div class="plp-card-content">
+                                <div class="plp-card-img-text">
+                                    <div class="plp-card__img">
+                                        <img src="static/images/products/fruit-n-veg/kiwi-green.jpg" />
+                                    </div>
+                                    <!-- <div class="plp-card__content flex-1"> </div> -->
+                                    <div class="plp-desc-container">
+                                        <span class="plp-card-desc bgcolor">
+                                            Kiwis are oval shaped with a brownish outer skin. The flesh
+                                            is bright green and juicy with tiny, edible black seeds.
+                                        </span>
+                                        <span class="plp-card-cta hide-on-tablet">
+                                            Buy Now @ MRP Rs.87111
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="plp-price-container">
+                                    <span class="plp-card-price show-on-desktop">MRP Rs.87</span>
+                                    <span class="plp-card-cta hide-on-mobile show-on-tablet">
+                                        Buy Now @ MRP Rs.87
+                                    </span>
+                                    <span class="plp-card-cta-tabs show-on-desktop">
+                                        Buy Now
+                                    </span>
+                                </div>
+                            </div>
+                        </div>  <!-- plp-card ends -->
+
+                        <div class="plp-card">
+                            <h2>apple - washington, regular, 4pcs</h2>
+                            
+                            <div class="plp-card-content">
+                                <div class="plp-card-img-text">
+                                    <div class="plp-card__img">
+                                        <img src="static/images/products/fruit-n-veg/apple.jpg" />
+                                    </div>
+                                    
+                                    <div class="plp-desc-container">
+                                        <span class="plp-card-desc bgcolor">
+                                            The bright red colored and heart shaped Washington apples are 
+                                            crunchy, juicy and slightly sweet. Washington Apples are a 
+                                            natural source of fibre and are
+                                        </span>
+                                        <span class="plp-card-cta  hide-on-tablet">
+                                            Buy Now @ MRP Rs.187
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="plp-price-container">
+                                    <span class="plp-card-price show-on-desktop">MRP Rs.187</span>
+                                    <span class="plp-card-cta hide-on-mobile show-on-tablet">
+                                        Buy Now @ MRP Rs.187
+                                    </span>
+                                    <span class="plp-card-cta-tabs show-on-desktop">
+                                        Buy Now
+                                    </span>
+                                </div>
+                            </div>
+                        </div>  <!-- plp-card ends -->
+
+
+                        <div class="plp-card">
+                            <h2>fresho pomegranate peeled, 500gm</h2>
+                            
+                            <div class="plp-card-content">
+                                
+                                <div class="plp-card-img-text">
+                                    <div class="plp-card__img">
+                                        <img src="static/images/products/fruit-n-veg/pomegrante.jpg" />
+                                    </div>
+                                    
+                                    <div class="plp-desc-container">
+                                        <span class="plp-card-desc bgcolor">
+                                            Pomegranate variety has a glossy, vibrant and soft ruby-red skin. 
+                                            The inside of the fruit is divided into compartments by thin 
+                                            white membranes.
+                                        </span>
+                                        <span class="plp-card-cta  hide-on-tablet">
+                                            Buy Now @ MRP Rs.88
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="plp-price-container">
+                                    <span class="plp-card-price show-on-desktop">MRP Rs.88</span>
+                                    <span class="plp-card-cta hide-on-mobile show-on-tablet">
+                                        Buy Now @ MRP Rs.88
+                                    </span>
+                                    <span class="plp-card-cta-tabs show-on-desktop">
+                                        Buy Now
+                                    </span>
+                                </div>
+                            </div>
+                        </div>  <!-- plp-card ends -->
+
+                        <div class="plp-card">
+                            <h2>tomato - local, organically grown, 500gm</h2>
+                            
+                            <div class="plp-card-content">
+                                <div class="plp-card-img-text">
+                                    <div class="plp-card__img">
+                                        <img src="static/images/products/fruit-n-veg/tomato.jpg" />
+                                    </div>
+                                    
+                                    <div class="plp-desc-container">
+                                        <span class="plp-card-desc bgcolor">
+                                            Fresho brings to you an exquisite range of locally grown organic 
+                                            tomatoes, which are now avaialble at bigbasket.
+                                            These organic tomatoes are free from
+                                        </span>
+                                        <span class="plp-card-cta  hide-on-tablet">
+                                            Buy Now @ MRP Rs.12
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="plp-price-container">
+                                    <span class="plp-card-price show-on-desktop">MRP Rs.12</span>
+                                    <span class="plp-card-cta hide-on-mobile show-on-tablet">
+                                        Buy Now @ MRP Rs.12
+                                    </span>
+                                    <span class="plp-card-cta-tabs show-on-desktop">
+                                        Buy Now
+                                    </span>
+                                </div>
+                            </div>
+                        </div>  <!-- plp-card ends -->
+            
+                        <div class="plp-card">
+                            <h2>capsicum - green, 1 kg</h2>
+                            
+                            <div class="plp-card-content">
+                               <div class="plp-card-img-text">
+                                    <div class="plp-card__img">
+                                        <img src="static/images/products/fruit-n-veg/capsicum-green.jpg" />
+                                    </div>
+                                   
+                                    <div class="plp-desc-container">
+                                        <span class="plp-card-desc bgcolor">
+                                            Leaving a moderately pungent taste on the tongue, Green
+                                            capsicums, also known as green peppers are bell-shaped,
+                                            medium-sized fruit pods.
+                                        </span>
+                                        <span class="plp-card-cta  hide-on-tablet">
+                                            Buy Now @ MRP Rs.137
+                                        </span>
+                                    </div>
+                               </div>
+
+                                <div class="plp-price-container">
+                                    <span class="plp-card-price show-on-desktop">MRP Rs.137</span>
+                                    <span class="plp-card-cta hide-on-mobile show-on-tablet">
+                                        Buy Now @ MRP Rs.137
+                                    </span>
+                                    <span class="plp-card-cta-tabs show-on-desktop">
+                                        Buy Now
+                                    </span>
+                                </div>
+                            </div>
+                        </div>  <!-- plp-card ends -->
+
+                        <div class="plp-card">
+                            <h2>apple - washington, regular, 4pcs</h2>
+                            
+                            <div class="plp-card-content">
+                                <div class="plp-card-img-text">
+                                    <div class="plp-card__img">
+                                        <img src="static/images/products/fruit-n-veg/apple.jpg" />
+                                    </div>
+                                    
+                                    <div class="plp-desc-container">
+                                        <span class="plp-card-desc bgcolor">
+                                            The bright red colored and heart shaped Washington apples are 
+                                            crunchy, juicy and slightly sweet. Washington Apples are a 
+                                            natural source of fibre and are
+                                        </span>
+                                        <span class="plp-card-cta  hide-on-tablet">
+                                            Buy Now @ MRP Rs.187
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="plp-price-container">
+                                    <span class="plp-card-price show-on-desktop">MRP Rs.187</span>
+                                    <span class="plp-card-cta hide-on-mobile show-on-tablet">
+                                        Buy Now @ MRP Rs.187
+                                    </span>
+                                    <span class="plp-card-cta-tabs show-on-desktop">
+                                        Buy Now
+                                    </span>
+                                </div>
+                            </div>
+                        </div>  <!-- plp-card ends -->
+                        
+                        <div class="plp-card">
+                            <h2>tomato - local, organically grown, 500gm</h2>
+                            
+                            <div class="plp-card-content">
+                                <div class="plp-card-img-text">
+                                    <div class="plp-card__img">
+                                        <img src="static/images/products/fruit-n-veg/tomato.jpg" />
+                                    </div>
+                                    
+                                    <div class="plp-desc-container">
+                                        <span class="plp-card-desc bgcolor">
+                                            Fresho brings to you an exquisite range of locally grown organic 
+                                            tomatoes, which are now avaialble at bigbasket.
+                                            These organic tomatoes are free from
+                                        </span>
+                                        <span class="plp-card-cta  hide-on-tablet">
+                                            Buy Now @ MRP Rs.12
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="plp-price-container">
+                                    <span class="plp-card-price show-on-desktop">MRP Rs.12</span>
+                                    <span class="plp-card-cta hide-on-mobile show-on-tablet">
+                                        Buy Now @ MRP Rs.12
+                                    </span>
+                                    <span class="plp-card-cta-tabs show-on-desktop">
+                                        Buy Now
+                                    </span>
+                                </div>
+                            </div>
+                        </div>  <!-- plp-card ends -->
+                                
+                </div> <!-- fnb cards end -->
+
+
+
+
+
+                <!-- bakery and cake cards -->
+                <div id="bakery" class="option-content" style="display: none;">
+
+                    <div class="plp-card">
+                        <h2>bread - wheat, 2pcs</h2>
+                        
+                        <div class="plp-card-content">
+                            <div class="plp-card-img-text">
+                                <div class="plp-card__img">
+                                    <img src="static/images/products/bakery-cakes-dairy/bread.jpg" />
+                                </div>
+                                <!-- <div class="plp-card__content flex-1"> </div> -->
+                                <div class="plp-desc-container">
+                                    <span class="plp-card-desc bgcolor">
+                                        Kiwis are oval shaped with a brownish outer skin. The flesh
+                                        is bright green and juicy with tiny, edible black seeds.
+                                    </span>
+                                    <span class="plp-card-cta hide-on-tablet">
+                                        Buy Now @ MRP Rs.64
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="plp-price-container">
+                                <span class="plp-card-price show-on-desktop">MRP Rs.87</span>
+                                <span class="plp-card-cta hide-on-mobile show-on-tablet">
+                                    Buy Now @ MRP Rs.64
+                                </span>
+                                <span class="plp-card-cta-tabs show-on-desktop">
+                                    Buy Now
+                                </span>
+                            </div>
+                        </div>
+                    </div>  <!-- plp-card ends -->
+
+                    <div class="plp-card">
+                        <h2>paneer</h2>
+                        
+                        <div class="plp-card-content">
+                            <div class="plp-card-img-text">
+                                <div class="plp-card__img">
+                                    <img src="static/images/products/bakery-cakes-dairy/paneer.jpg" />
+                                </div>
+                                
+                                <div class="plp-desc-container">
+                                    <span class="plp-card-desc bgcolor">
+                                        The bright red colored and heart shaped Washington apples are 
+                                        crunchy, juicy and slightly sweet. Washington Apples are a 
+                                        natural source of fibre and are
+                                    </span>
+                                    <span class="plp-card-cta  hide-on-tablet">
+                                        Buy Now @ MRP Rs.187
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="plp-price-container">
+                                <span class="plp-card-price show-on-desktop">MRP Rs.187</span>
+                                <span class="plp-card-cta hide-on-mobile show-on-tablet">
+                                    Buy Now @ MRP Rs.187
+                                </span>
+                                <span class="plp-card-cta-tabs show-on-desktop">
+                                    Buy Now
+                                </span>
+                            </div>
+                        </div>
+                    </div>  <!-- plp-card ends -->
+
+
+                    <div class="plp-card">
+                        <h2>Yoghurt</h2>
+                        
+                        <div class="plp-card-content">
+                            
+                            <div class="plp-card-img-text">
+                                <div class="plp-card__img">
+                                    <img src="static/images/products/bakery-cakes-dairy/yogurt-blue.jpg" />
+                                </div>
+                                
+                                <div class="plp-desc-container">
+                                    <span class="plp-card-desc bgcolor">
+                                        Pomegranate variety has a glossy, vibrant and soft ruby-red skin. 
+                                        The inside of the fruit is divided into compartments by thin 
+                                        white membranes.
+                                    </span>
+                                    <span class="plp-card-cta  hide-on-tablet">
+                                        Buy Now @ MRP Rs.88
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="plp-price-container">
+                                <span class="plp-card-price show-on-desktop">MRP Rs.88</span>
+                                <span class="plp-card-cta hide-on-mobile show-on-tablet">
+                                    Buy Now @ MRP Rs.88
+                                </span>
+                                <span class="plp-card-cta-tabs show-on-desktop">
+                                    Buy Now
+                                </span>
+                            </div>
+                        </div>
+                    </div>  <!-- plp-card ends -->
+        
+                    <div class="plp-card">
+                        <h2>yoghurt - red</h2>
+                        
+                        <div class="plp-card-content">
+                           <div class="plp-card-img-text">
+                                <div class="plp-card__img">
+                                    <img src="static/images/products/bakery-cakes-dairy/yogurt-red.jpg" />
+                                </div>
+                               
+                                <div class="plp-desc-container">
+                                    <span class="plp-card-desc bgcolor">
+                                        Leaving a moderately pungent taste on the tongue, Green
+                                        capsicums, also known as green peppers are bell-shaped,
+                                        medium-sized fruit pods.
+                                    </span>
+                                    <span class="plp-card-cta  hide-on-tablet">
+                                        Buy Now @ MRP Rs.137
+                                    </span>
+                                </div>
+                           </div>
+
+                            <div class="plp-price-container">
+                                <span class="plp-card-price show-on-desktop">MRP Rs.137</span>
+                                <span class="plp-card-cta hide-on-mobile show-on-tablet">
+                                    Buy Now @ MRP Rs.137
+                                </span>
+                                <span class="plp-card-cta-tabs show-on-desktop">
+                                    Buy Now
+                                </span>
+                            </div>
+                        </div>
+                    </div>  <!-- plp-card ends -->
+                    
+                    <div class="plp-card">
+                        <h2>tomato - local, organically grown, 500gm</h2>
+                        
+                        <div class="plp-card-content">
+                            <div class="plp-card-img-text">
+                                <div class="plp-card__img">
+                                    <img src="static/images/products/fruit-n-veg/tomato.jpg" />
+                                </div>
+                                
+                                <div class="plp-desc-container">
+                                    <span class="plp-card-desc bgcolor">
+                                        Fresho brings to you an exquisite range of locally grown organic 
+                                        tomatoes, which are now avaialble at bigbasket.
+                                        These organic tomatoes are free from
+                                    </span>
+                                    <span class="plp-card-cta  hide-on-tablet">
+                                        Buy Now @ MRP Rs.12
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="plp-price-container">
+                                <span class="plp-card-price show-on-desktop">MRP Rs.12</span>
+                                <span class="plp-card-cta hide-on-mobile show-on-tablet">
+                                    Buy Now @ MRP Rs.12
+                                </span>
+                                <span class="plp-card-cta-tabs show-on-desktop">
+                                    Buy Now
+                                </span>
+                            </div>
+                        </div>
+                    </div>  <!-- plp-card ends -->
+
+                </div> <!-- bakery and cakes cards end -->
+
+            </div> <!-- cards ends -->
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt. Ltd.
+    </footer>
+
+</body>
+</html>
