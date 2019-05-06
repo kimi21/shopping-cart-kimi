@@ -4,11 +4,18 @@
   "description": "shopping cart project by Kimi",
   "main": "script.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style1.css -w"
+    "compile:sass": "node-sass sass/main.scss css/style1.css -w",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
   },
   "author": "kimi",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
   }
 }
