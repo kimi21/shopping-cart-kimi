@@ -1,0 +1,14 @@
+{
+  "name": "shopping-cart",
+  "version": "1.0.0",
+  "description": "shopping cart project by Kimi",
+  "main": "script.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style1.css -w"
+  },
+  "author": "kimi",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}

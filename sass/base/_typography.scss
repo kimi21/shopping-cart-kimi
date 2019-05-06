@@ -1,0 +1,35 @@
+
+/*
+.main__heading and .main__sub-text present on 
+Login(index.html) and register.html
+*/
+
+.main__heading {
+    font-size: 4rem;
+    margin-top: 1rem;
+    margin-bottom: 4.5%;
+    text-align: center;
+
+    @include respond(tab-port) { 
+        font-size: 3rem;
+        margin-bottom: 4.5%;
+        text-align: center;
+    }
+
+    @include respond(tab-land) {
+        font-size: 3.2rem;
+        text-align: left;
+    }
+}
+
+.main__sub-text {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 4.4rem;
+
+    @include respond(tab-port) { 
+        font-size: 1.8rem;
+        text-align: left;
+        margin-bottom: 8%;
+    }
+}

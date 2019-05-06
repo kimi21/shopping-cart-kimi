@@ -1,0 +1,39 @@
+/*---------------------------------*\
+    #HEADER
+\*---------------------------------*/
+
+.header {
+    height: 6.4rem;      // ~ 64px
+    background-color: $color-white;
+    padding: .8rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: capitalize; 
+
+    @include bottom-shadow;
+
+    @include respond(tab-land) {        // 801px
+        height: 7.4rem;
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    @include respond(desktop) {         // 1025px
+        font-size: 62.5%;  
+    }
+
+    @include respond(big-desktop) {     //1281px
+        font-size: 75%; 
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $color-grey-medium;
+    cursor: pointer;
+}
+
+
+a:hover {
+    cursor: pointer;
+}

@@ -11,7 +11,7 @@
     \*---------------------------------*/
 
     .nav--left-menu-div {
-        display: inline-block;;
+        display: inline-block;
     }
 
     .nav--left ul li {
@@ -528,7 +528,7 @@
     big landscape tablets, laptops, and desktops 
 */
 
-@media (min-width:1025px) { 
+@media (min-width: 1025px) { 
 
     /*---------------------------------*\
         #HEADER

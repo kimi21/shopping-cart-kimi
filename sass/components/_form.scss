@@ -1,0 +1,226 @@
+/*---------------------------------*\
+    #FORM INPUT CONTROLS ON 
+    LOGIN(INDEX) AND REGISTER
+\*---------------------------------*/
+
+
+input.effect,
+span.effect,
+label.effect {
+  font-family: 'Ubuntu', sans-serif;
+  display: block;
+  margin: 1rem;
+  padding: 1rem; 
+  border: none;
+  font-size: 3rem /* 22px */
+}
+
+
+input:focus {
+  outline: 0;
+}
+/* Effect */
+
+input.effect {
+  margin-bottom: 2rem;
+  font-size: 2rem; /* 48px */
+  font-weight: 300;
+  border-radius: 2px;
+  margin: 0;
+  border: none;
+  padding-top: 3.4rem;
+  width: 100%;
+  background: $color-black;
+  transition: padding-top 0.2s ease, margin-top 0.2s ease;
+  overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+}
+/* Underline and Placeholder */
+
+input.effect + label {
+  display: block;
+  position: relative;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  border-top: 1px solid black;
+
+  -webkit-transition: width 0.4s ease, border-top 0.4s ease;
+  transition: width 0.4s ease, border-top 0.4s ease;
+  height: 0px;
+}
+
+input.effect:focus + label {
+  width: 100%;
+  border-top: 1px solid $color-blue-light;
+  color: $color-blue-light;
+}
+
+input.effect:focus,
+input.effect:valid {
+  padding-top: 3.5rem; /* 35px */
+}
+
+
+input.effect:focus + label > span,
+input.effect:valid + label > span {
+  top: -60px; /* -100px */
+  font-size: 12px; /* 22px which we see upwards*/
+  color: $color-blue-light; /* #333; */
+}
+
+input.effect + label > span {
+  font-weight: 300;
+  margin: 0;
+  position: absolute;
+  color: $color-grey-medium;
+  font-size: 16px; /* 48px */
+  top: -40px; /* -66px */
+  left: 0px;
+  z-index: -1;
+  -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+input[type="submit"] {
+  -webkit-transition: opacity 0.2s ease, background 0.2s ease;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  display: block;
+  opacity: 1;
+  margin: 1rem 0 0 0;
+  padding: 10px;
+  cursor: pointer;
+  font-size: rem;
+}
+
+input[type="submit"]:hover {
+  background: $color-primary;
+}
+
+input[type="submit"]:active {
+  background: $color-primary;
+}
+
+input.effect:valid ~ input[type="submit"] {
+  -webkit-animation: appear 1s forwards;
+  animation: appear 1s forwards;
+}
+
+input.effect:invalid ~ input[type="submit"] {
+  display: none;
+}
+
+.btn-container {
+    margin-top: 60px;
+    font-size: 100%;
+}
+
+.form__submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: 4rem;
+    border: none;
+}
+
+
+
+
+
+
+
+input:focus {
+  outline: 0;
+}
+/* Effect */
+
+input.effect {
+  margin-bottom: 20px;
+  font-size: 20px; /* 48px */
+  font-weight: 300;
+  border-radius: 2px;
+  margin: 0;
+  border: none;
+  padding-top: 40px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: padding-top 0.2s ease, margin-top 0.2s ease;
+  overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+}
+/* Underline and Placeholder */
+
+input.effect + label {
+  display: block;
+  position: relative;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  border-top: 1px solid black;
+
+  -webkit-transition: width 0.4s ease, border-top 0.4s ease;
+  transition: width 0.4s ease, border-top 0.4s ease;
+  height: 0px;
+}
+
+input.effect:focus + label {
+  width: 100%;
+  border-top: 1px solid $color-blue-light;
+  color: $color-blue-light;
+}
+
+input.effect:focus,
+input.effect:valid {
+  padding-top: 40px; /* 35px */
+}
+
+
+input.effect:focus + label > span,
+input.effect:valid + label > span {
+  top: -60px; /* -100px */
+  font-size: 12px; /* 22px which we see upwards*/
+  color: $color-blue-light; /* #333; */
+}
+
+input.effect + label > span {
+  font-weight: 300;
+  margin: 0;
+  position: absolute;
+  color: $color-grey-medium;
+  font-size: 16px; /* 48px */
+  top: -40px; /* -66px */
+  left: 0px;
+  z-index: -1;
+  -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+input[type="submit"] {
+  -webkit-transition: opacity 0.2s ease, background 0.2s ease;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  display: block;
+  opacity: 1;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+
+input[type="submit"]:hover {
+  background: rgb(165, 5, 85);
+}
+
+input[type="submit"]:active {
+  background: rgb(165, 5, 85);
+}
+
+input.effect:valid ~ input[type="submit"] {
+  -webkit-animation: appear 1s forwards;
+  animation: appear 1s forwards;
+}
+
+input.effect:invalid ~ input[type="submit"] {
+  display: none;
+}
+

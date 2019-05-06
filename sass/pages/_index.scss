@@ -1,0 +1,40 @@
+/*---------------------------------*\
+    #LOGIN 
+\*---------------------------------*/
+
+.login-content {
+    width: 80%;
+    margin: 0 auto;
+    text-transform: capitalize;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    @include respond(tab-port) { 
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+
+        .login-flex-container {
+            display: flex;
+
+            .login__header {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            .flex-row {
+                flex: 1;
+                margin-left: 4rem;
+
+                .form-flex {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
+
