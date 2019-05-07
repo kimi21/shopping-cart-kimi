@@ -1,6 +1,26 @@
-export default " KIMI ";
+import axios from 'axios';
 
-export const add = (a, b) => a + b;
-export const multiply = (a, b) => a * b;
+export default class Category {
+    constructor() {
+        //this.query = query;
+    }
+    async getCategories() {
+        try {
+            const res = await axios(`./server/categories/index.get.json`);
+            // const result = res.data;
+            return res.data;
+        } catch (err) {
+            alert(err);
+        }
+    }  
+    
+    async getCarousel() {
+        try {
+            const res = await axios(`./server/banners/index.get.json`);
+            return res.data;
+        } catch(err) {
+            alert(err);
+        }
 
-export const ID = "ABS";
+    }
+}
