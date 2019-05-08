@@ -1,10 +1,12 @@
 // import Products from './model/products';
+import { elements } from './view/base';
 
 import Category from './model/home';
 import Products from './model/products';
 
 import * as productsView from './view/productsView';
 import * as homeView from './view/homeView';
+import * as cartView from './view/cartView';
 
 
 // const products = new Products();
@@ -17,6 +19,7 @@ import * as homeView from './view/homeView';
  */
 
 const state = {};
+var cartArr = [];
 
 /**
  * Home(Categories) controller
@@ -68,25 +71,186 @@ const loadProducts = async () => {
 
 loadProducts();
 
+const createProductObj = () => {
 
+    const productObj = {
+        productID: product.productId,
+        productCurrentCount: 1,
+        productName: product.productName,
+        productImageurl: product.productImageurl,
+        productDesc: product.productDesc,
+        productPrice: product.productPrice,
+        productCategory: product.productCategory,
+        productSku: product.productSku,
+        productStock: product.productStock
+    };  
 
-elements.plpPageContent.querySelector('.btn-buy').addEventListener('click', e => {
-    e.preventDefault();
-    // controlSearch();
-    console.log("Event : ");
-    console.log(e);
+    return productObj;
+}
+
+const addToCart = product => {
+
+    console.log("Data attributes : " + JSON.stringify(product));
+
+    //create a product object to be pushed in cartArr : 
+    const productObj = createProductObj();
+
+    //Check if cartArr is not empty
+    if(cartArr.length > 0) {
+
+        //check if the product already exists in the cartArr and if it's in stock
+        const existingProduct = cartArr.find(function(element) {
+
+            if(element.productID === productObj.productID ) { 
+                
+                //check if this element is in stock
+                if(element.productStock > productObj.productCurrentCount) {
+                    
+                    //increment the count of product in cart
+                    element.productCurrentCount++;
+                    console.log("element already exists, Count incremented");
+                    return true;
+
+                } else {
+                    alert("Oops! The product you are looking for is out of stock!");
+                    return false;
+                }
+                
+            } else { // product not already present in cartArr
+                return false;
+            }
+        });
+        
+        if(!existingProduct) {
+            //Add this product to the cartObj array
+            cartArr.push(productObj);
+        }
+
+    } else {    //cart array is empty
+        
+        //Add this product to the cartObj array
+        cartArr.push(productObj);
+    }
+
+    //set cart details in local storage
+    localStorage.setItem("cartData", JSON.stringify(cartArr));
+            
+    let cartData = JSON.parse(localStorage.getItem('cartData'));
+
+    //update cart count in the header
+    elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
+    //Render products on Cart
+    console.log("Rendering cart view");
+    cartView.renderResult(cartData);
+
+    // cartObj.add(product); 
+    console.log("Cart Array : ");
+    cartArr.forEach(element => {
+        console.log("Product ID : " + element.productID);
+        console.log("Product count : " + element.productCurrentCount);
+    });
+}
+
+elements.plpPageContent.addEventListener('click', (event) => {
+
+    //check if the element pressed was the 'BUY' button:
+    if(event.target.matches('.btn-buy')) {
+        
+        const product = event.target.closest('.plp-card').dataset;
+        // const product = JSON.stringify(event.target.closest('.plp-card').dataset);
+        
+        addToCart(product);
+
+        console.log("Data attributes : " + JSON.stringify(product));
+
+        //create a product object to be pushed in cartArr : 
+        const productObj = {
+            productID: product.productId,
+            productCurrentCount: 1,
+            productName: product.productName,
+            productImageurl: product.productImageurl,
+            productDesc: product.productDesc,
+            productPrice: product.productPrice,
+            productCategory: product.productCategory,
+            productSku: product.productSku,
+            productStock: product.productStock
+        };   
+
+        //Check if cartArr is not empty
+        if(cartArr.length > 0) {
+
+            //check if the product already exists in the cartArr and if it's in stock
+            const existingProduct = cartArr.find(function(element) {
+
+                if(element.productID === productObj.productID ) { 
+                    
+                    //check if this element is in stock
+                    if(element.productStock > productObj.productCurrentCount) {
+                        
+                        //increment the count of product in cart
+                        element.productCurrentCount++;
+                        console.log("element already exists, Count incremented");
+                        return true;
+
+                    } else {
+                        alert("Oops! The product you are looking for is out of stock!");
+                        return false;
+                    }
+                    
+                } else { // product not already present in cartArr
+                    return false;
+                }
+            });
+            
+            if(!existingProduct) {
+                //Add this product to the cartObj array
+                cartArr.push(productObj);
+            }
+
+        } else {    //cart array is empty
+            
+            //Add this product to the cartObj array
+            cartArr.push(productObj);
+        }
+
+        localStorage.setItem("cartData", JSON.stringify(cartArr));
+                
+        let cartData = JSON.parse(localStorage.getItem('cartData'));
+
+        //update cart count in the header
+        elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
+        //Render products on Cart
+        console.log("Rendering cart view");
+        cartView.renderResult(cartData);
+
+        // cartObj.add(product); 
+        console.log("Cart Array : ");
+        cartArr.forEach(element => {
+            console.log("Product ID : " + element.productID);
+            console.log("Product count : " + element.productCurrentCount);
+        }); 
+    }
 });
 
+elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
+
+
+/**
+ * CART Controller
+ */
+// cartView.updateCart(cartArr);
+elements.cartIcon.addEventListener('click', )
 
 
 
 
-// const card_list = document.querySelectorAll('.js-home .js-home-card .card__img');
-// const card_array = [...card_list];
 
-// card_array.forEach((card) => {
-//     card.addEventListener('click', () => {
-//         console.log("You pressed this card!");
-//     });
-// })
 
+// document.addEventListener('click', function (event) {
+//             if (event.target.matches('.add-to-cart')) {
+//                 const product = event.target.closest('.plp-container__products__item').dataset;
+//                 let products = cartModelObj.add(product);
+//                 CartViewObj.setHtml(products);
+//             } 
+// }
+    

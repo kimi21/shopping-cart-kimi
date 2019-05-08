@@ -131,6 +131,7 @@ a:hover {
     margin-top: 10px; 
     display: flex; 
     align-items: center;
+    padding: 2px 10px;
 }
 
 .cart__img {
@@ -141,7 +142,9 @@ a:hover {
     display: inline-block;
 }
 
-
+.highlighted-cart {
+    background-color: #ebebeb;
+}
 
 
 
@@ -605,6 +608,10 @@ hr {
     /* padding: 10px; */
     margin-left: 10px;
     
+}
+
+.hide-below-desktop {
+    display: none;
 }
 
 select{

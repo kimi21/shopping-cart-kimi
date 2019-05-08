@@ -23,6 +23,11 @@ const rendercategory = category => {
 
 
 export const renderResults = categories => {
+    //update cart coutn in the header
+    var cartData;
+    cartData = JSON.parse(localStorage.getItem('cartData'));
+    elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
+
     categories.forEach(rendercategory);
 }
 

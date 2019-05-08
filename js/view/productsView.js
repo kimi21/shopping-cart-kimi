@@ -3,7 +3,10 @@ import { miscData } from './miscData';
 
 export const renderProduct = product => {
     const markup =  `
-    <div class="plp-card">
+    <div class="plp-card"  data-product-id="${product.id}" data-product-name="${product.name}"
+    data-product-imageUrl="${product.imageURL}" data-product-desc="${product.description}" 
+    data-product-price="${product.price}" data-product-category="${product.category}" 
+    data-product-stock="${product.stock}" data-product-sku="${product.sku}">
         <h2>${product.name}</h2>
     
         <div class="plp-card-content">
@@ -17,7 +20,7 @@ export const renderProduct = product => {
                         ${product.description}
                     </span>
                     <a href="#" class="btn-buy">
-                        <span class="plp-card-cta hide-on-tablet">
+                        <span class="btn-buy plp-card-cta hide-on-tablet" data-product-id="${product.id}">
                             Buy Now @ MRP Rs.${product.price}
                         </span>
                     </a>
@@ -27,12 +30,12 @@ export const renderProduct = product => {
             <div class="plp-price-container">
                 <span class="plp-card-price show-on-desktop">MRP Rs.87</span>
                 <a href="#" class="btn-buy">
-                    <span class="plp-card-cta hide-on-mobile show-on-tablet">
+                    <span class="btn-buy plp-card-cta hide-on-mobile show-on-tablet" data-product-id="${product.id}">
                         Buy Now @ MRP Rs.${product.price}
                     </span>
                 </a>
                 <a href="#" class="btn-buy">
-                    <span class="plp-card-cta-tabs show-on-desktop">
+                    <span class="btn-buy plp-card-cta-tabs show-on-desktop hide-below-desktop" data-product-id="${product.id}">
                         Buy Now
                     </span>
                 </a>
@@ -47,6 +50,11 @@ export const renderProduct = product => {
 export const renderProducts = products => {
     //render only for category Fruits
     // products.forEach(renderProduct);
+
+    //update cart count in the header
+    var cartData;
+    cartData = JSON.parse(localStorage.getItem('cartData'));
+    elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
 
     const fruitItems = products.filter(function(item) {
         return item.category == miscData.categoryFruits;
