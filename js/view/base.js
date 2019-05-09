@@ -4,7 +4,7 @@ export const elements = {
     plpPageContent: document.querySelector('#fruits'),
     cartIcon: document.querySelector('.nav--right__cart-div'),
     countOnCart: document.querySelector('.cart-head-light'),
-    cartContainer: document.querySelector('.cart-top'),
+    cartTop: document.querySelector('.cart-top'),
     headerCartCountDiv: document.querySelector('.js-cart-count')
 };
 

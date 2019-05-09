@@ -28,6 +28,9 @@ html {
     flex-direction: column;
 }
 
+.main {
+    position: relative;
+}
 
 
 
@@ -525,6 +528,17 @@ hr {
     -webkit-box-shadow: 0px 4px 13px -6px rgba(92,92,92,1);
     -moz-box-shadow: 0px 4px 13px -6px rgba(92,92,92,1);
     box-shadow: 0px 4px 13px -6px rgba(92,92,92,1);
+}
+
+/* 
+* Cart on home 
+*/
+.cart-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1em;
+    display: none;
 }
 
 

@@ -43,8 +43,9 @@ export const renderProduct = product => {
         </div>
     </div>  <!-- plp-card ends -->
     `;
-    
-    elements.plpPageContent.insertAdjacentHTML('beforeend', markup);
+
+    if(elements.plpPageContent)
+        elements.plpPageContent.insertAdjacentHTML('beforeend', markup);
 }
 
 export const renderProducts = products => {
@@ -54,7 +55,9 @@ export const renderProducts = products => {
     //update cart count in the header
     var cartData;
     cartData = JSON.parse(localStorage.getItem('cartData'));
-    elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
+
+    if(cartData)
+        elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
 
     const fruitItems = products.filter(function(item) {
         return item.category == miscData.categoryFruits;

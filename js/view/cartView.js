@@ -7,42 +7,44 @@ const renderProductOnCart = product => {
     const markup = `
         <div class="cart-content__item">
             <div class="cart-item-img">
-                <img src="./.${category.imageUrl}" />
+                <img src="./.${product.productImageurl}" />
             </div>                        
             <div class="cart-item-desc">
                 <div class="">
-                    <span class="cart-item-desc-title">${product.name}</span>
+                    <span class="cart-item-desc-title">${product.productName}</span>
                 </div>
                 <div class="cart-item-info">
                     <div class="cart-item-info-left">
                         <i class="fa fa-minus fa-cart-tablet" aria-hidden="true"></i>
-                        <span class="cart-item-qauntity">2</span>
+                        <span class="cart-item-qauntity">${product.productCurrentCount}</span>
                         <i class="fa fa-plus fa-cart-tablet" aria-hidden="true"></i>
                         
                         <span class="cart-item-price">
                             <i class="fa fa-times" aria-hidden="true"></i>
-                            Rs. 187
+                            Rs. ${product.productPrice}
                         </span>
                     </div>
                     
                     <div class="cart-item-info-right">
-                        <span class="">Rs. 187</span>
+                        <span class="">Rs. ${product.productCurrentCount * product.productPrice}</span>
                     </div>
                 </div>
             </div>
         </div>
     `;
 
-    // elements.cartTotalCount.textContent = cartTotalCount;
-    elements.cartContainer.insertAdjacentHTML('beforeend', "Hello kimi");
+    if(elements.countOnCart)
+        elements.countOnCart.textContent = cartTotalCount + (cartTotalCount === 1 ? ' item' : ' items');
+    if(elements.cartTop)
+        elements.cartTop.insertAdjacentHTML('beforeend', markup);
 }
 
 export const renderResult = products => {
     cartTotalCount = products.length;
 
     console.log("Products in cart : " + cartTotalCount);
-    console.log("In CART VIEW PRODUCTS : : : " + products);
-   
+    console.log("In CART VIEW PRODUCTS : : : " + JSON.stringify(products));
+
     products.forEach(renderProductOnCart);
     
 }

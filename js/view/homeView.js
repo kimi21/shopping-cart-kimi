@@ -18,7 +18,8 @@ const rendercategory = category => {
         </div>          
     `;
     
-    elements.homePageContent.insertAdjacentHTML('beforeend', markup);
+    if (elements.homePageContent)
+        elements.homePageContent.insertAdjacentHTML('beforeend', markup);
 }
 
 
@@ -26,7 +27,8 @@ export const renderResults = categories => {
     //update cart coutn in the header
     var cartData;
     cartData = JSON.parse(localStorage.getItem('cartData'));
-    elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
+    if (cartData)
+        elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
 
     categories.forEach(rendercategory);
 }
@@ -57,5 +59,7 @@ export const renderCarousel = carouselImages => {
                     class="main__carousel__img" />
             </div>
         `;
-    elements.homePageContent.insertAdjacentHTML('afterbegin', markup);
+    
+    if (elements.homePageContent)
+        elements.homePageContent.insertAdjacentHTML('afterbegin', markup);
 }
