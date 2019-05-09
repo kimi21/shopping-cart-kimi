@@ -518,35 +518,40 @@
 
 
 
-        <div class="main cart-main bgcolor cart-container" id="cart-body">
-                <div class="main-content">
+        <div class="main cart-main bgcolor cart-container " id="cart-body">
+                <div class="main-content main-cart">
                     <div class="cart-content__body">
                         <div class="cart-top">
                             <h2 class="cart-head bg-color-change">
                                 <span class="cart-head-bold">My Cart</span>
                                 <span class="cart-head-light"></span>
+                                <a href = "#">
+                                    <i class="fa fa-times btn-close" aria-hidden="true"></i>
+                                </a>
                             </h2>
-                            <!-- dynamic content comes here -->
+                            <div class="cart-dynamic">
+                                <!-- dynamic content comes here -->
+                            </div>
                         </div>
-
+        
                         <div class="cart-content__banner">
                             <img src="static/images/lowest-price.png">
                             <span>You won't find it cheaper anywhere</span>
                         </div>
                     </div>
-    
-                    <!-- <div class="cart-bottom">
+        
+                    <div class="cart-bottom">
                         <span class="promo-code">
                             Promo code can be applied on payment page
                         </span>
                         <a class="cart-bottom__btn">
                             <span>Proceed to Checkout </span>
                             <span>
-                                Rs.187&nbsp;
+                                <span class="cart-bottom-amount"></span> &nbsp;
                                 <i class="fa fa-chevron-right" aria-hidden="true"></i>
                             </span>
                         </a>
-                    </div> -->
+                    </div>
                 </div>
             </div>
     </main>

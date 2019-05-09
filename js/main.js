@@ -33,19 +33,30 @@ const showCart = () => {
 
 elements.cartIcon.addEventListener('click', function(event) {
 
-    //toggle hide and show of cart
     let cartElement =  document.querySelector('.cart-container');
-    if(cartElement.style.display = 'none') {
+
+    //toggle hide and show of cart
+    if(cartElement.style.display == 'none') {
         cartElement.style.display = 'block';
+        elements.cartDynamic.innerHTML = '';
         showCart();
-    } else if(cartElement.style.display = 'block')
+    } else {
         cartElement.style.display = 'none';
+    }
+        
 
     //update cart count in the header
-    elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
+    // cartData = JSON.parse(localStorage.getItem('cartData'));
+    // elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
     
 });
 
+
+elements.closeBtn.addEventListener('click', function(event){
+    //close cart 
+    document.querySelector('.cart-container').style.display = 'none';
+
+});
 
 //hide cart on mouse leave of the cart icon in the header
 // elements.cartIcon.addEventListener('mouseleave', function(event) {

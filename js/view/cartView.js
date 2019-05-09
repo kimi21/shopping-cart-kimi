@@ -34,17 +34,19 @@ const renderProductOnCart = product => {
     `;
 
     if(elements.countOnCart)
-        elements.countOnCart.textContent = cartTotalCount + (cartTotalCount === 1 ? ' item' : ' items');
-    if(elements.cartTop)
-        elements.cartTop.insertAdjacentHTML('beforeend', markup);
+        elements.countOnCart.textContent = "( " + cartTotalCount + (cartTotalCount === 1 ? ' item )' : ' items )');
+    if(elements.cartDynamic)
+        elements.cartDynamic.insertAdjacentHTML('beforeend', markup);
+    if(elements.cartBillAmount)
+        elements.cartBillAmount.textContent = `Rs. ${product.productCurrentCount * product.productPrice}`;
 }
 
-export const renderResult = products => {
-    cartTotalCount = products.length;
 
+export const renderResult = products => {
+    
+    cartTotalCount = products.length;
     console.log("Products in cart : " + cartTotalCount);
     console.log("In CART VIEW PRODUCTS : : : " + JSON.stringify(products));
-
     products.forEach(renderProductOnCart);
     
 }

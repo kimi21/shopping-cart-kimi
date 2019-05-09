@@ -4,8 +4,10 @@ export const elements = {
     plpPageContent: document.querySelector('#fruits'),
     cartIcon: document.querySelector('.nav--right__cart-div'),
     countOnCart: document.querySelector('.cart-head-light'),
-    cartTop: document.querySelector('.cart-top'),
-    headerCartCountDiv: document.querySelector('.js-cart-count')
+    cartDynamic: document.querySelector('.cart-dynamic'),
+    headerCartCountDiv: document.querySelector('.js-cart-count'),
+    closeBtn: document.querySelector('.btn-close'),
+    cartBillAmount: document.querySelector('.cart-bottom-amount')
 };
 
 

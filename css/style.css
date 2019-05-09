@@ -13,6 +13,10 @@
 html {
     font-size: 20px;
 }
+html, body {
+    min-height: 100%;
+
+}
 
 .row {
     width: 100%;
@@ -530,16 +534,6 @@ hr {
     box-shadow: 0px 4px 13px -6px rgba(92,92,92,1);
 }
 
-/* 
-* Cart on home 
-*/
-.cart-container {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 1em;
-    display: none;
-}
 
 
 
@@ -709,6 +703,27 @@ select::-ms-expand {
 /*---------------------------------*\
     #CART
 \*---------------------------------*/
+/* 
+* Cart on home 
+*/
+.cart-container {
+    position: absolute;
+    right: 0;
+    top: 74px;
+    /* padding: 1em; */
+    display: none;
+    z-index: 100;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5); /*dim the background*/
+}
 
 .cart-main {
     margin-top: 0;
@@ -722,9 +737,10 @@ select::-ms-expand {
 
 .cart-content__body h2{
     padding: 10px 12px;
-    margin: 2.5% 0;
+    /* margin: 2.5% 0; */
     font-size: 80%;
-    background-color: #fff;
+    background-color: #000;
+    color: #fff;
 }
 
 .cart-head-light {
@@ -800,12 +816,13 @@ select::-ms-expand {
 
 .cart-bottom {
     height: 100px; 
-    position: fixed; 
+    /* position: fixed;  */
     bottom:0%;
     width:100%; 
     background-color: #fff; 
     opacity: 1;
 
+    margin-top: 1em;
     color: rgb(53, 53, 53);
     font-size: 70%;
     font-weight: 500;
@@ -825,4 +842,9 @@ select::-ms-expand {
 
     display: flex;
     justify-content: space-between;
+}
+
+.btn-close {
+    float: right;
+    color: #fff;
 }
