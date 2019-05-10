@@ -15,9 +15,9 @@ const renderProductOnCart = product => {
                 </div>
                 <div class="cart-item-info">
                     <div class="cart-item-info-left">
-                        <i class="fa fa-minus fa-cart-tablet" aria-hidden="true"></i>
+                        <i class="fa fa-minus fa-cart-tablet js-btn-minus" aria-hidden="true"></i>
                         <span class="cart-item-qauntity">${product.productCurrentCount}</span>
-                        <i class="fa fa-plus fa-cart-tablet" aria-hidden="true"></i>
+                        <i class="fa fa-plus fa-cart-tablet js-btn-add" aria-hidden="true"></i>
                         
                         <span class="cart-item-price">
                             <i class="fa fa-times" aria-hidden="true"></i>

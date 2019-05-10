@@ -15,8 +15,7 @@ import * as cartView from './view/cartView';
  */
 
 const state = {};
-var cartArr = [];
-
+var cartData;
 
 /**
  * CART Controller
@@ -25,7 +24,7 @@ var cartArr = [];
 //toggle display cart on click of cart icon in the header
 
 const showCart = () => {
-    var cartData = JSON.parse(localStorage.getItem('cartData'));
+    cartData = JSON.parse(localStorage.getItem('cartData'));
     //Render products on Cart
     console.log("Rendering cart view");
     cartView.renderResult(cartData);
@@ -94,6 +93,9 @@ const loadCategories = async () => {
 loadCategories();
 
 
+
+
+
 /**
  * PLP Controller
  */
@@ -116,11 +118,16 @@ const loadProducts = async () => {
 loadProducts();
 
 
-const createProductObj = () => {
+
+
+
+/**
+ * Add to cart fucntionality starts --
+ */
+const createProductObj = (product) => {
 
     const productObj = {
         productID: product.productId,
-        productCurrentCount: 1,
         productName: product.productName,
         productImageurl: product.productImageurl,
         productDesc: product.productDesc,
@@ -133,148 +140,133 @@ const createProductObj = () => {
     return productObj;
 }
 
-const addToCart = product => {
 
-    console.log("Data attributes : " + JSON.stringify(product));
+const productAlreadyInCart = (productToBuy) => {
+    
+    let productFound;
+    var cartArr;
 
-    //create a product object to be pushed in cartArr : 
-    const productObj = createProductObj();
+    //Get cart from local storage
+    cartArr = JSON.parse(localStorage.getItem('cartData')) || [];
+    console.log("cart : " + cartArr);
 
-    //Check if cartArr is not empty
+    // 1. check if cart is not empty
     if(cartArr.length > 0) {
-
-        //check if the product already exists in the cartArr and if it's in stock
-        const existingProduct = cartArr.find(function(element) {
-
-            if(element.productID === productObj.productID ) { 
-                
-                //check if this element is in stock
-                if(element.productStock > productObj.productCurrentCount) {
-                    
-                    //increment the count of product in cart
-                    element.productCurrentCount++;
-                    console.log("element already exists, Count incremented");
-                    return true;
-
-                } else {
-                    alert("Oops! The product you are looking for is out of stock!");
-                    return false;
-                }
-                
-            } else { // product not already present in cartArr
-                return false;
-            }
+        productFound = cartArr.find(function(cartProduct) {
+            return cartProduct.productID === productToBuy.productID ;
         });
-        
-        if(!existingProduct) {
-            //Add this product to the cartObj array
-            cartArr.push(productObj);
-        }
-
-    } else {    //cart array is empty
-        
-        //Add this product to the cartObj array
-        cartArr.push(productObj);
     }
-
-    //set cart details in local storage
-    localStorage.setItem("cartData", JSON.stringify(cartArr));
-            
-    var cartData = JSON.parse(localStorage.getItem('cartData'));
-
-    //update cart count in the header
-    elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
-    //Render products on Cart
-    console.log("Rendering cart view");
-    // cartView.renderResult(cartData);
-
-    // cartObj.add(product); 
-    console.log("Cart Array : ");
-    cartArr.forEach(element => {
-        console.log("Product ID : " + element.productID);
-        console.log("Product count : " + element.productCurrentCount);
-    });
+    return productFound;   
 }
 
 
-//code for handling clicking the buy button
+
+const updateCartInHeader = () => {
+    let cartData = JSON.parse(localStorage.getItem("cartData"));
+    
+    //update cart count in the header
+    elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
+}
+
+
+
+//update product's count in cart
+const updateProductInCart = (productObj) => {
+ 
+    //1. fetch value of localstorage's cartData. 
+    var cart = JSON.parse(localStorage.getItem("cartData"));
+    console.log("Cart BEFORE update: " + cart);
+
+    for(var i = 0; i < cart.length; i++) { 
+        //find the element in cart with matching ID of productObj 
+        if(cart[i].productID === productObj.productID) {
+            //update the count of this product in cart
+            cart[i].productCurrentCount = productObj.productCurrentCount;
+        }
+    }
+
+    //store this updated cart in local storage
+    localStorage.setItem('cartData', JSON.stringify(cart));
+    console.log("Cart with updated coutn of product : " + JSON.stringify(cart));
+}
+
+
+
+//add to cart
+const addToCart = (productObj) => {
+
+    //1. fetch value of localstorage's cartData. 
+    var cart = JSON.parse(localStorage.getItem("cartData")) || [];
+    console.log("Cart BEFORE push: " + cart);
+
+    // 3. Add productObj to cart
+    cart.push(productObj);
+    console.log("Cart AFTER push: " + cart);
+   
+    // 4. store the updated cart in local storage
+    localStorage.setItem("cartData", JSON.stringify(cart));
+    console.log("cart Added to LS");
+}
+
+
+/*
+ * Code for handling the click event of 'buy' button on Products page
+ */
 var plpPageContent = elements.plpPageContent;
 
 if(plpPageContent) {
-    elements.plpPageContent.addEventListener('click', (event) => {
 
+    elements.plpPageContent.addEventListener('click', (event) => {
+        
         //check if the element pressed was the 'BUY' button:
         if(event.target.matches('.btn-buy')) {
-            
-            const product = event.target.closest('.plp-card').dataset;
+
+            /*Get the nearest matching plp card's data atrributes
+             *and store that data in product
+            */
+            const productData = event.target.closest('.plp-card').dataset;
             // const product = JSON.stringify(event.target.closest('.plp-card').dataset);
             
-            //addToCart(product);
+            //create a productObj object from the data attributes in 'productData' variable
+            let productObj = createProductObj(productData);
 
-            console.log("Data attributes : " + JSON.stringify(product));
 
-            //create a product object to be pushed in cartArr : 
-            const productObj = {
-                productID: product.productId,
-                productCurrentCount: 1,
-                productName: product.productName,
-                productImageurl: product.productImageurl,
-                productDesc: product.productDesc,
-                productPrice: product.productPrice,
-                productCategory: product.productCategory,
-                productSku: product.productSku,
-                productStock: product.productStock
-            };   
 
-            //Check if cartArr is not empty
-            if(cartArr.length > 0) {
+            /*   productCurrentCount: 1
+             * Add To Cart
+             * 1.) Check if the product is already in cart
+             * 2.1.) If product is in cart => in stock => update count [do not add to cart]
+             * 2.2.) If product is in cart => not in stock => alert()
+             * 3.) If product not in cart => set its count to 1 => add it to cart
+             */
+           
 
-                //check if the product already exists in the cartArr and if it's in stock
-                const existingProduct = cartArr.find(function(element) {
+                //1.) Check if the product is already in cart
+                let productInCart = productAlreadyInCart(productObj);
 
-                    if(element.productID === productObj.productID ) { 
-                        //check if this element is in stock
-                        if(element.productStock > productObj.productCurrentCount) {
-                            //increment the count of product in cart
-                            element.productCurrentCount++;
-                            console.log("element already exists, Count incremented");
-                            return true;
-                        } else {
-                            alert("Oops! The product you are looking for is out of stock!");
-                            return false;
-                        }
-                    } else { // product not already present in cartArr
-                        return false;
+                if(productInCart) {
+                    //2.1.) product is in stock
+                    if(productInCart.productCurrentCount < productInCart.productStock) {
+                        //update count of this product
+                        productInCart.productCurrentCount++;
+                        productObj.productCurrentCount = productInCart.productCurrentCount;
+                        
+                        //update the count of this object in local storage's cart
+                        updateProductInCart(productObj);
+                    } else {
+                        //2.2.) product is in stock
+                        alert("Oops! this product is out of stock");
                     }
-                });
-                
-                if(!existingProduct) {
-                    //Add this product to the cartObj array
-                    cartArr.push(productObj);
+
+                } else {
+                    //3.) product not in cart => set its count to 1 
+                    productObj.productCurrentCount = 1;
+                    
+                    //add this product to cart
+                    addToCart(productObj, 'add');
                 }
 
-            } else {    //cart array is empty
-                
-                //Add this product to the cartObj array
-                cartArr.push(productObj);
-            }
-
-            localStorage.setItem("cartData", JSON.stringify(cartArr));
-                    
-            let cartData = JSON.parse(localStorage.getItem('cartData'));
-
-            //update cart count in the header
-            elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
-            //Render products on Cart
-            console.log("Rendering cart view");
-            // cartView.renderResult(cartData);
-
-            // cartObj.add(product); 
-            console.log("Cart Array : ");
-            cartArr.forEach(element => {
-                console.log("Product ID : " + element.productID);
-                console.log("Product count : " + element.productCurrentCount);
-            }); 
+            updateCartInHeader();
         }
     });
 }
@@ -283,7 +275,13 @@ if(plpPageContent) {
 
 
 
+var btnMinus = document.querySelector('.js-btn-minus');
 
+if(btnMinus) {
+    btnMinus.addEventListener('click', () => {
+        console.log('HelloWorld');
+    })
+}
 
 
 
