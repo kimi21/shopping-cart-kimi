@@ -19,25 +19,23 @@ export const renderProduct = product => {
                     <span class="plp-card-desc bgcolor">
                         ${product.description}
                     </span>
-                    <a href="#" class="btn-buy">
-                        <span class="btn-buy plp-card-cta hide-on-tablet" data-product-id="${product.id}">
+                    <a href="#" class="btn-buy plp-card-cta hide-on-tablet" data-product-id="${product.id}">
+                        
                             Buy Now @ MRP Rs.${product.price}
-                        </span>
+                        
                     </a>
                 </div>
             </div>
 
             <div class="plp-price-container">
                 <span class="plp-card-price show-on-desktop">MRP Rs.87</span>
-                <a href="#" class="btn-buy">
-                    <span class="btn-buy plp-card-cta hide-on-mobile show-on-tablet" data-product-id="${product.id}">
-                        Buy Now @ MRP Rs.${product.price}
-                    </span>
+                <a href="#" class="btn-buy plp-card-cta hide-on-mobile show-on-tablet" data-product-id="${product.id}">
+                        
+                    Buy Now @ MRP Rs.${product.price}
+
                 </a>
-                <a href="#" class="btn-buy">
-                    <span class="btn-buy plp-card-cta-tabs show-on-desktop hide-below-desktop" data-product-id="${product.id}">
+                <a href="#" class="btn-buy plp-card-cta-tabs show-on-desktop hide-below-desktop" data-product-id="${product.id}">
                         Buy Now
-                    </span>
                 </a>
             </div>
         </div>
