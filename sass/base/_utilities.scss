@@ -22,3 +22,70 @@
 .menu-list {
     list-style-type: none;
 }
+
+.bgcolor {
+    background-color: #ebebeb;
+}
+
+.bg-color-change {
+
+    @include respond(tab-port) {    // @600px
+        background-color: #ebebeb;
+   }
+   
+   background-color: #fff;
+}
+
+.hide-below-desktop {
+    display: none;
+}
+
+.hide-on-mobile {
+    display: none;
+}
+
+.hide-on-tablet {
+    @include respond(tab-port) {    // @600px
+        display: none;
+    }
+}
+
+.show-on-tablet {
+    @include respond(tab-port) {    // @600px
+        display: block;
+    }
+}
+
+.show-sidemenu-on-tablet {
+    @include respond(tab-port) {    // @600px
+        display: inline-block;
+    }
+}
+
+.show-on-desktop {
+
+    @include respond(tab-land) {    // @ 801px
+        display: inline-block;
+    }
+
+    display: none;
+
+}
+
+
+.text--bold {
+    font-weight: 800;
+}
+
+.text--light {
+    font-weight: 300;
+} 
+
+.text--medium {
+    font-size: 2.8em;
+}
+
+.text--small { 
+    font-size: 1.8em;
+}
+

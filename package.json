@@ -4,7 +4,7 @@
   "description": "shopping cart project by Kimi",
   "main": "script.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style1.css -w",
+    "compile:sass": "node-sass --watch sass/main.scss css/style1.css",
     "dev": "webpack --mode development",
     "build": "webpack --mode production"
   },

@@ -10,7 +10,7 @@
         #HEADER
     \*---------------------------------*/
 
-    .nav--left-menu-div {
+    /* .nav--left__menu-div {
         display: inline-block;
     }
 
@@ -33,12 +33,12 @@
         margin-left: 6px;
     }
 
-    .nav--left-menu-div ul li{
+    .nav--left__menu-div ul li{
         margin-left: 80px;
         font-size: 120%;
         font-weight: 600;
         color: rgb(160, 158, 158);
-    }
+    } */
 
 
 
@@ -155,11 +155,11 @@
         #PLP 
     \*---------------------------------*/
 
-    .main-content, .plp-main {
+    /* .main-content, .plp-main {
         margin-top: 0;
-    }
+    } */
 
-    .main-content__cards {
+    /* .plp-content__cards {
         margin-top: 2.5%;
         display: flex;
     }
@@ -171,19 +171,19 @@
 
     .hide-on-tablet {
         display: none;
-    }
+    } */
 
-    .option-content-tab-display {
+    /* .option-content-tab-display {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-    }
+    } */
 
-    .bg-color-change {
+    /* .bg-color-change {
         background-color: #ebebeb;
-    }
+    } */
 
-    .plp-card {
+    /* .plp-card {
         width: 48%;
         border-bottom: 1px dashed #777;
         padding-bottom: 10px;
@@ -191,80 +191,79 @@
         -webkit-box-shadow: 4px 1px 6px -4px rgba(0,0,0,0.23);
            -moz-box-shadow: 4px 1px 6px -4px rgba(0,0,0,0.23);
                 box-shadow: 4px 1px 6px -4px rgba(0,0,0,0.33);
-    }
+    } */
 
-    .plp-card h2 {
+    /* .plp-card h2 {
         font-size: 70%;
         font-weight: bold;
         text-align: center;
         margin-bottom: 14px;
         text-transform: capitalize;
         height: 2em;
-    } 
+    }  */
 
-    .plp-card-desc {
+    /* .plp-card__desc {
         height: 10em;
         line-height: 1.2em;
         overflow: hidden;
-    }
+    } */
 
-    .plp-main-content {
+    .plp-content {
         display: flex;
         justify-content: space-between;
     }
-    .main-content__cards {
-        padding: 10px;
-    }
 
-    .plp-card-content {
+    /* .plp-content__cards {
+        padding: 10px;
+    } */
+
+    /* .plp-card__content {
         display: flex;
         flex-direction: column;
         font-size: 60%;
-    }
+    } */
 
-    .plp-card-img-text {
+    /* .plp-card__content__img-text {
         display: flex;
         flex-direction: row;
         align-items: stretch;
         margin-bottom: 10px;
-    }
+    } */
 
-    .plp-card__img {
+    /* .plp-card__img {
         width: 50%;
         flex: 1;
-        /* background-image: url("../static/images/products/fruit-n-veg/kiwi-green.jpg");
-        background-size: cover; */
+        
     }
 
     .plp-card__img img { 
         width: 100%;
-    }
+    } */
 
-    .plp-desc-container {
+    /* .plp-card__desc-container {
         flex: 1;
         background-color: #ebebeb;
         padding: 6px;
         display: flex;
-        /* height: 10em; */
         overflow: hidden;
-    }
+    } */
 
-    .plp-price-container {
+    /* .plp-card__content__price {
         display: flex;
-    }
+    } */
 
-    .show-on-tablet {
+    /* .show-on-tablet {
         display: block;
     }
 
-    .plp-card-cta {
+    .plp-card__cta {
         background-color: rgb(190, 4, 97);
         width: 100%;
         padding: 10px;
         color: #fff;
         text-align: center;
         margin-top: 0;
-    }
+    } */
 
 }
 
@@ -318,8 +317,6 @@
     }
 
 
-
-
     /*---------------------------------*\
         #CART
     \*---------------------------------*/
@@ -333,32 +330,30 @@
     }
 
 
-
-
     /*---------------------------------*\
         #HEADER
     \*---------------------------------*/
 
-    .header {
+    /* .header {
         height: 74px;
         padding: 13px 20px;
         font-size: 80%;
     }
 
-    .img-small-logo {
+    .nav--left__img-div--logo-small {
         height: 48px;
     }
 
-    .cart__img {
+    .nav--right__cart-link__img {
         height: 36px;
     }
 
-    .nav--left-menu-div ul li{
+    .nav--left__menu-div ul li{
         margin-left: 80px;
         font-size: 100%;
         font-weight: 600;
         color: #777;
-    }
+    } */
 
     /*---------------------------------*\
         #HOME
@@ -386,7 +381,7 @@
         font-size: 100%;
     }
 
-    .carousel__circle {
+    .main__carousel__circle {
         width: 12px;
         height: 12px; 
     }
@@ -397,11 +392,11 @@
     \*---------------------------------*/
 
 
-    .sidemenu-container {
+    /* .sidemenu-container {
         width: 160px;
         font-size: 70%;
-    }
-
+    } */
+/* 
     .option-content-tab-display {
         display: flex;
         flex-wrap: wrap;
@@ -430,22 +425,22 @@
 
     } 
 
-    .plp-main-content {
+    .plp-content {
         display: flex;
         justify-content: space-between;
     }
-    .main-content__cards {
+    .plp-content__cards {
         padding: 10px;
-    }
+    } */
 
-    .plp-card-content {
+    /* .plp-card__content {
         display: flex;
         flex-direction: column;
         font-size: 60%;
         padding-right: 6px;
     }
 
-    .plp-card-img-text {
+    .plp-card__content__img-text {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -459,48 +454,47 @@
 
     .plp-card__img img { 
         width: 100%;
-    }
+    } */
 
-    .plp-desc-container {
+    /* .plp-card__desc-container {
         flex: 1;
         background-color: #ebebeb;
         padding: 6px;
         display: flex;
         margin-left: 0;
-        /* height: 160px; */
-    }
+    } */
 
-    .plp-card-desc{
+    .plp-card__desc{
         /* padding: 6px; */
     }
     
 
-    .show-on-desktop {
+    /* .show-on-desktop {
         display: inline-block;
     }
     
-    .plp-price-container {
+    .plp-card__content__price {
         display: flex;
         flex-direction: row;
         align-items: center;
     }
 
-    .plp-card-desc {
+    .plp-card__desc {
         height: 10em;
         line-height: 1.2em;
         overflow: hidden;
-    }
+    } */
 
-    .plp-card-price {
+    /* .plp-card-price {
         flex: 1;
         font-weight: 600;
     }
 
-    .plp-card-cta{
+    .plp-card__cta{
         display: none;
-    }
+    } */
 
-    .plp-card-cta-tabs {
+    .plp-card__cta-tabs {
         flex: 1;
         background-color: rgb(190, 4, 97);
         width: 100%;
@@ -533,8 +527,8 @@
     /*---------------------------------*\
         #HEADER
     \*---------------------------------*/
-
-    .nav--left-menu-div {
+/* 
+    .nav--left__menu-div {
         display: inline-block;;
     }
 
@@ -555,7 +549,7 @@
     .nav--right ul li{
         display: inline-block; 
         margin-left: 6px;
-    }
+    } */
 
 
 

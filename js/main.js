@@ -85,7 +85,7 @@ const loadCategories = async () => {
     console.log(result);
 
         //render carousel
-        homeView.renderCarousel(carousel);
+        // homeView.renderCarousel(carousel);
         //render categories
         homeView.renderResults(result);
 }

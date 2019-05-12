@@ -1,0 +1,13 @@
+/**
+ * Main content
+ **/
+
+ .main {
+    position: relative;
+
+    @include respond(desktop) {         // @ 801px
+        // padding: 2rem 6rem;
+        width: 80%;
+        margin: 0 auto;
+    }
+}

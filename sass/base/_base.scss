@@ -1,5 +1,7 @@
 /*---------------------------------*\
     #COMMON STYLES
+    In here, you will find some standard styles 
+    for commonly used HTML elements.
 \*---------------------------------*/
 
 *,
@@ -11,6 +13,7 @@
 }
 
 html {
+
     // This defines what 1rem is
     font-size: 50%;   //1 rem = 8px; 8px/16px = 50%
 
@@ -35,4 +38,16 @@ html {
 body {
     font-family: 'Dosis', sans-serif;
     box-sizing: border-box;
+    background-color: $color-white;
+}
+
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: $color-grey-medium;
+}
+
+a:hover {
+    cursor: pointer;
 }

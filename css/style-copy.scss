@@ -128,16 +128,16 @@ header {
             .nav--left__img-div {
                 display: inline-block;
 
-                .img-small-logo {
+                .nav--left__img-div--logo-small {
                     height: 36px;
                 }
                 
-                .img-big-logo {
+                .nav--left__img-div--logo-big {
                     display: none;
                 }
             }
 
-            .nav--left-menu-div {
+            .nav--left__menu-div {
                 display: none;
 
                 .menu-list {
@@ -153,13 +153,13 @@ header {
                 display: none;
             }
                             
-            .nav--right__cart-div {
+            .nav--right__cart-link {
                 clear: left; 
                 margin-top: 10px; 
                 display: flex; 
                 align-items: center;
 
-                .cart__img {
+                .nav--right__cart-link__img {
                     height: 24px;
                 }
                 
@@ -377,7 +377,7 @@ input.effect:invalid ~ input[type="submit"] {
     .main-content {
         margin-top: 20px;
 
-        .main-carousel__indicators {
+        .main__carousel__indicators {
             position: relative;
 
             .carousel__circle {
@@ -506,12 +506,12 @@ hr {
 \*---------------------------------*/
 
 .main {
-    .plp-main-content {
+    .plp-content {
         .list-container {
             .dropdown-container {
                 position: relative;
 
-                .main__dropdown-list {
+                .dropdown-list {
                     width :100%;
                     border-radius: 0;
                     border: none;
@@ -546,7 +546,7 @@ hr {
                 display: none;
             }
         }
-        .main-content__cards {
+        .plp-content__cards {
             .option-content {
                 padding: 5% 5%;
 
@@ -562,11 +562,11 @@ hr {
                         text-transform: capitalize;
                     }
 
-                    .plp-card-content {
+                    .plp-card__content {
                         padding-top: 10px;
                         font-size: 80%;
                         
-                        .plp-card-img-text {
+                        .plp-card__content__img-text {
                             display: flex;
                             flex-direction: row;
                             justify-content: flex-start;
@@ -580,7 +580,7 @@ hr {
                                 }
                             }
 
-                            .plp-desc-container {
+                            .plp-card__desc-container {
                                 flex: 1;
                                 display: flex;
                                 flex-direction: column;
@@ -588,13 +588,13 @@ hr {
                                 /* padding: 10px; */
                                 margin-left: 10px;
                                 
-                                .plp-card-desc {
+                                .plp-card__desc {
                                     display: inline-block;
                                     padding: 6px;
                                     padding-left: 6px;
                                 }
 
-                                .plp-card-cta {
+                                .plp-card__cta {
                                     background-color: rgb(190, 4, 97);
                                     width: 100%;
                                     padding: 10px;

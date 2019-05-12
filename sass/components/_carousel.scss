@@ -1,0 +1,56 @@
+.main {
+
+    &__carousel__img {
+    width: 100%;
+    height: auto;
+
+    }
+
+    &__carousel__indicators {
+        position: relative;
+        margin-left: 50%;
+
+        .main__carousel__circle {
+            width: 1rem;
+            height: 1rem;
+            margin-top: 1rem;
+            margin-right: 1rem;
+            border-radius: 50%;
+            display: inline-block;
+            // position: absolute;
+            top: 50%;
+
+            @include respond(tab-land) {   // @ 801px 
+                width: 1.6rem;
+                height: 1.6rem;
+            }
+
+            &1 {
+                // left: 46%;
+                background-color: black;
+            }
+
+            &2{
+                // left: 48%;
+                background-color: #777;
+            }
+
+            &3 {
+                // left: 50%;
+                background-color: #777;
+            }
+
+            &4 {
+                // left: 52%;
+                background-color: #777;
+            }
+
+            &5 {
+                // left: 54%;
+                background-color: #777;
+            }
+        }
+    }
+}
+
+

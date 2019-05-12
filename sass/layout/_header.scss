@@ -3,7 +3,7 @@
 \*---------------------------------*/
 
 .header {
-    height: 6.4rem;      // ~ 64px
+    height: 6.8rem;      // ~ 68px
     background-color: $color-white;
     padding: .8rem;
     font-size: 1.4rem;
@@ -27,13 +27,3 @@
     }
 }
 
-a {
-    text-decoration: none;
-    color: $color-grey-medium;
-    cursor: pointer;
-}
-
-
-a:hover {
-    cursor: pointer;
-}

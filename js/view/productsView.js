@@ -9,17 +9,17 @@ export const renderProduct = product => {
     data-product-stock="${product.stock}" data-product-sku="${product.sku}">
         <h2>${product.name}</h2>
     
-        <div class="plp-card-content">
-            <div class="plp-card-img-text">
+        <div class="plp-card__content">
+            <div class="plp-card__content__img-text">
                 <div class="plp-card__img">
                     <img src="./.${product.imageURL}" />
                 </div>
                
-                <div class="plp-desc-container">
-                    <span class="plp-card-desc bgcolor">
+                <div class="plp-card__desc-container">
+                    <span class="plp-card__desc bgcolor">
                         ${product.description}
                     </span>
-                    <a href="#" class="btn-buy plp-card-cta hide-on-tablet" data-product-id="${product.id}">
+                    <a href="#" class="btn-buy plp-card__cta hide-on-tablet" data-product-id="${product.id}">
                         
                             Buy Now @ MRP Rs.${product.price}
                         
@@ -27,14 +27,14 @@ export const renderProduct = product => {
                 </div>
             </div>
 
-            <div class="plp-price-container">
+            <div class="plp-card__content__price">
                 <span class="plp-card-price show-on-desktop">MRP Rs.87</span>
-                <a href="#" class="btn-buy plp-card-cta hide-on-mobile show-on-tablet" data-product-id="${product.id}">
+                <a href="#" class="btn-buy plp-card__cta hide-on-mobile show-on-tablet" data-product-id="${product.id}">
                         
                     Buy Now @ MRP Rs.${product.price}
 
                 </a>
-                <a href="#" class="btn-buy plp-card-cta-tabs show-on-desktop hide-below-desktop" data-product-id="${product.id}">
+                <a href="#" class="btn-buy plp-card__cta-tabs show-on-desktop hide-below-desktop" data-product-id="${product.id}">
                         Buy Now
                 </a>
             </div>

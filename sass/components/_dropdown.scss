@@ -1,0 +1,43 @@
+/**
+ * Dropdown on PLP(products) page
+ **/
+
+
+.dropdown-container {
+    position: relative;
+
+    .fa-angle-down{
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 4rem;
+    }
+
+    .dropdown-list {
+        width: 100%;
+        border-radius: 0;
+        border: none;
+        padding: 2rem 1.4rem;
+        /* margin-bottom: 30px; */
+        background-color: rgb(190, 4, 97);
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: 600;
+        /* position: absolute; */
+    }
+
+    select{
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        text-overflow: '';
+    }
+
+    /* For IE10 */
+    select::-ms-expand {
+        display: none;
+    }
+}
