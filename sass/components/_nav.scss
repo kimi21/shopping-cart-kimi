@@ -22,7 +22,7 @@
 
 .nav {
 
-    @include respond(tab-port) { font-size: 1.8rem; }  // @ 600px
+    @include respond(tab-port) { font-size: 1.5rem; }  // @ 600px
 
     @include respond(desktop) {
         width: 80%;
@@ -108,10 +108,6 @@
             
             display: flex; 
             align-items: center;
-
-            &__count {
-                // font-size: 1.6rem;
-            }
             
             @include respond(tab-port) { 
                 margin-top: 1.1rem;

@@ -1,48 +1,42 @@
 import { elements } from './base';
 
-//Renders each category
-const rendercategory = category => {
-    const markup = `
-        <div class="card card-shadow js-home-card" data-category="fruits">
-            <div class="card__img">
-                <img src="./.${category.imageUrl}" alt = "${category.name}"/>
-            </div>
+export default class HomeView {
+    constructor() {}
 
-            <div class="card__content">
-                <h2>${category.name}</h2>
-                <span>${category.description}</span>
-                <a href="#" class="btn card__content__btn">
-                    Explore ${category.name}
-                </a>
-            </div>
-        </div>          
-    `;
+    rendercategory (category ) {
+        const markup = `
+            <section class="card card-shadow js-home-card" data-category="fruits">
+                <div class="card__img">
+                    <img src="./.${category.imageUrl}" alt = "${category.name}"/>
+                </div>
     
-    if (elements.homePageContent)
-        elements.homePageContent.insertAdjacentHTML('beforeend', markup);
+                <div class="card__content">
+                    <h2>${category.name}</h2>
+                    <span>${category.description}</span>
+                    <a href="#" class="btn card__content__btn">
+                        Explore ${category.name}
+                    </a>
+                </div>
+            </section>
+        `;
+        
+        if (elements.homePageContent)
+            elements.homePageContent.insertAdjacentHTML('beforeend', markup);
+    }
+
+    renderResults  (categories) {
+        //update cart count in the header
+        var cartData;
+        cartData = JSON.parse(localStorage.getItem('cartData'));
+        if (cartData)
+            elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
+    
+        categories.forEach(this.rendercategory);
+    }
 }
 
+//Renders each category one by one
 
-export const renderResults = categories => {
-    //update cart coutn in the header
-    var cartData;
-    cartData = JSON.parse(localStorage.getItem('cartData'));
-    if (cartData)
-        elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
-
-    categories.forEach(rendercategory);
-}
-
-
-//renders carousel
-const renderCarouselImage = carouselImage => {
-    const markup = `
-        <div id="main-carousel" class="main__carousel" >
-            <img src="./.${carouselImage.bannerImageUrl}" class="main__carousel__img" />
-        </div>
-    `;
-    elements.homePageContent.insertAdjacentHTML('afterbegin', markup);
-}
 
 
 export const renderCarousel = carouselImages => {

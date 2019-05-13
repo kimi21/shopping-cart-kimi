@@ -24,16 +24,20 @@
 }
 
 .bgcolor {
-    background-color: #ebebeb;
+    background-color: $color-grey-light;
 }
 
 .bg-color-change {
 
     @include respond(tab-port) {    // @600px
-        background-color: #ebebeb;
+        background-color: $color-grey-light;
    }
    
-   background-color: #fff;
+   background-color: $color-white;
+}
+
+.hide { 
+    display: none;
 }
 
 .hide-below-desktop {
@@ -48,6 +52,10 @@
     @include respond(tab-port) {    // @600px
         display: none;
     }
+}
+
+.show { 
+    display: block;
 }
 
 .show-on-tablet {

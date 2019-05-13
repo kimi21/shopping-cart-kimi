@@ -15,57 +15,29 @@
 </head>
 
 <body>
-<!-- Cart -->
-    <div class="main cart-modal bgcolor cart-container" id="cart-body" style="display: none;">
-        <div class="cart-modal__top">
-            <div class="cart-modal__head">
-                <h2 class="cart-head bg-color-change">
-                    <span class="text--bold">My Cart</span>
-                    <span class="text--light">( )</span>
-                </h2>
-                <a href = "#" class="cart-modal__head__btn-close">
-                    <i class="fa fa-times btn-close" aria-hidden="true"></i>
-                </a>
-            </div>
-            <div class="cart-modal__body">
-                <!-- empty cart -->
-                <div class="cart-modal__body--empty">
-                    <span class="text--bold text--medium">No items in your cart</span> <br/>
-                    <span class="text--light text--small">Your favourite items are just a click away</span>
+<!-- Cart modal starts -->
+    <div class="cart hide">
+        <div class="main cart-modal bgcolor cart-container" id="cart-body">
+            <div class="cart-modal__top">
+                <div class="cart-modal__head">
+                    <h2 class="cart-head bg-color-change">
+                        <span class="text--bold">My Cart</span>
+                        <span class="text--light">( )</span>
+                    </h2>
+                    <a href = "#" class="cart-modal__head__btn-close">
+                        <i class="fa fa-times btn-close" aria-hidden="true"></i>
+                    </a>
                 </div>
-                
-                <div class="cart-dynamic"> 
-                    <!-- dynamic content comes here -->
-                    <div class="cart-modal__body__item">
-                        <div class="cart-item-img">
-                            <!-- <img src="./.${product.productImageurl}" /> -->
-                            <img src="static/images/products/fruit-n-veg/apple.jpg" />
-                        </div>                        
-                        <div class="cart-item-desc">
-                            <div class="cart-item-desc__title">
-                                <span class="">apple - washington, regular, 4pcs</span>
-                            </div>
-                            <div class="cart-item-desc__info">
-                                <div class="cart-item-desc__info-left">
-                                    <i class="fa fa-minus fa-cart-tablet js-btn-minus" aria-hidden="true"></i>
-                                    <span class="cart-item-qauntity">1</span>
-                                    <i class="fa fa-plus fa-cart-tablet js-btn-add" aria-hidden="true"></i>
-                                    
-                                    <span class="cart-item-price">
-                                        <i class="fa fa-times" aria-hidden="true"></i>
-                                        Rs. 87
-                                    </span>
-                                </div>
-                                
-                                <div class="cart-item-desc__info-right">
-                                    <span class="">Rs. 87</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="cart-modal__body">
+                    <!-- empty cart -->
+                    <div class="cart-modal__body--empty">
+                        <span class="text--bold text--medium">No items in your cart</span> <br/>
+                        <span class="text--light text--small">Your favourite items are just a click away</span>
                     </div>
-
-                    <!-- 2nd item -->
-                    <div class="cart-modal__body__item">
+                    
+                    <div class="cart-dynamic"> 
+                        <!-- dynamic content comes here -->
+                        <div class="cart-modal__body__item">
                             <div class="cart-item-img">
                                 <!-- <img src="./.${product.productImageurl}" /> -->
                                 <img src="static/images/products/fruit-n-veg/apple.jpg" />
@@ -92,38 +64,68 @@
                                 </div>
                             </div>
                         </div>
-
-                </div>
-                <div class="cart-modal__body__banner">
-                    <img src="static/images/lowest-price.png">
-                    <span class="cart-modal__banner-text">You won't find it cheaper anywhere</span>
+        
+                        <!-- 2nd item -->
+                        <div class="cart-modal__body__item">
+                                <div class="cart-item-img">
+                                    <!-- <img src="./.${product.productImageurl}" /> -->
+                                    <img src="static/images/products/fruit-n-veg/apple.jpg" />
+                                </div>                        
+                                <div class="cart-item-desc">
+                                    <div class="cart-item-desc__title">
+                                        <span class="">apple - washington, regular, 4pcs</span>
+                                    </div>
+                                    <div class="cart-item-desc__info">
+                                        <div class="cart-item-desc__info-left">
+                                            <i class="fa fa-minus fa-cart-tablet js-btn-minus" aria-hidden="true"></i>
+                                            <span class="cart-item-qauntity">1</span>
+                                            <i class="fa fa-plus fa-cart-tablet js-btn-add" aria-hidden="true"></i>
+                                            
+                                            <span class="cart-item-price">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                                Rs. 87
+                                            </span>
+                                        </div>
+                                        
+                                        <div class="cart-item-desc__info-right">
+                                            <span class="">Rs. 87</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                    </div>
+                    <div class="cart-modal__body__banner">
+                        <img src="static/images/lowest-price.png">
+                        <span class="cart-modal__banner-text">You won't find it cheaper anywhere</span>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="cart-modal__bottom">
-            <div class="cart-full js-cart-full">
-                <span class="promo-code">
-                    Promo code can be applied on payment page
-                </span>
-                <a class="cart-modal__bottom__btn flex-btn">
-                    <span>Proceed to Checkout </span>
-                    <span>
-                        <span class="cart-bottom-amount">Rs. 87</span> &nbsp;
-                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        
+            <div class="cart-modal__bottom">
+                <div class="cart-full js-cart-full">
+                    <span class="promo-code">
+                        Promo code can be applied on payment page
                     </span>
-                </a>
-            </div>
-            
-            <!-- when cart is empty: -->
-            <div class="cart-empty js-cart-empty">
-                <a class="cart-modal__bottom__btn">
-                    <span>start shopping</span>
-                </a>
+                    <a class="cart-modal__bottom__btn flex-btn">
+                        <span>Proceed to Checkout </span>
+                        <span>
+                            <span class="cart-bottom-amount">Rs. 87</span> &nbsp;
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </span>
+                    </a>
+                </div>
+                
+                <!-- when cart is empty: -->
+                <div class="cart-empty js-cart-empty">
+                    <a class="cart-modal__bottom__btn">
+                        <span>start shopping</span>
+                    </a>
+                </div>
             </div>
         </div>
-
     </div>
+<!-- Cart modal ends -->
     
     <header class="header bottom-shadow">
         <nav class="nav">
@@ -147,15 +149,52 @@
                     <li><a href="register.html">register</a></li>
                 </ul>
 
-                <div class="float-right nav--right__cart-div">
-                    <a href="#cart-body" class="nav--right__cart-link">
+                <div class="float-right nav--right__cart-div hide-on-mobile show-on-tablet">
+                    <a href="cart.html" class="nav--right__cart-link ">
                         <img class="nav--right__cart-link__img cart-svg-alternate" src="static/images/cart.svg">
-                        <span class="nav--right__cart-link__count js-cart-count"></span>
+                        <span class="nav--right__cart-link__count js-cart-count">1000 item</span>
                     </a>
+                    
                 </div>
+                <a class="nav--right__hamburger-menu hide-on-tablet">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </a>
             </div>
         </nav>
     </header>
+
+    <div class="hamburger-menu-div hide hide-on-tablet">
+        <div class="hamburger-menu-body" id="hamburger-menu-body">
+            <ul class="menu-list">
+                <li class="hamburger-menu-body__cart">
+                    <a href="#cart-body" class="hamburger-menu-body__cart-link"> <!-- class="nav--right__cart-link" -->
+                        <img class="nav--right__cart-link__img cart-svg-alternate" src="static/images/cart.svg">
+                        <span class="nav--right__cart-link__count js-cart-count">1000 item</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        sign in
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        register
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        home
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        products
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
 
 
@@ -183,7 +222,7 @@
                     <span class="main__carousel__circle main__carousel__circle5"></span>
                 </div>
                 
-                <section class="card card-shadow js-home-card" data-category="fruits">
+                <!-- <section class="card card-shadow js-home-card" data-category="fruits">
                     <div class="card__img">
                         <img src="static/images/category/fruits.png" />
                     </div>
@@ -195,87 +234,18 @@
                             Explore fruit-and-veg
                         </a>
                     </div>
-                </section>
+                </section> -->
 
-                <section class="card card-shadow" data-category="bakery">
-                    <div class="card__img">
-                        <img src="static/images/category/bakery.png" />
-                    </div>
-
-                    <div class="card__content">
-                        <h2>bakery cakes and dairy</h2>
-                        <span>
-                            The best cupcakes, cookies, cakes, pies, cheesecakes, fresh
-                            bread, biscotti, muffins, bagels, fresh coffee, milk and
-                            more.
-                        </span>
-                        <a href="#" class="btn card__content__btn">
-                            Explore bakery-cakes-dairy
-                        </a>
-                    </div>
-                </section>
-
-                <section class="card card-shadow" data-category="beverages">
-                    <div class="card__img">
-                        <img src="static/images/category/beverages.png" />
-                    </div>
-
-                    <div class="card__content">
-                        <h2>beverages</h2>
-                        <span>
-                            Our beverage department will ensure your fridge is always fully
-                            stocked. Shop for soda, juice, beer and more.
-                        </span>
-                        <a href="#" class="btn card__content__btn">
-                            Explore beverages
-                        </a>
-                    </div>
-                </section>
-
-                <section class="card card-shadow" data-category="beauty">
-                    <div class="card__img">
-                        <img src="static/images/category/beauty.png" />
-                    </div>
-                    <div class="card__content">
-                        <h2>beauty and hygiene</h2>
-                        <span>
-                            Buy beauty and personal care products online in India at best 
-                            prices.
-                        </span>
-                        <a href="#" class="btn card__content__btn">
-                            Explore beauty-hygiene
-                        </a>
-                    </div>
-                </section>
-
-                <section class="card card-shadow" data-category="babyCare">
-                    <div class="card__img">
-                        <img src="static/images/category/baby.png" />
-                    </div>
-                    <div class="card__content">
-                        <h2>baby care</h2>
-                        <span>
-                            Shop online for Baby Products, Diapers, Skin Care Products, 
-                            etc.
-                        </span>
-                        <a href="#" class="btn card__content__btn">
-                            Explore baby
-                        </a>
-                    </div>
-                </section>
             </section>
 
-
-            
-            
     </main>
     
 
 
 
     <footer class="footer">
-        Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt. Ltd.
+        <small>Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt. Ltd.</small>
     </footer>
+    <script src= "./js/bundle.js"></script>
 </body>
-<!-- <script src= "./js/bundle.js"></script> -->
 </html>

@@ -7,6 +7,7 @@ import Products from './model/products';
 import * as productsView from './view/productsView';
 import * as homeView from './view/homeView';
 import * as cartView from './view/cartView';
+import HomeController from './controller/homeController';
 
 
 /** Global state of the app
@@ -61,8 +62,9 @@ elements.closeBtn.addEventListener('click', function(event){
 // elements.cartIcon.addEventListener('mouseleave', function(event) {
 //     //console.log("YOU MOUSED OVER on cart icon");
 //     document.querySelector('.cart-container').style.display = 'none';
-
 // });
+
+
 
 
 
@@ -70,27 +72,29 @@ elements.closeBtn.addEventListener('click', function(event){
  * Home(Categories) controller
  */
 
-const loadCategories = async () => {
+export const loadCategories = async () => {return;
     
-    //1) new category object and add to state
+    //1) create new category object and add to state
     state.category = new Category(); 
     console.log(state.category);
 
-    //2)get the categories and carousel images
-    const result = await state.category.getCategories();
+    //2) get the categories and carousel images from
+    //   Category object in home.js
+    const categories = await state.category.getCategories();
     const carousel = await state.category.getCarousel();
     console.log("Fetching categories...");
 
     //3) render results on UI
-    console.log(result);
+    console.log(`Categories : ${categories}`);
+    homeView.renderResults(categories);
 
-        //render carousel
-        // homeView.renderCarousel(carousel);
-        //render categories
-        homeView.renderResults(result);
+    //render carousel
+    // homeView.renderCarousel(carousel);
+    //render categories
+        
 }
-
-loadCategories();
+var homeController = new HomeController(state);
+homeController.loadCategories();
 
 
 
@@ -106,13 +110,12 @@ const loadProducts = async () => {
     state.products = new Products();
 
     //2) get the products
-    const result = await state.products.getProducts();
+    const products = await state.products.getProducts();
     console.log("Fetching products...");
 
     //3)render results on UI
-    console.log("Products : ");
-    console.log(result);
-    productsView.renderProducts(result);
+    console.log(`Products : ${products}`);
+    productsView.renderProducts(products);
 }
 
 loadProducts();
@@ -122,7 +125,80 @@ loadProducts();
 
 
 /**
- * Add to cart fucntionality starts --
+ * Hamburger Menu Controller
+ */
+
+const toggleDisplay = (el) => {
+
+    el.classList.toggle('hide');
+    // if(el.classList.contains('hide')) {
+        
+    //     /*  1.1. remove class 'hide' if present */
+    //     el.classList.remove('hide');
+
+    //     /*  1.2. add class'show' */
+    //    el.classList.add('show');
+
+    // } else if (el.classList.contains('show')) {
+        
+    //     /*  1.1. remove class 'hide' if present */
+    //     el.classList.remove('show');
+
+    //     /*  1.2. add class'show' */
+    //    el.classList.add('hide');
+
+    // }
+
+}
+
+elements.hamburgerMenuIcon.addEventListener('click', function(event){
+    
+    /* toggle display of hamburger menu div 
+     *  1.check if hamburger menu div has class 'hide'
+     *      1.1. remove class 'hide' if present
+     *      1.2. add class'show'
+     */
+    toggleDisplay( elements.hamburgerMenuDiv);
+
+});
+
+
+
+const hide = (el) => {
+
+    //check if class exists before removing it
+    if (el.classList.contains('show')){
+        el.classList.remove('show');
+    }
+    el.classList.add('hide');
+
+}
+
+const display = (el) => {
+    if (el.classList.contains('hide')){
+        el.classList.remove('hide');
+    }
+    el.classList.add('show');
+}
+
+
+
+elements.cartIconInHamburgerMenu.addEventListener('click', function() {
+    
+    //1. hide the hamburger menu div
+    hide(elements.hamburgerMenuDiv);
+
+    //2. show the cart modal
+    display( elements.cartModal);
+
+    
+});
+
+
+
+
+/**
+ * Add to cart functionality starts --
  */
 const createProductObj = (product) => {
 

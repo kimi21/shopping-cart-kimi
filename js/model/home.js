@@ -1,9 +1,8 @@
 import axios from 'axios';
 
-export default class Category {
-    constructor() {
-        //this.query = query;
-    }
+export default class Home {
+    constructor() {}
+
     async getCategories() {
         try {
             const res = await axios(`./server/categories/index.get.json`);

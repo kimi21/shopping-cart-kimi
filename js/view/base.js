@@ -7,7 +7,11 @@ export const elements = {
     cartDynamic: document.querySelector('.cart-dynamic'),
     headerCartCountDiv: document.querySelector('.js-cart-count'),
     closeBtn: document.querySelector('.btn-close'),
-    cartBillAmount: document.querySelector('.cart-bottom-amount')
+    cartBillAmount: document.querySelector('.cart-bottom-amount'),
+    hamburgerMenuIcon: document.querySelector('.nav--right__hamburger-menu'),
+    hamburgerMenuDiv: document.querySelector('.hamburger-menu-div'),
+    cartIconInHamburgerMenu : document.querySelector('.hamburger-menu-body__cart-link'),
+    cartModal: document.querySelector('cart')
 };
 
 

@@ -38,3 +38,11 @@
        -moz-box-shadow: 0px 3px 4px -1px $color-grey-medium;
             box-shadow: 0px 3px 4px -1px $color-grey-medium;
 }
+
+@mixin alpha-attribute($attribute, $color, $background) {
+    $percent: alpha($color) * 100%;
+    $opaque: opacify($color, 1);
+    $solid-color: mix($opaque, $background, $percent);
+    #{$attribute}: $solid-color;
+    #{$attribute}: $color;
+  }
