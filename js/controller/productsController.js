@@ -26,9 +26,8 @@ export default class ProductsController {
     
         //3) render results on UI
         this.view.renderProducts(products);
-        console.log(`Products : ${products}`);
         
-        //Also update cart length in header
+        //Also update # of products in cart in the header
         this.view.updateHeaderNav(this.model.getCartLength());
 
         debugger;
@@ -47,10 +46,10 @@ export default class ProductsController {
                 //2. Get the product which was clicked from the view
                 if(event.target.matches('.js-btn-buy')) {
                     productData = this.view.getProductClicked(event); 
-                    console.log("productData wich was clicked : " + productData); 
+                    console.log("productData which was clicked : " + productData); 
                 }
     
-                //3. send this product to model for adding this product to cart
+                //3. send this product to model to add this product to cart
                 let isProductAdded = this.model.addToCart(productData);
                 console.log("Is product added to cart ? " + isProductAdded);
     

@@ -8,7 +8,12 @@ export default class CartView {
     renderProductOnCart(product) {
 
         const markup = `
-            <div class="cart-modal__body__item" >
+            <div class="cart-modal__body__item" data-product-name="${product.productName}" 
+                data-product-id="${product.productID}" data-product-category="${product.productCategory}"
+                data-product-price="${product.productPrice}" data-product-stock="${product.productStock}"
+                data-product-sku="${product.productSku}" data-product-imageUrl="${product.productImageurl}"
+                data-product-desc="${product.productDesc}" data-product-count="${product.productCurrentCount}">
+
                 <div class="cart-item-img">
                     <img src="./.${product.productImageurl}" />
                 </div>                        
@@ -61,7 +66,8 @@ export default class CartView {
         /* --> From the click event of minus/add btn, get the nearest matching plp card's 
         *  data attributes and store that data in productData
         */
-        const productData = event.target.closest('.plp-card').dataset;        
+        const productData = event.target.closest('.cart-modal__body__item').dataset; 
+        console.log("Product clicked in cart : " + JSON.stringify(productData.productId));       
         return productData;
     }
 

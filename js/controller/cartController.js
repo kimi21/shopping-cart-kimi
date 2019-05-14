@@ -14,15 +14,16 @@ export default class CartController {
 
 
     toggleCartDisplayFromHeader() {
-        debugger;
+        
         //listen for click on cart icon in header
         elements.cartIconInHeader.addEventListener('click', (event) => {
-            debugger;
+            
             let isDisplayed = this.utility.toggleDisplay(elements.cartModal);
 
-            //if cart is shown, load cart data
+            //if cart is shown, and cart data is not null
             if(isDisplayed) {
-                this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
+                if(localStorage.getItem('cartData') !== null)
+                    this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
             }
         });
         
@@ -47,9 +48,14 @@ export default class CartController {
         elements.cartModal.addEventListener('click', (event) => {
             if(event.target.matches('.js-btn-minus')) {
 
-                //get the corresponding product of this btn
+                // 1. get the corresponding product of this minus btn
                 productData = this.view.getProductClicked(event); 
-                console.log("productData wich was clicked : " + productData); 
+                
+                // 2. Reduce count of this product.
+                this.model.updateProductInCart(productData.productId, productData.productCurrentCount, 0);
+
+                //3. Update cart view
+                this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
             }
         });
             

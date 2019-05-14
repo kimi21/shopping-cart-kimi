@@ -13,11 +13,11 @@ export default class Products {
     }    
 
 
-    increaseProductCount(product) {
-
+    increaseProductCount(productData) {
+        
     }
 
-    decreaseProductCount(product) {
+    decreaseProductCount(productData) {
         
     }
 
@@ -60,18 +60,35 @@ export default class Products {
     }
 
 
-    //update product's count in cart
-    updateProductInCart(productObj) {
+    /* update product's count in cart
+     * action = 1, if count is to be increased
+     * action = 0, if count is to be decreased
+     */
+    updateProductInCart(productID, productCurrentCount, action) {
     
-        //1. fetch value of localstorage's cartData. 
+        //1. fetch value of local storage's cartData. 
         var cart = JSON.parse(localStorage.getItem("cartData"));
         console.log("Cart BEFORE update: " + cart);
 
+        //2. Find the product in cart
         for(var i = 0; i < cart.length; i++) { 
+            if(cart[i].productID === productID) {
 
-            //find the element in cart with matching ID of productObj 
-            if(cart[i].productID === productObj.productID) {
-                cart[i].productCurrentCount = productObj.productCurrentCount;
+                /* decrease product count since action = 0
+                * 1. check if the product's current count > 0
+                */
+                if(action === 0) {
+                    
+                    if(cart[i].productCurrentCount > 0)
+                        cart[i].productCurrentCount--;
+                    else    
+                        console.log("Product's count cannot be reduced beyond 0");
+                } else {
+                    /* increase product count since action = 1
+                     */
+                    if(cart[i].productStock > productCurrentCount) 
+                        cart[i].productCurrentCount = ++productCurrentCount;
+                }
                 break;
             }
         }
@@ -101,8 +118,8 @@ export default class Products {
     *  Add product To Cart:
     *  1.) create a productObj object from the data attributes in 'productData' variable
     *  2.) Check if the product is already in cart
-        *  2.1.) If product is in cart => in stock => update count [do not add to cart]
-        *  2.2.) If product is in cart => not in stock => alert()
+        *  2.1.) If product is in cart => if in stock => increase count [do not add to cart] - flag #1
+        *  2.2.) If product is in cart => if not in stock => alert()
     *  3.) If product not in cart => set its count to 1 => add it to cart
     */
     
@@ -119,10 +136,10 @@ export default class Products {
             //2.1.) product is IN cart and IN stock
             if(productInCart.productCurrentCount < productInCart.productStock) {
                
-                productObj.productCurrentCount = ++productInCart.productCurrentCount;
-                
-                //update the count of this object in local storage's cart
-                this.updateProductInCart(productObj);
+                // productObj.productCurrentCount = ++productInCart.productCurrentCount;
+
+                //argument 1 is sent to 'increase' the count of this object in local storage's cart
+                this.updateProductInCart(productObj.productID, productInCart.productCurrentCount, 1);
                 return true;
             } else {
                 //2.2.) product is IN cart but NOT in stock
@@ -148,9 +165,11 @@ export default class Products {
         cartLength = 0;
         cartData = JSON.parse(localStorage.getItem('cartData'));
         
-        cartData.forEach( (cartItem) => {
-            cartLength += cartItem.productCurrentCount;
-        });
+        if(cartData !== null) {
+            cartData.forEach( (cartItem) => {
+                cartLength += cartItem.productCurrentCount;
+            });
+        }
 
         return cartLength;
     }

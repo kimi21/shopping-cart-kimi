@@ -28,7 +28,7 @@ export default class HomeView {
         //update cart count in the header
         var cartData;
         cartData = JSON.parse(localStorage.getItem('cartData'));
-        if (cartData)
+        if (cartData !== null)
             elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
     
         categories.forEach(this.rendercategory);

@@ -28,6 +28,7 @@ var cartData;
         /**
          * PLP Controller
          */
+        
         console.log("The URL contains plp");
         var productsController = new ProductsController(state);
         productsController.loadProducts();
@@ -41,16 +42,15 @@ var cartData;
 
 
 
-
 /**
  * CART Controller
  */
 var cartController = new CartController(state);
 // productsController.initialize();
-debugger;
+
 cartController.toggleCartDisplayFromHeader();
 cartController.toggleCartDisplayFromHamburgerMenu();
-
+cartController.handleMinusClick();
 
 
 /**
