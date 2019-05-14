@@ -1,6 +1,16 @@
 
-
+.cart {
+    @include respond(tab-land) {       
+        // padding: 2rem 6rem;
+        width: 40%;
+        margin: 0 auto;
+    }
+}
 .cart-modal {
+
+    @include respond(tab-land) {      
+        width: 40%;
+    }
 
     position: absolute;
     right: 0;
@@ -51,6 +61,10 @@
             top: 40%;
             left: 50%;
             transform: translate(-50%,-50%);
+        }
+
+        .cart-dynamic {
+            background-color: $color-grey-light;
         }
 
         &__item {
@@ -136,10 +150,9 @@
 
     &__bottom {
         width:100%; 
-        background-color: $color-white;
+        background-color: $color-grey-light;
         color: $color-grey-dark; 
     
-        margin-top: 1em;
         padding: 2.4rem 1rem;
 
         display: flex;
@@ -151,7 +164,7 @@
         
         .cart-full {
             width: 100%;
-            display: none;
+            // display: none;
         }
         .cart-empty {
             width: 100%;

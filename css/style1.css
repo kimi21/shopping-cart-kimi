@@ -258,7 +258,6 @@ Login(index.html) and register.html
 input.effect,
 span.effect,
 label.effect {
-  font-family: 'Ubuntu', sans-serif;
   display: block;
   margin: 1rem;
   padding: 1rem;
@@ -546,6 +545,11 @@ input.effect:invalid ~ input[type="submit"] {
   background-color: #c4c2c2;
   color: #fff; }
 
+@media (min-width: 50.06em) {
+  .cart {
+    width: 40%;
+    margin: 0 auto; } }
+
 .cart-modal {
   position: absolute;
   right: 0;
@@ -558,6 +562,9 @@ input.effect:invalid ~ input[type="submit"] {
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
+  @media (min-width: 50.06em) {
+    .cart-modal {
+      width: 40%; } }
   .cart-modal__head {
     display: flex;
     align-items: center;
@@ -585,6 +592,8 @@ input.effect:invalid ~ input[type="submit"] {
       top: 40%;
       left: 50%;
       transform: translate(-50%, -50%); }
+    .cart-modal__body .cart-dynamic {
+      background-color: #ebebeb; }
     .cart-modal__body__item {
       display: flex;
       background-color: #fff;
@@ -638,9 +647,8 @@ input.effect:invalid ~ input[type="submit"] {
         margin-left: 2rem; }
   .cart-modal__bottom {
     width: 100%;
-    background-color: #fff;
+    background-color: #ebebeb;
     color: #3f3f3f;
-    margin-top: 1em;
     padding: 2.4rem 1rem;
     display: flex;
     flex-direction: column;
@@ -648,8 +656,7 @@ input.effect:invalid ~ input[type="submit"] {
     font-size: 2rem;
     text-transform: capitalize; }
     .cart-modal__bottom .cart-full {
-      width: 100%;
-      display: none; }
+      width: 100%; }
     .cart-modal__bottom .cart-empty {
       width: 100%;
       text-align: center; }

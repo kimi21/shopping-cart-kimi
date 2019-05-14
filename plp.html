@@ -24,7 +24,66 @@
   });
     </script>
 </head>
-<body>
+<body class="products-container">
+    
+    <!-- Cart modal starts -->
+    <div class="cart hide">
+        <div class="main cart-modal bgcolor cart-container" id="cart-body">
+            <div class="cart-modal__top">
+                <div class="cart-modal__head">
+                    <h2 class="cart-head bg-color-change">
+                        <span class="text--bold">My Cart</span>
+                        <span class="text--light">( )</span>
+                    </h2>
+                    <a href = "#" class="cart-modal__head__btn-close">
+                        <i class="fa fa-times btn-close" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="cart-modal__body">
+                    <!-- empty cart -->
+                    <div class="cart-modal__body--empty" style="display: none;">
+                        <span class="text--bold text--medium">No items in your cart</span> <br/>
+                        <span class="text--light text--small">Your favourite items are just a click away</span>
+                    </div>
+                    
+                    <div class="cart-dynamic"> 
+                        <!-- dynamic content comes here -->
+                        
+                        <!-- dynamic content ends here -->
+                    </div>
+                    <div class="cart-modal__body__banner">
+                        <img src="static/images/lowest-price.png">
+                        <span class="cart-modal__banner-text">You won't find it cheaper anywhere</span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="cart-modal__bottom">
+                <div class="cart-full js-cart-full">
+                    <span class="promo-code">
+                        Promo code can be applied on payment page
+                    </span>
+                    <a class="cart-modal__bottom__btn flex-btn">
+                        <span>Proceed to Checkout </span>
+                        <span>
+                            <span class="cart-bottom-amount">Rs. </span> &nbsp;
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </span>
+                    </a>
+                </div>
+                
+                <!-- when cart is empty: -->
+                <div class="cart-empty js-cart-empty hide">
+                    <a class="cart-modal__bottom__btn">
+                        <span>start shopping</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cart modal ends -->
+
+
     <header class="header bottom-shadow">
         <nav class="nav">
             <div class="nav--left float-left">
@@ -48,9 +107,9 @@
                 </ul>
 
                 <div class="float-right nav--right__cart-div hide-on-mobile show-on-tablet">
-                    <a href="cart.html" class="nav--right__cart-link ">
+                    <a href="#" class="nav--right__cart-link ">
                         <img class="nav--right__cart-link__img cart-svg-alternate" src="static/images/cart.svg">
-                        <span class="nav--right__cart-link__count js-cart-count">1000 item</span>
+                        <span class="nav--right__cart-link__count js-cart-count">0 item</span>
                     </a>
                     
                 </div>
@@ -61,6 +120,7 @@
         </nav>
     </header>
 
+    <!-- hamburger open div starts -->
     <div class="hamburger-menu-div hide hide-on-tablet">
         <div class="hamburger-menu-body" id="hamburger-menu-body">
             <ul class="menu-list">
@@ -93,6 +153,7 @@
             </ul>
         </div>
     </div>
+    <!-- hamburger open div ends -->
 
 
 
@@ -207,44 +268,6 @@
             </section> <!-- All cards end -->
         </div>
 
-
-        <!-- Cart modal -->
-        <div class="main cart-main bgcolor cart-container hide" id="cart-body">
-                <div class="main-content main-cart">
-                    <div class="cart-content__body">
-                        <div class="cart-top">
-                            <h2 class="cart-head bg-color-change">
-                                <span class="cart-head-bold">My Cart</span>
-                                <span class="cart-head-light"></span>
-                                <a href = "#">
-                                    <i class="fa fa-times btn-close" aria-hidden="true"></i>
-                                </a>
-                            </h2>
-                            <div class="cart-dynamic">
-                                <!-- dynamic content comes here -->
-                            </div>
-                        </div>
-        
-                        <div class="cart-content__banner">
-                            <img src="static/images/lowest-price.png">
-                            <span>You won't find it cheaper anywhere</span>
-                        </div>
-                    </div>
-        
-                    <div class="cart-bottom">
-                        <span class="promo-code">
-                            Promo code can be applied on payment page
-                        </span>
-                        <a class="cart-bottom__btn">
-                            <span>Proceed to Checkout </span>
-                            <span>
-                                <span class="cart-bottom-amount"></span> &nbsp;
-                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
     </main>
 
     <footer class="footer">

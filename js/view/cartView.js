@@ -1,54 +1,70 @@
 import { elements } from './base';
+import { miscData } from './miscData'
 
-var cartTotalCount;
+export default class CartView {
+    
+    constructor() {}
 
-const renderProductOnCart = product => {
+    renderProductOnCart(product) {
 
-    const markup = `
-        <div class="cart-content__item">
-            <div class="cart-item-img">
-                <img src="./.${product.productImageurl}" />
-            </div>                        
-            <div class="cart-item-desc">
-                <div class="">
-                    <span class="cart-item-desc-title">${product.productName}</span>
-                </div>
-                <div class="cart-item-info">
-                    <div class="cart-item-info-left">
-                        <i class="fa fa-minus fa-cart-tablet js-btn-minus" aria-hidden="true"></i>
-                        <span class="cart-item-qauntity">${product.productCurrentCount}</span>
-                        <i class="fa fa-plus fa-cart-tablet js-btn-add" aria-hidden="true"></i>
-                        
-                        <span class="cart-item-price">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                            Rs. ${product.productPrice}
-                        </span>
+        const markup = `
+            <div class="cart-modal__body__item" >
+                <div class="cart-item-img">
+                    <img src="./.${product.productImageurl}" />
+                </div>                        
+                <div class="cart-item-desc">
+                    <div class="cart-item-desc__title">
+                        <span class="">${product.productName}</span>
                     </div>
-                    
-                    <div class="cart-item-info-right">
-                        <span class="">Rs. ${product.productCurrentCount * product.productPrice}</span>
+                    <div class="cart-item-desc__info">
+                            <div class="cart-item-desc__info-left">
+                                <a href="" class="js-btn-minus">
+                                    <i class="fa fa-minus fa-cart-tablet js-btn-minus" aria-hidden="true"></i>
+                                </a>
+                                <span class="cart-item-qauntity">${product.productCurrentCount}</span>
+                                <a href="" class="js-btn-add">
+                                    <i class="fa fa-plus fa-cart-tablet js-btn-add" aria-hidden="true"></i>
+                                </a>
+                                
+                                <span class="cart-item-price">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                    Rs. ${product.productPrice}
+                                </span>
+                            </div>
+                        
+                        <div class="cart-item-desc__info-right">
+                            <span class="">Rs. ${product.productCurrentCount * product.productPrice}</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    `;
+        `;        
+        
+        if(elements.countOnCart)
+            elements.countOnCart.textContent = "( " + cartTotalCount + (cartTotalCount === 1 ? ' item )' : ' items )');
+        if(elements.cartDynamic)
+            elements.cartDynamic.insertAdjacentHTML('beforeend', markup);
+        if(elements.cartBillAmount)
+            elements.cartBillAmount.textContent = `Rs. ${product.productCurrentCount * product.productPrice}`;
+    }
 
-    if(elements.countOnCart)
-        elements.countOnCart.textContent = "( " + cartTotalCount + (cartTotalCount === 1 ? ' item )' : ' items )');
-    if(elements.cartDynamic)
-        elements.cartDynamic.insertAdjacentHTML('beforeend', markup);
-    if(elements.cartBillAmount)
-        elements.cartBillAmount.textContent = `Rs. ${product.productCurrentCount * product.productPrice}`;
-}
 
+    renderResult(products) {
+        
+        //emty the contents of cart dynamic div
+        elements.cartDynamic.innerHTML = "";
+        products.forEach(this.renderProductOnCart);
+    }
 
-export const renderResult = products => {
-    
-    cartTotalCount = products.length;
-    console.log("Products in cart : " + cartTotalCount);
-    console.log("In CART VIEW PRODUCTS : : : " + JSON.stringify(products));
-    products.forEach(renderProductOnCart);
-    
+    getProductClicked(event) {
+        
+        /* --> From the click event of minus/add btn, get the nearest matching plp card's 
+        *  data attributes and store that data in productData
+        */
+        const productData = event.target.closest('.plp-card').dataset;        
+        return productData;
+    }
+
 }
 
 

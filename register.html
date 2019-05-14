@@ -13,7 +13,94 @@
 
     <title>Sabkaa Bazaar</title>
 </head>
-<body>
+<body class="">
+    <!-- Cart modal starts -->
+    <div class="cart hide">
+            <div class="main cart-modal bgcolor cart-container" id="cart-body">
+                <div class="cart-modal__top">
+                    <div class="cart-modal__head">
+                        <h2 class="cart-head bg-color-change">
+                            <span class="text--bold">My Cart</span>
+                            <span class="text--light">( )</span>
+                        </h2>
+                        <a href = "#" class="cart-modal__head__btn-close">
+                            <i class="fa fa-times btn-close" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="cart-modal__body">
+                        <!-- empty cart -->
+                        <div class="cart-modal__body--empty">
+                            <span class="text--bold text--medium">No items in your cart</span> <br/>
+                            <span class="text--light text--small">Your favourite items are just a click away</span>
+                        </div>
+                        
+                        <div class="cart-dynamic"> 
+                            <!-- dynamic content comes here -->
+                            <div class="cart-modal__body__item">
+                                <div class="cart-item-img">
+                                    <!-- <img src="./.${product.productImageurl}" /> -->
+                                    <img src="static/images/products/fruit-n-veg/apple.jpg" />
+                                </div>                        
+                                <div class="cart-item-desc">
+                                    <div class="cart-item-desc__title">
+                                        <span class="">apple - washington, regular, 4pcs</span>
+                                    </div>
+                                    <div class="cart-item-desc__info">
+                                            <div class="cart-item-desc__info-left">
+                                                <a href="" class="js-btn-minus">
+                                                    <i class="fa fa-minus fa-cart-tablet js-btn-minus" aria-hidden="true"></i>
+                                                </a>
+                                                <span class="cart-item-qauntity">1</span>
+                                                <a href="" class="js-btn-add">
+                                                    <i class="fa fa-plus fa-cart-tablet js-btn-add" aria-hidden="true"></i>
+                                                </a>
+                                                
+                                                <span class="cart-item-price">
+                                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                                    Rs. 87
+                                                </span>
+                                            </div>
+                                        
+                                        <div class="cart-item-desc__info-right">
+                                            <span class="">Rs. 87</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dynamic content ends here -->
+                        </div>
+                        <div class="cart-modal__body__banner">
+                            <img src="static/images/lowest-price.png">
+                            <span class="cart-modal__banner-text">You won't find it cheaper anywhere</span>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="cart-modal__bottom">
+                    <div class="cart-full js-cart-full">
+                        <span class="promo-code">
+                            Promo code can be applied on payment page
+                        </span>
+                        <a class="cart-modal__bottom__btn flex-btn">
+                            <span>Proceed to Checkout </span>
+                            <span>
+                                <span class="cart-bottom-amount">Rs. 87</span> &nbsp;
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <!-- when cart is empty: -->
+                    <div class="cart-empty js-cart-empty">
+                        <a class="cart-modal__bottom__btn">
+                            <span>start shopping</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Cart modal ends -->
+
     <header class="header bottom-shadow">
         <nav class="nav">
             <div class="nav--left float-left">
