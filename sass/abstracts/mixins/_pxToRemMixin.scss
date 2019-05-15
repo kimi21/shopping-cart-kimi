@@ -1,0 +1,11 @@
+//px to rem convertor
+
+@function calculateRem($size) {
+    $remSize: $size / 16px; //the default font-size in browsers : 16px
+    @return #{$remSize}rem;
+  }
+
+  @mixin fontSize($size) {
+    font-size: $size; //Fallback in px
+    font-size: calculateRem($size);
+  }

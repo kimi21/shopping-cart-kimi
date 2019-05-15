@@ -11,13 +11,15 @@ Login(index.html) and register.html
     text-align: center;
 
     @include respond(tab-port) { 
-        font-size: 3rem;
+       
+        font-size: 4rem;
         margin-bottom: 4.5%;
         text-align: center;
     }
 
-    @include respond(tab-land) {
-        font-size: 3.2rem;
+    @include respond(tab-landscape) {
+        @include fontSize(60px);    //takes font size in px and converts to rem
+        // font-size: 3.2rem;
         text-align: left;
     }
 }

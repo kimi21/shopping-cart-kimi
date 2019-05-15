@@ -1,0 +1,15 @@
+
+@mixin bottom-shadow() {
+    -webkit-box-shadow: 0px 3px 4px -1px $color-grey-medium;
+       -moz-box-shadow: 0px 3px 4px -1px $color-grey-medium;
+            box-shadow: 0px 3px 4px -1px $color-grey-medium;
+}
+
+//mixin for letting older broswers understand color with opacity
+@mixin alpha-attribute($attribute, $color, $background) {
+    $percent: alpha($color) * 100%;
+    $opaque: opacify($color, 1);
+    $solid-color: mix($opaque, $background, $percent);
+    #{$attribute}: $solid-color;
+    #{$attribute}: $color;
+  }

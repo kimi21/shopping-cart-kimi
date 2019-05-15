@@ -181,23 +181,25 @@
             </div>
 
             <section class="flex-row">
-                <form class="form form-flex">
+                <form class="form form-flex" id="loginForm" novalidate method="POST">
                     <div class="email-container">
-                        <input type="text" name="email" class="effect" id="email-text" required autocomplete="off" />
-                        <label for="email-text" class="effect">      
-                            <span class="effect">Email </span>
+                        <input type="text" name="email" class="effect" id="email" required autocomplete="off" />
+                        <label for="email" class="effect">      
+                            <span class="effect">Email</span>
                         </label>
+                        <span class="form-input-error js-form__input-error hide"></span>
                     </div>
                     
                     <div class="pswrd-container">
-                        <input type="password" name="name" class="effect" id="pswrd-text" required autocomplete="off" />
-                        <label for="pswrd-text" class="effect">      
-                            <span class="effect">Password </span>
+                        <input type="password" name="name" class="effect" id="pswrd" required autocomplete="off" />
+                        <label for="pswrd" class="effect">      
+                            <span class="effect">Password</span>
                         </label>
+                        <span class="form-input-error js-form__input-error hide"></span>
                     </div>
 
                     <div class="btn-container">
-                        <input type="submit" class="form__submit-btn" value="Login" style="display: block;"/>
+                        <input type="submit" class="form__submit-btn" value="Login"/>
                     </div>
                     
                 </form>

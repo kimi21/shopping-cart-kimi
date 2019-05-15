@@ -12,7 +12,7 @@
 
     @include bottom-shadow;
 
-    @include respond(tab-land) {        // 801px
+    @include respond(tab-landscape) {        // 801px
         height: 7.4rem;
         padding: 1rem;
         font-size: 1.2rem;

@@ -20,7 +20,7 @@
             // position: absolute;
             top: 50%;
 
-            @include respond(tab-land) {   // @ 801px 
+            @include respond(tab-landscape) {   // @ 801px 
                 width: 1.6rem;
                 height: 1.6rem;
             }

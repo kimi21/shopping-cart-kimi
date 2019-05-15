@@ -1,0 +1,39 @@
+/*---------------------------------*\
+    #MEDIA QUERY MANAGER
+
+    0 - 599px:            Mobile- normal styles apply here
+    600px - 800px :       Tablet Portrait
+    801px - 1024px:       Tablet Landscape
+    1025px - 1280px:      Desktop
+    1281px + :            Big Desktop
+
+
+    $breakpoint argument choices:
+    - tab-port
+    - tab-landscape
+    - desktop
+    - big-desktop
+
+    1em = 16px
+
+\*---------------------------------*/
+
+
+
+@import '../functions';
+
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == tab-port {
+        @media (min-width: calc-width-in-em(600, 16)) { @content };     // @600px => 600px/16px = 37.5em 
+    }
+    @if $breakpoint == tab-landscape {
+        @media (min-width: calc-width-in-em(801, 16)) { @content };     // @801px
+    }
+    @if $breakpoint == desktop {
+        @media (min-width: calc-width-in-em(1025, 16)) { @content };    // @1025px
+    }
+    @if $breakpoint == big-desktop {
+        @media (min-width: calc-width-in-em(1281, 16)) { @content };    // @1281px
+    }
+}

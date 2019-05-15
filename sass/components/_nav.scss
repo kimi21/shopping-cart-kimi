@@ -14,7 +14,7 @@
 
     $breakpoint argument choices:
     - tab-port
-    - tab-land
+    - tab-landscape
     - desktop
     - big-desktop
 
@@ -55,7 +55,7 @@
             &--logo-small {
                 height: 4.8rem;     // 48px
 
-                @include respond(tab-land) {    // @ 801px
+                @include respond(tab-landscape) {    // @ 801px
                     height: 5.4rem;
                 }
             }

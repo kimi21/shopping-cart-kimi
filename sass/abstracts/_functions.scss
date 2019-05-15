@@ -1,0 +1,6 @@
+//functions returning screen width in ems
+
+@function calc-width-in-em($widthInPixel, $fontInPixel) {
+    $widthInEm: $widthInPixel / $fontInPixel;
+    @return #{$widthInEm}em;
+}

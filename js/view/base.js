@@ -17,7 +17,7 @@ export const elements = {
     totalBill: document.querySelector('.cart-bottom-amount'),
     minusBtn: document.querySelector('.js-btn-minus'),
     addBtn: document.querySelector('.js-btn-add'),
-
+    errorMsg: document.querySelector('.js-form__input-error')
 };
 
 

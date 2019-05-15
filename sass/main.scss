@@ -1,5 +1,7 @@
 @import "abstracts/functions";
-@import "abstracts/mixins";
+@import "abstracts/mixins/mediaQueriesMixin";
+@import "abstracts/mixins/colorsMixin";
+@import "abstracts/mixins/pxToRemMixin";
 @import "abstracts/variables";
 
 @import "base/animations";

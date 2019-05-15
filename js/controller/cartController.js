@@ -47,7 +47,7 @@ export default class CartController {
     handleMinusClick() {
         elements.cartModal.addEventListener('click', (event) => {
             if(event.target.matches('.js-btn-minus')) {
-
+                let productData;
                 // 1. get the corresponding product of this minus btn
                 productData = this.view.getProductClicked(event); 
                 

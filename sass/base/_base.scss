@@ -14,15 +14,15 @@
 
 html {
 
-    // This defines what 1rem is
+    // This defines what 1rem is. The default font-size on browsers is 16px
     font-size: 50%;   //1 rem = 8px; 8px/16px = 50%
 
     @include respond(tab-port) {
        font-size: 50%;  //1 rem = 8px; 8px/16px = 50%
     }
 
-    @include respond(tab-land) {
-    font-size: 56.25%;   //1 rem = 9px; 8px/16px = 56.25%
+    @include respond(tab-landscape) {
+    font-size: 56.25%;   //1 rem = 9px; 9px/16px = 56.25%
     }
 
     @include respond(desktop) {
