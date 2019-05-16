@@ -9,10 +9,10 @@ export default class CartView {
 
         const markup = `
             <div class="cart-modal__body__item" data-product-name="${product.productName}" 
-                data-product-id="${product.productID}" data-product-category="${product.productCategory}"
+                data-product-id="${product.productId}" data-product-category="${product.productCategory}"
                 data-product-price="${product.productPrice}" data-product-stock="${product.productStock}"
                 data-product-sku="${product.productSku}" data-product-imageUrl="${product.productImageurl}"
-                data-product-desc="${product.productDesc}" data-product-count="${product.productCurrentCount}">
+                data-product-desc="${product.productDesc}" data-product-current-count="${product.productCurrentCount}">
 
                 <div class="cart-item-img">
                     <img src="./.${product.productImageurl}" />
@@ -23,11 +23,11 @@ export default class CartView {
                     </div>
                     <div class="cart-item-desc__info">
                             <div class="cart-item-desc__info-left">
-                                <a href="" class="js-btn-minus">
+                                <a class="js-btn-minus">
                                     <i class="fa fa-minus fa-cart-tablet js-btn-minus" aria-hidden="true"></i>
                                 </a>
                                 <span class="cart-item-qauntity">${product.productCurrentCount}</span>
-                                <a href="" class="js-btn-add">
+                                <a class="js-btn-add">
                                     <i class="fa fa-plus fa-cart-tablet js-btn-add" aria-hidden="true"></i>
                                 </a>
                                 
@@ -45,12 +45,12 @@ export default class CartView {
             </div>
         `;        
         
-        if(elements.countOnCart)
-            elements.countOnCart.textContent = "( " + cartTotalCount + (cartTotalCount === 1 ? ' item )' : ' items )');
+        // if(elements.countOnCart)
+        //     elements.countOnCart.textContent = "( " + cartTotalCount + (cartTotalCount === 1 ? ' item )' : ' items )');
         if(elements.cartDynamic)
             elements.cartDynamic.insertAdjacentHTML('beforeend', markup);
         if(elements.cartBillAmount)
-            elements.cartBillAmount.textContent = `Rs. ${product.productCurrentCount * product.productPrice}`;
+            elements.cartBillAmount.innerHTML = `Rs. ${product.productCurrentCount * product.productPrice}`;
     }
 
 
@@ -67,10 +67,15 @@ export default class CartView {
         *  data attributes and store that data in productData
         */
         const productData = event.target.closest('.cart-modal__body__item').dataset; 
-        console.log("Product clicked in cart : " + JSON.stringify(productData.productId));       
         return productData;
     }
 
+    updateUI(event, count) {
+        
+        //find the span in this event and set its content to the count of the product
+        const countSpan = event.target.closest('.cart-modal__body__item').querySelector('.cart-item-qauntity'); 
+        countSpan.innerHTML = count;
+    }
 }
 
 

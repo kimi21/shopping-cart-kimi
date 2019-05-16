@@ -13,18 +13,41 @@ export default class Products {
     }    
 
 
-    increaseProductCount(productData) {
-        
+    increaseProductCount(product) {
+
+        if(product.productCurrentCount < product.productStock) {
+            product.productCurrentCount++;
+            
+            //update this product in cart of local storage.
+            this.updateProductInCart(product);
+            return true;    //count increased successfully
+        } else {
+            return false;
+        }
     }
 
-    decreaseProductCount(productData) {
-        
+
+    decreaseProductCount(product) {
+
+        if(product.productCurrentCount > 1) {
+            product.productCurrentCount--;
+            
+            if(product.productCurrentCount === 0) {
+                this.removeProductFromCart(product.productId);
+                return false; //since the element is now removed from the cart
+            }
+            //update this product in cart of local storage.
+            this.updateProductInCart(product);
+            return true;    //count decreased successfully
+        }
+       
     }
 
-    // 1.) create a productObj object from the data attributes in 'productData' variable
+
+    // create a productObj object from the data attributes in 'productData' variable
     createProductObj (productData) {
         const productObj = {
-            productID: productData.productId,
+            productId: productData.productId,
             productName: productData.productName,
             productImageurl: productData.productImageurl,
             productDesc: productData.productDesc,
@@ -39,7 +62,7 @@ export default class Products {
     
 
     //2. check if the product is already in cart
-    productAlreadyInCart(productToBuy) {
+    productAlreadyInCart(productId) {
     
         let productFound;
         let cartArr;
@@ -53,7 +76,7 @@ export default class Products {
 
             //return product found from cart
             productFound = cartArr.find(function(cartProduct) {
-                return cartProduct.productID === productToBuy.productID ;
+                return cartProduct.productId === productId ;
             });
         }
         return productFound;   
@@ -61,10 +84,8 @@ export default class Products {
 
 
     /* update product's count in cart
-     * action = 1, if count is to be increased
-     * action = 0, if count is to be decreased
      */
-    updateProductInCart(productID, productCurrentCount, action) {
+    updateProductInCart(product) {
     
         //1. fetch value of local storage's cartData. 
         var cart = JSON.parse(localStorage.getItem("cartData"));
@@ -72,24 +93,9 @@ export default class Products {
 
         //2. Find the product in cart
         for(var i = 0; i < cart.length; i++) { 
-            if(cart[i].productID === productID) {
-
-                /* decrease product count since action = 0
-                * 1. check if the product's current count > 0
-                */
-                if(action === 0) {
-                    
-                    if(cart[i].productCurrentCount > 0)
-                        cart[i].productCurrentCount--;
-                    else    
-                        console.log("Product's count cannot be reduced beyond 0");
-                } else {
-                    /* increase product count since action = 1
-                     */
-                    if(cart[i].productStock > productCurrentCount) 
-                        cart[i].productCurrentCount = ++productCurrentCount;
-                }
-                break;
+            if(cart[i].productId === product.productId) {
+                //update count field
+                cart[i].productCurrentCount = product.productCurrentCount;
             }
         }
 
@@ -114,6 +120,20 @@ export default class Products {
     }
 
 
+    removeProductFromCart(productId) {
+        //1. fetch value of localstorage's cartData. 
+        var cart = JSON.parse(localStorage.getItem("cartData")) || [];
+        console.log("Cart BEFORE push: " + cart);
+
+        // 3. Remove product from cart
+        cart.splice(cart.indexOf(cart.find((el) => el.productId === productId)));
+        console.log("Cart AFTER push: " + cart);
+
+        // 4. store the updated cart in local storage
+        localStorage.setItem("cartData", JSON.stringify(cart));
+        console.log("cart Added to LS");
+    }
+
     /* 
     *  Add product To Cart:
     *  1.) create a productObj object from the data attributes in 'productData' variable
@@ -129,25 +149,21 @@ export default class Products {
         let productObj = this.createProductObj(productData);
 
         //2. check if the product is already in cart
-        let productInCart = this.productAlreadyInCart(productObj);
+        let productInCart = this.productAlreadyInCart(productObj.productId);
 
         
         if(productInCart) {
-            //2.1.) product is IN cart and IN stock
-            if(productInCart.productCurrentCount < productInCart.productStock) {
-               
-                // productObj.productCurrentCount = ++productInCart.productCurrentCount;
 
-                //argument 1 is sent to 'increase' the count of this object in local storage's cart
-                this.updateProductInCart(productObj.productID, productInCart.productCurrentCount, 1);
-                return true;
-            } else {
-                //2.2.) product is IN cart but NOT in stock
-                console.log("Oops! this product is out of stock");
-                return false;
+            //2.1.) product is IN cart and IN stock            
+            // productObj.productCurrentCount = ++productInCart.productCurrentCount;
+            let success = this.increaseProductCount(productInCart);
+            if(!success) {
+                console.log("Product is out of stock");
             }
-
+            return true;
+          
         } else {
+            
             //3.) product not in cart => set its count to 1 
             productObj.productCurrentCount = 1;
             

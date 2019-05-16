@@ -1,11 +1,17 @@
 import Home from "../model/home";
 import HomeView from "../view/homeView";
+import Utility from '../Utility/utilities';
 
 export default class HomeController {
     constructor(state) {
         this.view = new HomeView();
         this.model = new Home();
+        this.utility = new Utility();
         this.state = state;
+    }
+
+    initialize() {
+        this.utility.updateHeaderNav(this.utility.getCartLength());
     }
 
     async loadCategories() {

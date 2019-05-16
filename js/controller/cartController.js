@@ -45,17 +45,26 @@ export default class CartController {
 
     //handles click event of minus btn on product in cart
     handleMinusClick() {
+
         elements.cartModal.addEventListener('click', (event) => {
+
+            event.preventDefault();
+
             if(event.target.matches('.js-btn-minus')) {
                 let productData;
+                let success;
+
                 // 1. get the corresponding product of this minus btn
                 productData = this.view.getProductClicked(event); 
-                
-                // 2. Reduce count of this product.
-                this.model.updateProductInCart(productData.productId, productData.productCurrentCount, 0);
+                success = this.model.decreaseProductCount(productData);
 
-                //3. Update cart view
-                this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
+                
+                if(success) //if the element's count was reduced
+                    this.view.updateUI(event, productData.productCurrentCount);
+                else    //element's removed from cart since count reduced to 0
+                    this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
+            
+                this.utility.updateHeaderNav(this.utility.getCartLength());
             }
         });
             

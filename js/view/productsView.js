@@ -83,7 +83,7 @@ export default class ProductsView {
 
 
     updateHeaderNav(cartLength) {
-        elements.headerCartCountDiv.textContent = cartLength + (cartLength === 1 ? ' item' : ' items');
+        elements.headerCartCountDiv.innerHTML = cartLength + (cartLength === (1 || 0) ? ' item' : ' items');
     }
 
 }

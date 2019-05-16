@@ -24,6 +24,7 @@ var cartData;
          */
         console.log("The URL contains home");
         var homeController = new HomeController(state);
+        homeController.initialize();
         homeController.loadCategories();
 
     } else if(window.location.href.indexOf('plp.html') > 0) {
@@ -39,7 +40,7 @@ var cartData;
     } else if(window.location.href.indexOf('index.html') > 0) {
         
         var form = new FormController(document.forms[0]);
-        form.listenFormEvents();
+        form.formEventListener();
         // form.validateEmail();
         // form.readyForm();
     }
@@ -54,12 +55,12 @@ var cartData;
 /**
  * CART Controller
  */
-// var cartController = new CartController(state);
+var cartController = new CartController(state);
 
 
-// cartController.toggleCartDisplayFromHeader();
-// cartController.toggleCartDisplayFromHamburgerMenu();
-// cartController.handleMinusClick();
+cartController.toggleCartDisplayFromHeader();
+cartController.toggleCartDisplayFromHamburgerMenu();
+cartController.handleMinusClick();
 
 
 /**

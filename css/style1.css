@@ -155,10 +155,10 @@ Login(index.html) and register.html
     .show-on-desktop {
       display: inline-block; } }
 
-.text--bold {
+.text-bold {
   font-weight: 800; }
 
-.text--light {
+.text-light {
   font-weight: 300; }
 
 .text--medium {

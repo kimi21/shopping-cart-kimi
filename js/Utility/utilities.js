@@ -1,4 +1,4 @@
-
+import { elements } from '../view/base';
 
 export default class Utilities {
 
@@ -42,5 +42,28 @@ export default class Utilities {
            el.classList.remove('show');
         }
     }
+
+
+    getCartLength() {
+        //Calculate total number of elements in cart
+   
+        let cartLength, cartData;
+        cartLength = 0;
+        cartData = JSON.parse(localStorage.getItem('cartData'));
+        
+        if(cartData !== null) {
+            for(var i = 0; i < cartData.length; i++) {
+                cartLength += cartData[i].productCurrentCount;
+            }
+        }
+
+        return cartLength;
+    }
+
+
+    updateHeaderNav(cartLength) {
+        elements.headerCartCountDiv.innerHTML = cartLength + (cartLength === (1 || 0) ? ' item' : ' items');
+    }
+    
 }
 
