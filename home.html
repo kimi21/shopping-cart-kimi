@@ -14,7 +14,7 @@
     <title>Sabkaa Bazaar</title>
 </head>
 
-<body>
+<body class="body">
 
     <!-- Cart modal starts -->
     <div class="cart hide">
@@ -73,7 +73,7 @@
     </div>
     <!-- Cart modal ends -->
 
-
+<div class="sb-content">
     <header class="header bottom-shadow">
         <nav class="nav">
             <div class="nav--left float-left">
@@ -148,49 +148,45 @@
 
 
     <main class="main main-home">
-        <!-- <div id="main-carousel" class="main__carousel" >
-            <img src="static/images/offers/offer1.jpg" class="main__carousel__img" />
-        </div> -->
+        <div id="main-carousel" class="main__carousel" >
+            <img src="static/images/offers/offer1.jpg" class="main__carousel__img js-carousel-img" data-pos="1"/>
+            <img src="static/images/offers/offer2.jpg" class="main__carousel__img js-carousel-mg" data-pos="2"/>
+            <img src="static/images/offers/offer3.jpg" class="main__carousel__img js-carousel-img" data-pos="3"/>
 
-        <!-- <div class="main__carousel__indicators">
-            <span class="carousel__circle carousel__circle1"></span>
-            <span class="carousel__circle carousel__circle2"></span>
-            <span class="carousel__circle carousel__circle3"></span>
-            <span class="carousel__circle carousel__circle4"></span>
-            <span class="carousel__circle carousel__circle5"></span>
-        </div> -->
+            <div class="main__carousel__indicators">
+                <span class="main__carousel__circle main__carousel__circle1 js-dots" data-pos="1"></span>
+                <span class="main__carousel__circle main__carousel__circle2 js-dots" data-pos="2"></span>
+                <span class="main__carousel__circle main__carousel__circle3 js-dots" data-pos="3"></span>
+                <span class="main__carousel__circle main__carousel__circle4 js-dots" data-pos="4"></span>
+                <span class="main__carousel__circle main__carousel__circle5 js-dots" data-pos="5"></sspan>
+            </div>
+        </div>
 
         <section class="main-content js-home">
-                <div class="main__carousel__indicators">
-                    <span class="main__carousel__circle main__carousel__circle1"></span>
-                    <span class="main__carousel__circle main__carousel__circle2"></span>
-                    <span class="main__carousel__circle main__carousel__circle3"></span>
-                    <span class="main__carousel__circle main__carousel__circle4"></span>
-                    <span class="main__carousel__circle main__carousel__circle5"></span>
+            <!-- <section class="card card-shadow js-home-card" data-category="fruits">
+                <div class="card__img">
+                    <img src="static/images/category/fruits.png" />
                 </div>
-                
-                <!-- <section class="card card-shadow js-home-card" data-category="fruits">
-                    <div class="card__img">
-                        <img src="static/images/category/fruits.png" />
-                    </div>
 
-                    <div class="card__content">
-                        <h2>fruits &amp; vegetables</h2>
-                        <span>A variety of fresh fruits and vegetables.</span>
-                        <a href="#" class="btn card__content__btn">
-                            Explore fruit-and-veg
-                        </a>
-                    </div>
-                </section> -->
-
-            </section>
-
-        </main>
-
+                <div class="card__content">
+                    <h2>fruits &amp; vegetables</h2>
+                    <span>A variety of fresh fruits and vegetables.</span>
+                    <a href="#" class="btn card__content__btn">
+                        Explore fruit-and-veg
+                    </a>
+                </div>
+            </section> -->
+        </section>
+    </main>
         
-        <footer class="footer">
-            <small>Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt. Ltd.</small>
-        </footer>
-        <script src= "./js/bundle.js"></script>
+
+    <footer class="footer">
+        <small>Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt. Ltd.</small>
+    </footer>
+
+
+</div>
+
+<script src= "./js/bundle.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 export const elements = {
     productsContainer: document.querySelector('.products-container'),
     homePageContent: document.querySelector('.js-home'),
+    carouselContainer: document.querySelector('.main__carousel'),
     categoryCards: document.querySelectorAll('.js-home .js-home-card'),
     plpPageContent: document.querySelector('.js-plp-content'),
     cartIconInHeader: document.querySelector('.nav--right__cart-link'),

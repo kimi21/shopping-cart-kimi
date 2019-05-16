@@ -1,6 +1,9 @@
 import Home from "../model/home";
 import HomeView from "../view/homeView";
 import Utility from '../Utility/utilities';
+import CarouselController from '../controller/carouselController';
+
+import { elements } from '../view/base';
 
 export default class HomeController {
     constructor(state) {
@@ -8,10 +11,12 @@ export default class HomeController {
         this.model = new Home();
         this.utility = new Utility();
         this.state = state;
+        this.carouselController = new CarouselController(elements.carouselContainer);
     }
 
     initialize() {
         this.utility.updateHeaderNav(this.utility.getCartLength());
+        this.carouselController.loadCarousel();
     }
 
     async loadCategories() {
@@ -27,7 +32,6 @@ export default class HomeController {
         console.log("Fetching categories...");
     
         //3) render results on UI
-        console.log(`Categories : ${categories}`);
         this.view.renderResults(categories);
     
         //render carousel

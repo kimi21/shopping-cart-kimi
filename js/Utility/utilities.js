@@ -53,7 +53,7 @@ export default class Utilities {
         
         if(cartData !== null) {
             for(var i = 0; i < cartData.length; i++) {
-                cartLength += cartData[i].productCurrentCount;
+                cartLength += +(cartData[i].productCurrentCount);
             }
         }
 
@@ -62,7 +62,7 @@ export default class Utilities {
 
 
     updateHeaderNav(cartLength) {
-        elements.headerCartCountDiv.innerHTML = cartLength + (cartLength === (1 || 0) ? ' item' : ' items');
+        elements.headerCartCountDiv.innerHTML = cartLength + ' items';
     }
     
 }

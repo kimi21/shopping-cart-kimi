@@ -60,7 +60,7 @@ var cartController = new CartController(state);
 
 cartController.toggleCartDisplayFromHeader();
 cartController.toggleCartDisplayFromHamburgerMenu();
-cartController.handleMinusClick();
+cartController.cartEventHandler();
 
 
 /**

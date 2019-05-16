@@ -15,30 +15,30 @@ export default class Products {
 
     increaseProductCount(product) {
 
-        if(product.productCurrentCount < product.productStock) {
+        if(+(product.productCurrentCount) < +(product.productStock)) {
             product.productCurrentCount++;
             
             //update this product in cart of local storage.
             this.updateProductInCart(product);
             return true;    //count increased successfully
         } else {
-            return false;
+            return false;   //count exceeded stock
         }
     }
 
 
     decreaseProductCount(product) {
 
-        if(product.productCurrentCount > 1) {
+        if(+(product.productCurrentCount) >= 1) {
             product.productCurrentCount--;
             
-            if(product.productCurrentCount === 0) {
+            if(+(product.productCurrentCount) === 0) {
                 this.removeProductFromCart(product.productId);
                 return false; //since the element is now removed from the cart
             }
             //update this product in cart of local storage.
             this.updateProductInCart(product);
-            return true;    //count decreased successfully
+            return true;    //count decreased and item still in cart
         }
        
     }
@@ -123,15 +123,17 @@ export default class Products {
     removeProductFromCart(productId) {
         //1. fetch value of localstorage's cartData. 
         var cart = JSON.parse(localStorage.getItem("cartData")) || [];
-        console.log("Cart BEFORE push: " + cart);
 
         // 3. Remove product from cart
-        cart.splice(cart.indexOf(cart.find((el) => el.productId === productId)));
-        console.log("Cart AFTER push: " + cart);
+        for(var i = 0; i < cart.length; i++) {
+            if(cart[i].productId === productId)
+                cart.splice(i, 1);
+        }
+        //cart.splice(cart.indexOf(cart.find((el) => el.productId === productId)));
 
         // 4. store the updated cart in local storage
         localStorage.setItem("cartData", JSON.stringify(cart));
-        console.log("cart Added to LS");
+        console.log("Product removed from cart");
     }
 
     /* 

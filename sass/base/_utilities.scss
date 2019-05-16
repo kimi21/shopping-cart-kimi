@@ -80,6 +80,15 @@
 
 }
 
+.modal-open {
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 999;
+}
+
+.dark-bg {
+    background-color: $color-black;
+}
 
 .text-bold {
     font-weight: 800;

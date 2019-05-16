@@ -1,9 +1,13 @@
 .main {
 
-    &__carousel__img {
-    width: 100%;
-    height: auto;
+    &__carousel {
+        position: relative;
 
+        &__img {
+            display: none;
+            // width: 100%;
+            // height: auto;
+        }
     }
 
     &__carousel__indicators {

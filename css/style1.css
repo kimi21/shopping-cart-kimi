@@ -155,6 +155,14 @@ Login(index.html) and register.html
     .show-on-desktop {
       display: inline-block; } }
 
+.modal-open {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999; }
+
+.dark-bg {
+  background-color: #000; }
+
 .text-bold {
   font-weight: 800; }
 
@@ -463,9 +471,10 @@ input.effect:invalid ~ input[type="submit"] {
       width: 80%;
       margin: 0 auto; } }
 
-.main__carousel__img {
-  width: 100%;
-  height: auto; }
+.main__carousel {
+  position: relative; }
+  .main__carousel__img {
+    display: none; }
 
 .main__carousel__indicators {
   position: relative;
@@ -555,7 +564,7 @@ input.effect:invalid ~ input[type="submit"] {
   position: absolute;
   right: 0;
   top: 6.8rem;
-  height: 100%;
+  height: 90vh;
   border: 1px solid #ebebeb;
   z-index: 100;
   margin-top: 0;
@@ -594,7 +603,8 @@ input.effect:invalid ~ input[type="submit"] {
       left: 50%;
       transform: translate(-50%, -50%); }
     .cart-modal__body .cart-dynamic {
-      background-color: #ebebeb; }
+      background-color: #ebebeb;
+      overflow: scroll; }
     .cart-modal__body__item {
       display: flex;
       background-color: #fff;
@@ -648,6 +658,8 @@ input.effect:invalid ~ input[type="submit"] {
         margin-left: 2rem; }
   .cart-modal__bottom {
     width: 100%;
+    position: absolute;
+    bottom: 0;
     background-color: #ebebeb;
     color: #3f3f3f;
     padding: 2.4rem 1rem;
