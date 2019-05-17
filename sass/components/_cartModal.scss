@@ -16,14 +16,15 @@
     right: 0;
     top: 6.8rem;
     height: 90vh;
-    border: 1px solid $color-grey-light;
+    // border: 1px solid $color-grey-light;
     z-index: 100;
     margin-top: 0;
     width: 100%;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    z-index: 999;
 
     &__head {
 
@@ -53,6 +54,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        overflow-y: auto;
 
         &--empty {
             width: 100%;
@@ -65,7 +67,7 @@
 
         .cart-dynamic {
             background-color: $color-grey-light;
-            overflow: scroll;
+            // overflow: scroll;
         }
 
         &__item {
@@ -151,8 +153,8 @@
 
     &__bottom {
         width:100%; 
-        position: absolute;
-        bottom: 0;
+        // position: absolute;
+        // bottom: 0;
 
         background-color: $color-grey-light;
         color: $color-grey-dark; 

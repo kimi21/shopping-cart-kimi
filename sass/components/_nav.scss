@@ -104,13 +104,18 @@
         &__cart-link {
             clear: left; 
             margin-top: 1.8rem; 
-            padding: 0 1rem;    //for wider touch area on cart icon
+            padding: .6rem 1rem 0;    //for wider touch area on cart icon
             
             display: flex; 
             align-items: center;
+            background-color: $color-grey-light;
             
             @include respond(tab-port) { 
                 margin-top: 1.1rem;
+            }
+
+            @include respond(tab-landscape) { 
+                padding: 1rem 1rem 0;
             }
 
             &__img {

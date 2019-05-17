@@ -18,6 +18,30 @@ export default class Utilities {
     }
 
 
+    showAsErrorText(el) {
+        //add err-input class and remove ok-input
+        if(!(el.classList.contains('err-input')))
+            el.classList.add('err-input');
+
+        //remove ok-input if it exists
+        if(el.classList.contains('ok-input')) {
+           el.classList.remove('ok-input');
+        }
+    }
+
+
+    showAsOkText(el) {
+        //add ok-input class and remove error-input
+        if(!(el.classList.contains('ok-input')))
+            el.classList.add('ok-input');
+
+        //remove err-input if it exists
+        if(el.classList.contains('err-input')) {
+           el.classList.remove('err-input');
+        }
+    }
+
+
     show(el) {
 
         //check if show doesn't already exist

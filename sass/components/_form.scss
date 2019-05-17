@@ -124,7 +124,15 @@ input.effect:invalid ~ input[type="submit"] {
 }
 
 .form-input-error {
-  
+    font-size: 1.6rem;
+}
+
+.ok-input {
+    color: $color-green;
+}
+
+.err-input {
+  color: $color-primary;
 }
 
 

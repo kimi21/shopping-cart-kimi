@@ -51,3 +51,12 @@ a {
 a:hover {
     cursor: pointer;
 }
+
+.noscript {
+    padding: 2rem;
+    border: 1px solid $color-primary;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 600;
+}
+

@@ -28,21 +28,29 @@ export default class FormView {
     }
 
 
-    displayError(el, error) {
-        // 1. get the error div in element
-        let container = el.parentElement;
-        let queryString = '.' + container.className + ' .js-form__input-error';
-        let errorDiv = document.querySelector(queryString);
+    displayOkMessage (el, msg) {
         
-        this.utility.show(errorDiv);
+        let queryString = '.' + el.parentElement.className + ' .js-form__input-error';
+        let msgDiv = document.querySelector(queryString);
+        this.utility.show(msgDiv);
+        this.utility.showAsOkText(msgDiv);
+        msgDiv.innerHTML = msg;
+    }
 
-        errorDiv.innerHTML = error;
+
+    displayMessage(el, msg) {
+        
+        let queryString = '.' + el.parentElement.className + ' .js-form__input-error';
+        let errorDiv = document.querySelector(queryString);
+        this.utility.show(errorDiv);
+        this.utility.showAsErrorText(errorDiv);
+        errorDiv.innerHTML = msg;
     }
 
 
     checkForEmpty(input) {
         if(input.value === "") {
-            this.displayError(input.parentElement, errorNotifications.emptyInput);
+            this.displayMessage(input.parentElement, errorNotifications.emptyInput);
 
             //bring focus to the input field
             input.focus();
@@ -53,28 +61,31 @@ export default class FormView {
     }
 
 
+    confirmPassword(password, confirmPassword) {
+        if(password.value !== confirmPassword.value)
+            return false;
+        else
+            return true;
+    }
+
+
     validateEmail(email) {
         var validEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         if(email.value == '') {
-            // this.displayError(email.parentElement, errorNotifications.emptyInput);
             
-            //bring focus to the input field
-            // email.focus();
-            return errorNotifications.emptyInput;
+            return 0;
+            // return errorNotifications.emptyInput;
 
-        } else {    //email was not empty
-            if(!validEmail.test(email.value)) {
-                //render error on UI
-                // this.displayError(email.parentElement, errorNotifications.invalidEmail);
-                
-                //bring focus to the input field
-                // email.focus();
-                return errorNotifications.invalidEmail;
+        } else { //email was not empty
+               
+            if(!validEmail.test(email.value)) { //email is invalid
+                // return errorNotifications.invalidEmail;
+                return 2;
     
             } else {    //email was valid
                         //hide error div if previously shown
-                return false;
+                return 1;
             }
         }
     }
@@ -83,9 +94,7 @@ export default class FormView {
     scorePassword(password) {
         let score = 0;
         if (!password.value) {
-            this.displayError(password.parentElement, errorNotifications.emptyInput);
-            //bring focus to the input field
-            
+           
             return score;
         }
            
@@ -118,14 +127,7 @@ export default class FormView {
 
     checkPasswordStrength(password) {
         let score = this.scorePassword(password);
-        if (score > 80)
-            return "Your password is strong";
-        if (score > 60)
-            return "Your password is good";
-        if (score >= 30)
-            return "Your password is weak";
-    
-        return errorNotifications.emptyInput;
+        return score;
     }
 
 }

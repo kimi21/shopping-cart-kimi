@@ -13,7 +13,7 @@ export default class ProductsController {
     }
 
     initialize() {
-        
+      
         // this.afterInitialize();
     }
 

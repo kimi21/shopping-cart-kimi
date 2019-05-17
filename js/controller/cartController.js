@@ -12,31 +12,39 @@ export default class CartController {
         this.utility = new Utility();
     }
 
-
-    toggleCartDisplayFromHeader() {
-        
-        //listen for click on cart icon in header
-        elements.cartIconInHeader.addEventListener('click', (event) => {
-            
-            let isDisplayed = this.utility.toggleDisplay(elements.cartModal);
+    displayModal() {
+        document.querySelector('.body').classList.add('modal-open');
+        document.querySelector('.modal').classList.add('modal-bg-style');
+    }
 
 
+    removeModal() {
+        document.querySelector('.body').classList.remove('modal-open');
+        document.querySelector('.modal').classList.remove('modal-bg-style');
+    }
+
+
+    toggleCartDisplay() {
+        let isDisplayed = this.utility.toggleDisplay(elements.cartModal);
             //if cart is shown, and cart data is not null
             if(isDisplayed) {
-                 //add modal open class to body
-                document.querySelector('.body').classList.add('modal-open');
+                this.displayModal();
 
                 if(localStorage.getItem('cartData') !== null)
                     this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
             } else {
-                //remove modal open class to body
-                document.querySelector('.body').classList.remove('modal-open');
-
+                this.removeModal();
             }
-
-        });
-        
     }
+
+
+    toggleCartDisplayFromHeader() {
+        //listen for click on cart icon in header
+        elements.cartIconInHeader.addEventListener('click', (event) => {
+            this.toggleCartDisplay();
+        });
+    }
+
 
     toggleCartDisplayFromHamburgerMenu() {
         //listen for click on cart icon in hamburger Menu
@@ -62,7 +70,6 @@ export default class CartController {
         // 1. get the corresponding product of this add btn
         productData = this.view.getProductClicked(event); 
         success = this.model.increaseProductCount(productData);
-
         
         if(success) {
             //if the element's count was increased
@@ -81,19 +88,17 @@ export default class CartController {
         productData = this.view.getProductClicked(event); 
         success = this.model.decreaseProductCount(productData);
 
-        
         if(success) //if the element's count was reduced
             this.view.updateUI(event, productData.productCurrentCount);
         else    //element's removed from cart since count reduced to 0
             this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
     
         this.utility.updateHeaderNav(this.utility.getCartLength());
-    
     }
+
 
     //handles click event of minus btn on product in cart
     cartEventHandler() {
-
         elements.cartModal.addEventListener('click', (event) => {
             event.preventDefault();
 
@@ -103,8 +108,11 @@ export default class CartController {
             if(event.target.matches('.js-btn-add')) { 
                 this.handlePlusClick(event);
             }
+            if(event.target.matches('.btn-close')) {
+                this.toggleCartDisplay();
+            }
+
         });   
     }
-    
 
 } 

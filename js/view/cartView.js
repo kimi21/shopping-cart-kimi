@@ -1,9 +1,13 @@
 import { elements } from './base';
-import { miscData } from './miscData'
+import { miscData } from './miscData';
+import Utility from '../Utility/utilities';
 
 export default class CartView {
     
-    constructor() {}
+    constructor() {
+        this.totalBill = 0;
+        this.utility = new Utility();
+    }
 
     renderProductOnCart(product) {
 
@@ -49,17 +53,29 @@ export default class CartView {
         //     elements.countOnCart.textContent = "( " + cartTotalCount + (cartTotalCount === 1 ? ' item )' : ' items )');
         if(elements.cartDynamic)
             elements.cartDynamic.insertAdjacentHTML('beforeend', markup);
-        if(elements.cartBillAmount)
-            elements.cartBillAmount.innerHTML = `Rs. ${product.productCurrentCount * product.productPrice}`;
+        
     }
 
+    calculateBill(product) {
+        let productBill = (+(product.productCurrentCount)) * (+(product.productPrice));
+        this.totalBill += productBill;
+    }
 
     renderResult(products) {
         
         //emty the contents of cart dynamic div
         elements.cartDynamic.innerHTML = "";
         products.forEach(this.renderProductOnCart);
+
+        products.forEach((elem) => this.calculateBill(elem));
+
+        if(elements.cartBillAmount)
+            elements.cartBillAmount.innerHTML = `Rs. ${this.totalBill}`;
+        if(elements.countInCart) {
+            elements.countInCart.innerHTML = `(${this.utility.getCartLength()} items)`;
+        }
     }
+
 
     getProductClicked(event) {
         
@@ -69,6 +85,7 @@ export default class CartView {
         const productData = event.target.closest('.cart-modal__body__item').dataset; 
         return productData;
     }
+
 
     updateUI(event, count) {
         

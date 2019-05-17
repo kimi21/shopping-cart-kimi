@@ -31,7 +31,6 @@ var cartData;
         /**
          * PLP Controller
          */
-        
         console.log("The URL contains plp");
         var productsController = new ProductsController(state);
         productsController.loadProducts();
@@ -39,17 +38,16 @@ var cartData;
 
     } else if(window.location.href.indexOf('index.html') > 0) {
         
-        var form = new FormController(document.forms[0]);
-        form.formEventListener();
-        // form.validateEmail();
-        // form.readyForm();
-    }
+        var formController = new FormController(document.forms[0]);
+        formController.initialize();
+        formController.formEventListener();
+
+    } else if(window.location.href.indexOf('register.html') > 0) {
+        var formController = new FormController(document.forms[0]);
+        formController.initialize();
+        formController.formEventListener();
+    } 
 })();
-
-
-
-
-
 
 
 /**
@@ -61,6 +59,12 @@ var cartController = new CartController(state);
 cartController.toggleCartDisplayFromHeader();
 cartController.toggleCartDisplayFromHamburgerMenu();
 cartController.cartEventHandler();
+
+
+
+
+
+
 
 
 /**
@@ -75,16 +79,6 @@ cartController.cartEventHandler();
 
 
 
-
-
-
-
-
-
-
-
-
-//toggle display cart on click of cart icon in the header
 
 
 
@@ -171,55 +165,9 @@ cartController.cartEventHandler();
 
 
 
-// const hide = (el) => {
-
-//     //check if class exists before removing it
-//     if (el.classList.contains('show')){
-//         el.classList.remove('show');
-//     }
-//     el.classList.add('hide');
-
-// }
-
-// const display = (el) => {
-//     if (el.classList.contains('hide')){
-//         el.classList.remove('hide');
-//     }
-//     el.classList.add('show');
-// }
 
 
 
-// // elements.cartIconInHamburgerMenu.addEventListener('click', function() {
-    
-// //     //1. hide the hamburger menu div
-// //     hide(elements.hamburgerMenuDiv);
-
-// //     //2. show the cart modal
-// //     display( elements.cartModal);
-
-    
-// // });
-
-
-
-
-
-
-
-
-
-// //elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
-
-
-
-// // var btnMinus = document.querySelector('.js-btn-minus');
-
-// // if(btnMinus) {
-// //     btnMinus.addEventListener('click', () => {
-// //         console.log('HelloWorld');
-// //     })
-// // }
 
 
 

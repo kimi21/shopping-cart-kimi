@@ -1,5 +1,6 @@
 export const elements = {
     productsContainer: document.querySelector('.products-container'),
+    countInCart: document.querySelector('.text-light'),
     homePageContent: document.querySelector('.js-home'),
     carouselContainer: document.querySelector('.main__carousel'),
     categoryCards: document.querySelectorAll('.js-home .js-home-card'),
@@ -18,7 +19,9 @@ export const elements = {
     totalBill: document.querySelector('.cart-bottom-amount'),
     minusBtn: document.querySelector('.js-btn-minus'),
     addBtn: document.querySelector('.js-btn-add'),
-    errorMsg: document.querySelector('.js-form__input-error')
+    errorMsg: document.querySelector('.js-form__input-error'),
+    closeCartBtn: document.querySelector('.cart-modal__head__btn-close'),
+    submitBtn : document.querySelector('.form__submit-btn')
 };
 
 
