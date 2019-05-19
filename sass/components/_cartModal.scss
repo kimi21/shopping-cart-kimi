@@ -1,6 +1,6 @@
 
 .cart {
-    @include respond(tab-landscape) {       
+    @include respond(tablet-landscape-up) {       
         // padding: 2rem 6rem;
         width: 40%;
         margin: 0 auto;
@@ -8,7 +8,7 @@
 }
 .cart-modal {
 
-    @include respond(tab-landscape) {      
+    @include respond(tablet-landscape-up) {      
         width: 40%;
     }
 

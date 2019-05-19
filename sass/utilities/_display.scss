@@ -1,0 +1,67 @@
+/*---------------------------------*\
+    #UTILITIES
+\*---------------------------------*/
+
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.menu-list {
+    list-style-type: none;
+}
+
+
+
+.hide { 
+    display: none;
+}
+
+.hide-below-desktop {
+    display: none;
+}
+
+.hide-on-mobile {
+    display: none;
+}
+
+.hide-on-tablet {
+    @include respond(tablet-portrait-up) {    // @600px
+        display: none;
+    }
+}
+
+.show { 
+    display: block;
+}
+
+.show-on-tablet {
+    @include respond(tablet-portrait-up) {    // @600px
+        display: block;
+    }
+}
+
+.show-sidemenu-on-tablet {
+    @include respond(tablet-portrait-up) {    // @600px
+        display: inline-block;
+    }
+}
+
+.show-on-desktop {
+
+    @include respond(tablet-landscape-up) {    // @ 801px
+        display: inline-block;
+    }
+
+    display: none;
+
+}
+

@@ -11,12 +11,14 @@ export default class HomeController {
         this.model = new Home();
         this.utility = new Utility();
         this.state = state;
-        this.carouselController = new CarouselController(elements.carouselContainer);
+        this.carouselController = new CarouselController();        
     }
 
     initialize() {
         this.utility.updateHeaderNav(this.utility.getCartLength());
         this.carouselController.loadCarousel();
+        this.carouselController.carouselEvenListener();
+
     }
 
     async loadCategories() {

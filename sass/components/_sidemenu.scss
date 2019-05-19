@@ -1,12 +1,12 @@
 
 .sidemenu-container {
 
-    @include respond(tab-port) {    // @600px
+    @include respond(tablet-portrait-up) {    // @600px
         width: 16rem;
         font-size: 1.6rem;
     }
 
-    @include respond(desktop) {    // @600px
+    @include respond(desktop-up) {    // @600px
         width: 18rem;
     }
 

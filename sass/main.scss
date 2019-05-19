@@ -1,14 +1,22 @@
-@import "abstracts/functions";
-@import "abstracts/mixins/mediaQueriesMixin";
-@import "abstracts/mixins/colorsMixin";
-@import "abstracts/mixins/pxToRemMixin";
+@import "vendors/fonts";
+
 @import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixin";
+// @import "abstracts/mixins/breakpoint";
+// @import "abstracts/mixins/mediaQueriesMixin";
+// @import "abstracts/mixins/colorsMixin";
+// @import "abstracts/mixins/pxToRemMixin";
+
+@import "utilities";
+
+@import "themes/theme1/themeMain";
 
 @import "base/animations";
 @import "base/base";
 @import "base/typography";
-@import "base/utilities";
 
+@import "components/button";
 @import "components/nav";
 @import "components/form";
 @import "components/main";
@@ -19,8 +27,6 @@
 @import "components/cartModal";
 @import "components/hamburgerMenu";
 
-
-
 @import "layout/header";
 @import "layout/footer";
 
@@ -29,8 +35,3 @@
 @import "pages/index";
 @import "pages/plp";
 @import "pages/register";
-
-
-/*
-    #LOGIN - TEXTBOX ANIMATION
-*/

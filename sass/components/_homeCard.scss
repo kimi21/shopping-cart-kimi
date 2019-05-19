@@ -1,3 +1,4 @@
+
 .card {
     display: flex;
     justify-content: space-around;
@@ -9,7 +10,7 @@
     -webkit-border-radius:	0 0 6px 6px; /* Saf3+, Chrome */
     border-radius:	0 0 6px 6px; /* Opera 10.5, IE 9 */
 
-    @include respond(tab-port) {
+    @include respond(tablet-portrait-up) {
         padding: 8rem 2rem;
     }
 
@@ -31,11 +32,11 @@
         width: 40%;
 
         img {
-            width: 18rem;
+            width: 100%;
             margin: 0 auto;
             display: block;
 
-            @include respond(tab-port) {  
+            @include respond(tablet-portrait-up) {  
                 width: 24rem;
             }
          }
@@ -46,7 +47,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        letter-spacing: .03rem;
         width: 60%;
 
         h2 {
@@ -54,8 +54,9 @@
             font-weight: 600;
             margin: 0;
             text-transform: capitalize;
+            color: theme-color('foreground', 'dark');
 
-            @include respond(tab-port) {  
+            @include respond(tablet-portrait-up) {  
                 font-size: 3.2rem;
             }
         }
@@ -66,28 +67,16 @@
             margin: 1rem 1rem 2rem;
             text-align: center;
 
-            @include respond(tab-port) { 
+            @include respond(tablet-portrait-up) { 
                 margin: 1.4rem 1.4rem 2.4rem; 
                 font-size: 1.8rem;
             }
         }
         
         &__btn {
-            padding: .8rem 1.6rem;
-            background-color: rgb(190, 4, 97);
-            color: #fff;
-            border-radius: 0;
-            font-size: 1.6rem;
-
-            @include respond(tab-port) {  
-                font-size: 1.8rem;
-                padding: 1.6rem 2.6rem;
-            }
-
-            &:link,
-            &:visited{
-                color: #fff;
-                border-radius: 0;
+            
+            @include respond(tablet-portrait-up) {  
+               
             }
         }
     }
@@ -96,24 +85,14 @@
 
  
  .card::after {
-    content: ' ';
+    
+    content: "";
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 75%);
+    height: 8px;
+    width: 100%;
     position: absolute;
-    // top: 1px;
-    bottom: 0;
-    width: 80%;
-    // height: 20px;
-    margin: 0;
+    left: 0;
+    top: 15px;
     z-index: -1;
-    // -webkit-box-shadow: 0px 4px 13px -6px rgba(92,92,92,1);
-    // -moz-box-shadow: 0px 4px 13px -6px rgba(92,92,92,1);
-    // box-shadow: 0px 10px 13px -6px rgba(92,92,92,1);
-    // border-radius: 10px;
 
-    // clip: rect(0 950px 30px -3px);
  }
-
-//  .card-shadow {
-//     -webkit-box-shadow: 0px 4px 10px -6px rgba(92,92,92,0.8);
-//     -moz-box-shadow: 0px 4px 10px -6px rgba(92,92,92,0.8);
-//     box-shadow: 0px 10px 10px -6px rgba(92,92,92,0.8);
-// }

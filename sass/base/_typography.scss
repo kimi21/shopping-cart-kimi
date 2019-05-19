@@ -10,14 +10,14 @@ Login(index.html) and register.html
     margin-bottom: 4.5%;
     text-align: center;
 
-    @include respond(tab-port) { 
+    @include respond(tablet-portrait-up) { 
        
         font-size: 4rem;
         margin-bottom: 4.5%;
         text-align: center;
     }
 
-    @include respond(tab-landscape) {
+    @include respond(tablet-landscape-up) {
         @include fontSize(60px);    //takes font size in px and converts to rem
         // font-size: 3.2rem;
         text-align: left;
@@ -29,7 +29,7 @@ Login(index.html) and register.html
     text-align: center;
     margin-bottom: 4.4rem;
 
-    @include respond(tab-port) { 
+    @include respond(tablet-portrait-up) { 
         font-size: 1.8rem;
         text-align: left;
         margin-bottom: 8%;

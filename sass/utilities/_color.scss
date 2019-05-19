@@ -1,0 +1,25 @@
+.bgcolor {
+    background-color: $color-grey-light;
+}
+
+.bg-color-change {
+
+    @include respond(tablet-portrait-up) {    // @600px
+        background-color: $color-grey-light;
+   }
+   
+   background-color: $color-white;
+}
+
+.active {
+    // @include darken-color('background-color', #bbb);
+    background-color: #000;
+}
+
+.deactive {
+    background-color: darken(#bbb, 5%);
+}
+
+.dark-bg {
+    background-color: $color-black;
+}

@@ -1,0 +1,41 @@
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    letter-spacing: 0.03rem;
+    text-transform: capitalize;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    border: 1px solid transparent;
+    padding: .8rem 1.4rem;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    transition: color .95s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: theme-color('primary', 'base');
+    color: theme-color('primary','light');
+}
+
+.btn:hover,
+.btn:active {
+    background-color: theme-color('primary', 'dark');
+    color: theme-color('primary','light');
+}
+
+.btn-lg {
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+}

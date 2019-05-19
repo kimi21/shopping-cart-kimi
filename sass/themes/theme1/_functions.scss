@@ -1,0 +1,15 @@
+@import "themeColors";
+
+$color-key: 'base' !default;
+
+@function theme-color($key: 'primary', $variant: $color-key) {
+    $color: null;
+    //get the color spectrum
+    $color-spectrum: map-get($theme-colors, $key);
+
+    //get the color variant
+    @if $color-spectrum {
+        $color: map-get($color-spectrum, $variant);
+    }
+    @return $color;
+}

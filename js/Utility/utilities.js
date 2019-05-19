@@ -46,7 +46,7 @@ export default class Utilities {
 
         //check if show doesn't already exist
         if(!(el.classList.contains('show')))
-            el.classList.add('hide');
+            el.classList.add('show');
 
         //remove hide if it exists
         if(el.classList.contains('hide')) {
@@ -64,6 +64,33 @@ export default class Utilities {
         //remove show if it exists
         if(el.classList.contains('show')) {
            el.classList.remove('show');
+        }
+    }
+
+
+
+    active(el) {
+
+        //check if active doesn't already exist
+        if(!(el.classList.contains('active')))
+            el.classList.add('active');
+
+        //remove deactive if it exists
+        if(el.classList.contains('deactive')) {
+           el.classList.remove('deactive');
+        }
+    }
+
+
+    deactive(el) {
+
+        //check if active doesn't already exist
+        if(!(el.classList.contains('deactive')))
+            el.classList.add('deactive');
+
+        //remove deactive if it exists
+        if(el.classList.contains('active')) {
+           el.classList.remove('active');
         }
     }
 

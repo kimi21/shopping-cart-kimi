@@ -1,7 +1,7 @@
 
 .login-content {
 
-    @include respond(tab-port) {    // @ 600px
+    @include respond(tablet-portrait-up) {    // @ 600px
         .login-flex-container {
             .register__header {
                 flex: 1;

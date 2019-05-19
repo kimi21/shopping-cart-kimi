@@ -4,3 +4,18 @@
     $widthInEm: $widthInPixel / $fontInPixel;
     @return #{$widthInEm}em;
 }
+
+@function darkenColor($color) {
+    $color-dark: darken($color, 20%);
+    @return #{$color-dark};
+}
+
+@function if($condition, $if-value, $else-value) {
+    @if ($condition == true) {
+        @return $if-value;
+    } @else {
+        @return $else-value;
+    }
+}
+
+

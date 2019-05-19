@@ -13,7 +13,7 @@ export default class HomeView {
                 <div class="card__content">
                     <h2>${category.name}</h2>
                     <span>${category.description}</span>
-                    <a href="#" class="btn card__content__btn">
+                    <a href="#" class="btn btn-primary card__content__btn p-4">
                         Explore ${category.name}
                     </a>
                 </div>

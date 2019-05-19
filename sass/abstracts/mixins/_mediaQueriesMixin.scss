@@ -9,8 +9,8 @@
 
 
     $breakpoint argument choices:
-    - tab-port
-    - tab-landscape
+    - tablet-portrait-up
+    - tablet-landscape-up
     - desktop
     - big-desktop
 
@@ -24,16 +24,16 @@
 
 
 @mixin respond($breakpoint) {
-    @if $breakpoint == tab-port {
+    @if $breakpoint == tablet-portrait-up {
         @media (min-width: calc-width-in-em(600, 16)) { @content };     // @600px => 600px/16px = 37.5em 
     }
-    @if $breakpoint == tab-landscape {
+    @if $breakpoint == tablet-landscape-up {
         @media (min-width: calc-width-in-em(801, 16)) { @content };     // @801px
     }
-    @if $breakpoint == desktop {
+    @if $breakpoint == desktop-up {
         @media (min-width: calc-width-in-em(1025, 16)) { @content };    // @1025px
     }
-    @if $breakpoint == big-desktop {
+    @if $breakpoint == big-desktop-up {
         @media (min-width: calc-width-in-em(1281, 16)) { @content };    // @1281px
     }
 }
