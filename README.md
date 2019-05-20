@@ -17,7 +17,9 @@ In order to run the project:
 - On line no. 11 you you should see this:
     @import "themes/theme1/themeMain";
 - Change 'theme1' to 'theme2'
-- Run the follwing command in the console : 
+- Run the follwing commands in the console : 
     npm run compile:sass
+    live-server
+  
     
- You should see a dark theme of this app.
+ You should see a dark theme of this app!
