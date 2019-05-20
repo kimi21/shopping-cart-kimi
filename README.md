@@ -18,8 +18,8 @@ In order to run the project:
     @import "themes/theme1/themeMain";
 - Change 'theme1' to 'theme2'
 - Run the follwing commands in the console : 
-- npm run compile:sass
-- live-server
+  1. npm run compile:sass
+  2. live-server
   
     
  You should see a dark theme of this app!
