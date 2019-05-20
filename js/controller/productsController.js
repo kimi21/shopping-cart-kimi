@@ -12,10 +12,9 @@ export default class ProductsController {
         this.state = state;
     }
 
-    initialize() {
-      
-        // this.afterInitialize();
-    }
+
+    initialize() {}
+
 
     async loadProducts() {
 
@@ -38,6 +37,17 @@ export default class ProductsController {
     }
 
 
+    wobleCart() {
+        elements.cartIconInHeader.style.webkitAnimationPlayState = "running";
+        elements.cartIconInHeader.style.animationPlayState = "running";
+    }
+
+    pauseWobleCart() {
+        elements.cartIconInHeader.style.webkitAnimationPlayState = "paused";
+        elements.cartIconInHeader.style.animationPlayState = "paused";
+    }
+
+
     buyProduct() {
         
         if(elements.plpPageContent) {
@@ -56,9 +66,14 @@ export default class ProductsController {
                 let isProductAdded = this.model.addToCart(productData);
                 console.log("Is product added to cart ? " + isProductAdded);
     
-                //4. if the product is added to cart, update cart count in header
+                //4. if the product is added to cart, update cart count in header AND 
+                //woble(animation) the cart icon in header
                 if(isProductAdded) {
                     this.utility.updateHeaderNav(this.utility.getCartLength());
+                    setTimeout(this.wobleCart(), 1);
+                    setTimeout(this.pauseWobleCart(),4);
+                    // setTimeout(clearInterval(timeout),100);
+                    // pauseWobleCart
                 }
             });
         }

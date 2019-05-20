@@ -35,7 +35,7 @@ export default class CartController {
                 if(localStorage.getItem('cartData') !== null)
                     this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
                 
-                this.view.updateCartModalHeader();
+                this.view.updateCartBillUI();
             } else {
                 this.removeModal();
             }
@@ -55,9 +55,7 @@ export default class CartController {
         elements.cartIconInHamburgerMenu.addEventListener('click', (event) => {
             
             let isDisplayed = this.utility.toggleDisplay(elements.cartModal);
-
-            //if cart is shown, load cart data
-            if(isDisplayed) {
+            if(isDisplayed) {   //if cart is shown, load cart data
                 this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
             }
             
@@ -67,43 +65,48 @@ export default class CartController {
 
     //handles click event of add btn on product in cart
     handlePlusClick() {  
-        
-        let productData;
+        let product;
         let success;
 
         // 1. get the corresponding product of this add btn
-        productData = this.view.getProductClicked(event); 
-        success = this.model.increaseProductCount(productData);
+        product = this.view.getProductClicked(event); 
+        success = this.model.increaseProductCount(product);
         
         if(success) {
             //if the element's count was increased
-            this.view.updateUI(event, productData.productCurrentCount);
-            this.utility.updateHeaderNav(this.utility.getCartLength());
-            this.view.updateCartModalHeader();
+            this.view.updateProductInCartUI(event, product); 
+            this.utility.updateHeaderNav(this.utility.getCartLength());           
+            this.view.updateCartBillUI();
         }
             
     }
 
 
     handleMinusClick() {
-        let productData;
-        let success;
+        let product;
+        let countReduced;
 
         // 1. get the corresponding product of this minus btn
-        productData = this.view.getProductClicked(event); 
-        success = this.model.decreaseProductCount(productData);
+        product = this.view.getProductClicked(event); 
 
-        if(success) //if the element's count was reduced
-            this.view.updateUI(event, productData.productCurrentCount);
-        else    //element's removed from cart since count reduced to 0
+        //2. decrease product's count in localstorage(LS)/ remove product 
+        // from LS if count reduced to 0
+        countReduced = this.model.decreaseProductCount(product);
+
+        if(countReduced) 
+            this.view.updateProductInCartUI(event, product);
+
+        else {   //element's removed from cart since count reduced to 0
             this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
-    
+            this.view.updateCartBillInfoUI(JSON.parse(localStorage.getItem('cartData')));
+        } 
+        
         this.utility.updateHeaderNav(this.utility.getCartLength());
-        this.view.updateCartModalHeader();
+        this.view.updateCartBillUI();
     }
 
 
-    //handles click event of minus btn on product in cart
+    //handles click events in cart
     cartEventHandler() {
         elements.cartModal.addEventListener('click', (event) => {
             event.preventDefault();

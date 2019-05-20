@@ -49,14 +49,15 @@ export default class CartView {
             </div>
         `;        
         
-        // if(elements.countOnCart)
-        //     elements.countOnCart.textContent = "( " + cartTotalCount + (cartTotalCount === 1 ? ' item )' : ' items )');
         if(elements.cartDynamic)
             elements.cartDynamic.insertAdjacentHTML('beforeend', markup);
         
     }
 
-    calculateBill(product) {
+    calculateBill(products) {
+
+        products.forEach((elem) => this.calculateBill(elem));
+
         let productBill = (+(product.productCurrentCount)) * (+(product.productPrice));
         this.totalBill += productBill;
     }
@@ -66,18 +67,32 @@ export default class CartView {
         //emty the contents of cart dynamic div
         elements.cartDynamic.innerHTML = "";
         products.forEach(this.renderProductOnCart);
-
-        products.forEach((elem) => this.calculateBill(elem));
-
-        if(elements.cartBillAmount)
-            elements.cartBillAmount.innerHTML = `Rs. ${this.totalBill}`;
-       
     }
 
-    updateCartModalHeader() {
-        if(elements.countInCart) {
-            elements.countInCart.innerHTML = `(${this.utility.getCartLength()} items)`;
+
+    updateCartBillUI() {
+        let totalBill = 0;
+        let totalProducts = 0;
+
+        let cartData = JSON.parse(localStorage.getItem('cartData'));
+        let cartLength = 0;
+
+        if(cartData !== null) {
+            cartData.forEach((product) => {
+                totalProducts += +(product.productCurrentCount);
+                totalBill += (+(product.productCurrentCount)) * (+(product.productPrice));
+            });
         }
+
+        //Update # of items in cart header
+        if(elements.countInCart) {
+            elements.countInCart.innerHTML = `(${totalProducts} items)`;
+        }
+
+        //Update total bill items in cart bottom
+        if(elements.cartBillAmount)
+            elements.cartBillAmount.innerHTML = `Rs. ${totalBill}`;
+       
     }
 
     getProductClicked(event) {
@@ -90,11 +105,17 @@ export default class CartView {
     }
 
 
-    updateUI(event, count) {
-        
+    updateProductInCartUI(event, product) {
+        let productBill = 0;
+
         //find the span in this event and set its content to the count of the product
         const countSpan = event.target.closest('.cart-modal__body__item').querySelector('.cart-item-qauntity'); 
-        countSpan.innerHTML = count;
+        const productBillDiv = event.target.closest('.cart-modal__body__item').querySelector('.cart-item-desc__info-right'); 
+        
+        productBill = +(product.productCurrentCount) * +(product.productPrice);
+        productBillDiv.innerHTML = `Rs. ${productBill}`;
+
+        countSpan.innerHTML = product.productCurrentCount;
     }
 }
 

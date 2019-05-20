@@ -1082,6 +1082,105 @@ auto - for classes that set the margin to auto
   100% {
     opacity: 1; } }
 
+.cart-woble {
+  animation: wobleAnimation linear 1s;
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%;
+  animation-play-state: paused;
+  -webkit-animation: wobleAnimation linear 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-play-state: paused;
+  -moz-animation: wobleAnimation linear 1s;
+  -moz-animation-iteration-count: 1;
+  -moz-transform-origin: 50% 50%;
+  -o-animation: wobleAnimation linear 1s;
+  -o-animation-iteration-count: 1;
+  -o-transform-origin: 50% 50%;
+  -ms-animation: wobleAnimation linear 1s;
+  -ms-animation-iteration-count: 1;
+  -ms-transform-origin: 50% 50%; }
+
+@keyframes wobleAnimation {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg); }
+  15% {
+    transform: translate(-25px, 0px) rotate(-5deg); }
+  30% {
+    transform: translate(20px, 0px) rotate(3deg); }
+  45% {
+    transform: translate(-15px, 0px) rotate(-3deg); }
+  60% {
+    transform: translate(10px, 0px) rotate(2deg); }
+  75% {
+    transform: translate(-5px, 0px) rotate(-1deg); }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg); } }
+
+@-moz-keyframes wobleAnimation {
+  0% {
+    -moz-transform: translate(0px, 0px) rotate(0deg); }
+  15% {
+    -moz-transform: translate(-25px, 0px) rotate(-5deg); }
+  30% {
+    -moz-transform: translate(20px, 0px) rotate(3deg); }
+  45% {
+    -moz-transform: translate(-15px, 0px) rotate(-3deg); }
+  60% {
+    -moz-transform: translate(10px, 0px) rotate(2deg); }
+  75% {
+    -moz-transform: translate(-5px, 0px) rotate(-1deg); }
+  100% {
+    -moz-transform: translate(0px, 0px) rotate(0deg); } }
+
+@-webkit-keyframes wobleAnimation {
+  0% {
+    -webkit-transform: translate(0px, 0px) rotate(0deg); }
+  15% {
+    -webkit-transform: translate(-25px, 0px) rotate(-5deg); }
+  30% {
+    -webkit-transform: translate(20px, 0px) rotate(3deg); }
+  45% {
+    -webkit-transform: translate(-15px, 0px) rotate(-3deg); }
+  60% {
+    -webkit-transform: translate(10px, 0px) rotate(2deg); }
+  75% {
+    -webkit-transform: translate(-5px, 0px) rotate(-1deg); }
+  100% {
+    -webkit-transform: translate(0px, 0px) rotate(0deg); } }
+
+@-o-keyframes wobleAnimation {
+  0% {
+    -o-transform: translate(0px, 0px) rotate(0deg); }
+  15% {
+    -o-transform: translate(-25px, 0px) rotate(-5deg); }
+  30% {
+    -o-transform: translate(20px, 0px) rotate(3deg); }
+  45% {
+    -o-transform: translate(-15px, 0px) rotate(-3deg); }
+  60% {
+    -o-transform: translate(10px, 0px) rotate(2deg); }
+  75% {
+    -o-transform: translate(-5px, 0px) rotate(-1deg); }
+  100% {
+    -o-transform: translate(0px, 0px) rotate(0deg); } }
+
+@-ms-keyframes wobleAnimation {
+  0% {
+    -ms-transform: translate(0px, 0px) rotate(0deg); }
+  15% {
+    -ms-transform: translate(-25px, 0px) rotate(-5deg); }
+  30% {
+    -ms-transform: translate(20px, 0px) rotate(3deg); }
+  45% {
+    -ms-transform: translate(-15px, 0px) rotate(-3deg); }
+  60% {
+    -ms-transform: translate(10px, 0px) rotate(2deg); }
+  75% {
+    -ms-transform: translate(-5px, 0px) rotate(-1deg); }
+  100% {
+    -ms-transform: translate(0px, 0px) rotate(0deg); } }
+
 /*---------------------------------*\
     #COMMON STYLES
     In here, you will find some standard styles 
@@ -1877,7 +1976,7 @@ input.effect:invalid ~ input[type="submit"] {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  color: #6e6e6e; }
+  color: #353535; }
   @media (min-width: 37.5em) {
     .login-content {
       width: 80%;
@@ -1892,9 +1991,9 @@ input.effect:invalid ~ input[type="submit"] {
           justify-content: center;
           align-items: flex-start; }
           .login-content .login-flex-container .login__header .main__heading {
-            color: #6e6e6e; }
+            color: #353535; }
           .login-content .login-flex-container .login__header .main__sub-text {
-            color: #111; }
+            color: #6e6e6e; }
         .login-content .login-flex-container .flex-row {
           flex: 1;
           margin-left: 4rem; }
@@ -2079,7 +2178,7 @@ input.effect:invalid ~ input[type="submit"] {
       display: none; } }
 
 .login-content {
-  color: #6e6e6e; }
+  color: #353535; }
   @media (min-width: 37.5em) {
     .login-content .login-flex-container .register__header {
       flex: 1;
@@ -2089,6 +2188,6 @@ input.effect:invalid ~ input[type="submit"] {
       align-items: flex-start;
       margin-top: 2rem; }
       .login-content .login-flex-container .register__header .main__heading {
-        color: #6e6e6e; }
+        color: #353535; }
       .login-content .login-flex-container .register__header .main__sub-text {
-        color: #111; } }
+        color: #6e6e6e; } }

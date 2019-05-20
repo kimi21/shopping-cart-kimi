@@ -1,6 +1,6 @@
 
 .login-content {
-    color: theme-color('foreground', 'light');
+    color: theme-color('foreground', base);
     
     @include respond(tablet-portrait-up) {    // @ 600px
         .login-flex-container {
@@ -13,10 +13,10 @@
                 margin-top: 2rem;
 
                 .main__heading {
-                    color: theme-color('foreground', 'light');
+                    color: theme-color('foreground', 'base');
                 }
                 .main__sub-text {
-                    color: theme-color('foreground', 'dark');
+                    color: theme-color('foreground', 'light');
                 }
             }
         }

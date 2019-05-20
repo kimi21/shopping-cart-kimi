@@ -21,6 +21,7 @@ export default class HomeController {
 
     }
 
+
     async loadCategories() {
     
         //1) create new Home (model) object and add to state
@@ -35,13 +36,7 @@ export default class HomeController {
     
         //3) render results on UI
         this.view.renderResults(categories);
-    
-        //render carousel
-        // homeView.renderCarousel(carousel);
-        //render categories
         console.log('loadCategories  was called from homeController');
-            
     }
-    
 
 } 

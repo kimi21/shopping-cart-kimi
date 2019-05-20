@@ -12,7 +12,6 @@ export default class Products {
         }
     }    
 
-
     increaseProductCount(product) {
 
         if(+(product.productCurrentCount) < +(product.productStock)) {
@@ -27,6 +26,7 @@ export default class Products {
     }
 
 
+    //Decreases product's count and updates product in local storage
     decreaseProductCount(product) {
 
         if(+(product.productCurrentCount) >= 1) {
