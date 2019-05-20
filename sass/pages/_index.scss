@@ -5,11 +5,11 @@
 .login-content {
     width: 80%;
     margin: 0 auto;
-    text-transform: capitalize;
     padding: 2rem;
     display: flex;
     flex-direction: column;
-
+    color: theme-color('foreground', 'light');
+    
     @include respond(tablet-portrait-up) { 
         width: 80%;
         margin: 0 auto;
@@ -24,6 +24,14 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: flex-start;
+
+                .main__heading {
+                    color: theme-color('foreground', 'light');
+                }
+                .main__sub-text {
+                    color: theme-color('foreground', 'dark');
+                }
+                
             }
 
             .flex-row {

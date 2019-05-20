@@ -14,23 +14,23 @@
     -ms-user-select: none;
     user-select: none;
 
-    border: 1px solid transparent;
+    border: 1px solid theme-color('primary', 'base');
     padding: .8rem 1.4rem;
     font-size: 1.6rem;
     line-height: 1.5;
-    transition: color .95s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: background-color .15s ease-in-out,border .15s ease-in-out,box-shadow .15s ease-in-out;
     text-decoration: none;
 }
 
 .btn-primary {
     background-color: theme-color('primary', 'base');
-    color: theme-color('primary','light');
+    color: theme-color('tertiary','light');
 }
 
 .btn:hover,
 .btn:active {
     background-color: theme-color('primary', 'dark');
-    color: theme-color('primary','light');
+
 }
 
 .btn-lg {

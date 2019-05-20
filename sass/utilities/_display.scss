@@ -6,62 +6,52 @@
 .float-left {
     float: left;
 }
-
 .float-right {
     float: right;
 }
-
 .text-left {
     text-align: left;
 }
-
 .menu-list {
     list-style-type: none;
 }
 
-
-
 .hide { 
     display: none;
 }
-
 .hide-below-desktop {
-    display: none;
+    @include respond(desktop-up) {   
+        display: none !important;    }
 }
-
 .hide-on-mobile {
-    display: none;
+    display: none !important;
 }
-
 .hide-on-tablet {
-    @include respond(tablet-portrait-up) {    // @600px
-        display: none;
+    @include respond(tablet-portrait-up) {    
+        display: none !important;
     }
 }
 
 .show { 
     display: block;
 }
-
 .show-on-tablet {
-    @include respond(tablet-portrait-up) {    // @600px
-        display: block;
+    @include respond(tablet-portrait-up) {    
+        display: block !important;
     }
 }
-
 .show-sidemenu-on-tablet {
-    @include respond(tablet-portrait-up) {    // @600px
-        display: inline-block;
+    @include respond(tablet-portrait-up) {    
+        display: inline-block !important;
     }
 }
-
 .show-on-desktop {
 
-    @include respond(tablet-landscape-up) {    // @ 801px
-        display: inline-block;
+    @include respond(tablet-landscape-up) {    
+        display: inline-block !important;
     }
 
-    display: none;
+    display: none !important;
 
 }
 

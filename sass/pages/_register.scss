@@ -1,6 +1,7 @@
 
 .login-content {
-
+    color: theme-color('foreground', 'light');
+    
     @include respond(tablet-portrait-up) {    // @ 600px
         .login-flex-container {
             .register__header {
@@ -10,6 +11,13 @@
                 justify-content: flex-start;
                 align-items: flex-start;
                 margin-top: 2rem;
+
+                .main__heading {
+                    color: theme-color('foreground', 'light');
+                }
+                .main__sub-text {
+                    color: theme-color('foreground', 'dark');
+                }
             }
         }
     }

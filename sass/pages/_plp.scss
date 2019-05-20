@@ -67,6 +67,8 @@
             padding: 1rem 1.4rem;
         
             h2 {
+                color: theme-color('foreground', 'dark');
+
                 @include respond(tablet-portrait-up) {    // @600px
                     font-size: 2.2rem;
                     font-weight: 700;
@@ -141,10 +143,10 @@
                     }
         
                     .plp-card__desc-container {
-        
+                        
                         @include respond(tablet-portrait-up) {    // @600px
                             flex: 1;
-                            background-color: $color-white;
+                            background-color: theme-color('background', 'base');
                             display: flex;
                             overflow: hidden;
                         }
@@ -162,7 +164,9 @@
                         flex-direction: column;
                         justify-content: flex-start;
                         margin-left: 2rem;
-                        
+                        background-color: theme-color('background', 'base');
+                        color: theme-color('foreground', 'dark');
+
                         .plp-card__desc {
         
                             @include respond(tablet-portrait-up) {    // @ 600px
@@ -197,22 +201,24 @@
                         .plp-card__cta-tabs {
 
                             @include respond(desktop-up) {    // @600px
-                                font-size: 1.4rem;
+                                font-size: 1.2rem;
                             }
                             flex: 1;
-                            background-color: rgb(190, 4, 97);
-                            width: 100%;
-                            padding: 10px;
-                            color: #fff;
-                            text-align: center;
+                            // background-color: rgb(190, 4, 97);
+                            // width: 100%;
+                            // padding: 10px;
+                            // color: #fff;
+                            // text-align: center;
                         }
                     
                     }
 
                     .plp-card-price {
 
+                        color: theme-color('foreground', 'dark');
+
                         @include respond(desktop-up) {    // @600px
-                            font-size: 1.4rem;
+                            font-size: 1.2rem;
                         }
                         flex: 1;
                         font-weight: 600;
@@ -230,10 +236,10 @@
                     display: none;
                 }
                 
-                background-color: $color-primary;
+                // background-color: $color-primary;
                 width: 100%;
-                padding: 1rem;
-                color: $color-white;
+                // padding: 1rem;
+                // color: $color-white;
                 text-align: center;
                 margin-top: 1em;
             }
@@ -241,3 +247,10 @@
     }
 }
 
+
+.btn-on-tablet {
+    width: 100%;
+    @include respond(tablet-landscape-up) {
+        display: none;
+    }
+}

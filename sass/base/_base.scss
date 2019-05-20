@@ -36,10 +36,9 @@ html {
 }
 
 body {
-    
     font-family: $font-family;
     box-sizing: border-box;
-    background-color: $color-white;
+    background-color: theme-color('background', 'light');
 }
 
 
@@ -47,16 +46,6 @@ body {
     text-decoration: none;
 }
 
-.anchor:link,
-.anchor:visited {
-    color: theme-color('foreground', 'base');
-    transition: color .15s ease-in-out;
-}
-
-.anchor:hover,
-.anchor:active {
-    color: theme-color('primary', 'base');
-}
 
 .noscript {
     padding: 2rem;

@@ -1,0 +1,5 @@
+@mixin border-radius($tl, $tr, $br, $bl) {
+       -moz-border-radius:	 $tl $tr $br $bl; /* FF1+ */
+    -webkit-border-radius:   $tl $tr $br $bl; /* Saf3+, Chrome */
+            border-radius:	 $tl $tr $br $bl; /* Opera 10.5, IE 9 */
+}

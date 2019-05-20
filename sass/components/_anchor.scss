@@ -1,0 +1,20 @@
+
+.anchor:link,
+.anchor:visited {
+    color: theme-color('foreground', 'base');
+    transition: color .15s ease-in-out;
+}
+
+.anchor:hover,
+.anchor:active {
+    color: theme-color('primary', 'base');
+}
+
+.anchor-primary {
+    color: theme-color('foreground','base');
+    transition: color .15s ease-in-out;
+}
+
+.anchor-primary:hover {
+    color: theme-color('tertiary','base');
+}

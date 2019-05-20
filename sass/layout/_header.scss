@@ -5,11 +5,11 @@
 .sb-header {
     height: $header-height;      // ~ 68px
     text-transform: capitalize; 
+    background-color: theme-color('background', 'light');
 
     @include bottom-shadow(0px, 1px, 12px, -1px, theme-color('foreground', 'light'));
 
     @include respond(tablet-landscape-up) {        // 801px
-
         font-size: 1.2rem;
     }
 
@@ -22,9 +22,7 @@
     }
 }
 
-
 .header {
-    background-color: theme-color('background', 'light');
     padding: .8rem;
     font-size: 1.6rem;
     font-weight: 500;

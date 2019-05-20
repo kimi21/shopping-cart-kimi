@@ -12,6 +12,8 @@ export default class CartController {
         this.utility = new Utility();
     }
 
+    initialize() {}
+
     displayModal() {
         document.querySelector('.body').classList.add('modal-open');
         document.querySelector('.modal').classList.add('modal-bg-style');
@@ -32,6 +34,8 @@ export default class CartController {
 
                 if(localStorage.getItem('cartData') !== null)
                     this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
+                
+                this.view.updateCartModalHeader();
             } else {
                 this.removeModal();
             }
@@ -75,6 +79,7 @@ export default class CartController {
             //if the element's count was increased
             this.view.updateUI(event, productData.productCurrentCount);
             this.utility.updateHeaderNav(this.utility.getCartLength());
+            this.view.updateCartModalHeader();
         }
             
     }
@@ -94,6 +99,7 @@ export default class CartController {
             this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
     
         this.utility.updateHeaderNav(this.utility.getCartLength());
+        this.view.updateCartModalHeader();
     }
 
 

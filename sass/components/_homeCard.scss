@@ -6,9 +6,8 @@
     align-items: center;
     position: relative;
 
-    -moz-border-radius:	 0 0 6px 6px; /* FF1+ */
-    -webkit-border-radius:	0 0 6px 6px; /* Saf3+, Chrome */
-    border-radius:	0 0 6px 6px; /* Opera 10.5, IE 9 */
+    background-color: theme-color('background', 'base');
+    @include border-radius(4px, 4px, 4px, 4px);
 
     @include respond(tablet-portrait-up) {
         padding: 8rem 2rem;
@@ -66,6 +65,7 @@
             font-weight: 400;
             margin: 1rem 1rem 2rem;
             text-align: center;
+            color: theme-color('foreground', 'dark');
 
             @include respond(tablet-portrait-up) { 
                 margin: 1.4rem 1.4rem 2.4rem; 
@@ -84,15 +84,14 @@
 
 
  
- .card::after {
+//  .card::after {
     
-    content: "";
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 75%);
-    height: 8px;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 15px;
-    z-index: -1;
-
- }
+//     content: "";
+//     // background: radial-gradient(ellipse at center, theme-color('foreground', 'base')00 0%,theme-color('foreground', 'base')1 75%);
+//     background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 75%);
+//     height: 8px;
+//     width: 100%;
+//     position: absolute;
+//     left: 0;
+//     top: 15px;
+//  }

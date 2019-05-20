@@ -13,7 +13,7 @@ export default class HamburgerController {
     }
     
     //handles click event of hamburger menu icon in header
-    handleClick() {
+    eventListener() {
         if(elements.hamburgerMenuIcon) {
             elements.hamburgerMenuIcon.addEventListener('click', ()=> {
                 if(elements.hamburgerMenuDiv) {

@@ -8,14 +8,14 @@
 // @import "abstracts/mixins/colorsMixin";
 // @import "abstracts/mixins/pxToRemMixin";
 
-@import "utilities";
-
 @import "themes/theme1/themeMain";
+@import "utilities";
 
 @import "base/animations";
 @import "base/base";
 @import "base/typography";
 
+@import "components/anchor";
 @import "components/button";
 @import "components/nav";
 @import "components/form";

@@ -24,10 +24,10 @@ export default class ProductsView {
                         <img src="./.${product.imageURL}" alt="${product.name}"/>
                     </div>
                     <div class="plp-card__desc-container">
-                        <span class="plp-card__desc bgcolor">
+                        <span class="plp-card__desc">
                             ${product.description}
                         </span>
-                        <a href="" class="plp-card__cta hide-on-tablet js-btn-buy">
+                        <a href="" class="plp-card__cta btn btn-primary hide-on-tablet js-btn-buy">
                             Buy Now @ MRP Rs.${product.price}
                         </a>
                     </div>
@@ -36,11 +36,13 @@ export default class ProductsView {
                 <div class="plp-card__content__price">
                     <span class="plp-card-price show-on-desktop js-btn-buy">MRP Rs.87</span>
                     
-                    <a class="plp-card__cta hide-on-mobile show-on-tablet js-btn-buy">
-                        Buy Now @ MRP Rs.${product.price}
-                    </a>
+                    <div class="btn-on-tablet">
+                        <a class="plp-card__cta  btn btn-primary hide-on-mobile show-on-tablet hide-below-desktop js-btn-buy">
+                            Buy Now @ MRP Rs.${product.price}
+                        </a>
+                    </div>
                 
-                    <a class="plp-card__cta-tabs show-on-desktop hide-below-desktop js-btn-buy">
+                    <a class="plp-card__cta-tabs btn btn-primary show-on-desktop js-btn-buy">
                         Buy Now
                     </a>
 

@@ -12,7 +12,7 @@
     justify-content: space-between;
 
     @include alpha-attribute('background-color', rgba(black, 0.85), white);
-    background-color: #000000de;    /* IE 6-10 ignores this rgba format*/
+    background-color: theme-color('background', 'base');    /* IE 6-10 ignores this rgba format*/
     color: $color-white;
 
     height: 100vh;
@@ -25,21 +25,33 @@
             width: 100%;
             padding: 2rem;
             position: relative;
+                
+            color: theme-color('background','light');
+            transition: all .3s ease;
 
-            &::after{
-                content: " ";
-                width: 30%;
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                transform: translateX(-50%);
-                margin: 0 auto;
-                border: .4px solid $color-grey-light;
-
-                 a {
-                    color: $color-white;
-                 }
+            &:hover {
+                cursor: pointer;
+                background-color: theme-color('primary', 'base');
             }
+            &:hover a {
+                color: theme-color('background','light');
+            }
+
+            &:hover img {
+                color: theme-color('background','light');
+            }
+    
+            //for border bottom below each menu item
+            // &::after {
+            //     content: "";
+            //     width: 30%;
+            //     position: absolute;
+            //     top: 100%;
+            //     left: 50%;
+            //     transform: translateX(-50%);
+            //     margin: 0 auto;
+            //     border: .4px solid black;
+            // }
         
         }
         

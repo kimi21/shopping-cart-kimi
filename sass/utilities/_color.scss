@@ -12,12 +12,11 @@
 }
 
 .active {
-    // @include darken-color('background-color', #bbb);
-    background-color: #000;
+    background-color: theme-color('foreground', 'dark');  // #000;
 }
 
 .deactive {
-    background-color: darken(#bbb, 5%);
+    background-color: theme-color('foreground', 'light');
 }
 
 .dark-bg {

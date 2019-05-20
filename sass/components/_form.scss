@@ -29,7 +29,7 @@ input.effect {
   border: none;
   padding-top: 3.4rem;
   width: 100%;
-  background: $color-black;
+  background: theme-color('foreground', 'base');//$color-black;
   transition: padding-top 0.2s ease, margin-top 0.2s ease;
   overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
 }
@@ -42,7 +42,7 @@ input.effect + label {
   padding: 0;
   margin: 0;
   width: 100%;
-  border-top: 1px solid black;
+  border-top: 1px solid theme-color('foreground', 'base');
 
   -webkit-transition: width 0.4s ease, border-top 0.4s ease;
   transition: width 0.4s ease, border-top 0.4s ease;
@@ -65,14 +65,18 @@ input.effect:focus + label > span,
 input.effect:valid + label > span {
   top: -60px; /* -100px */
   font-size: 12px; /* 22px which we see upwards*/
-  color: $color-blue-light; /* #333; */
+  color: theme-color('primary', 'base'); /* #333; */
+}
+
+input::placeholder, input::-ms-input-placeholder {
+  color:#fff;
 }
 
 input.effect + label > span {
   font-weight: 300;
   margin: 0;
   position: absolute;
-  color: $color-grey-medium;
+  color: #fff;//theme-color('foreground', 'base');
   font-size: 16px; /* 48px */
   top: -40px; /* -66px */
   left: 0px;
@@ -112,15 +116,16 @@ input.effect:invalid ~ input[type="submit"] {
 .btn-container {
     margin-top: 60px;
     font-size: 100%;
+    width: 100%;
 }
 
 .form__submit-btn {
     width: 100%;
-    padding: 10px;
-    background-color: $color-primary;
-    color: $color-white;
-    font-size: 4rem;
-    border: none;
+    // padding: 10px;
+    // background-color: $color-primary;
+    // color: $color-white;
+    // font-size: 4rem;
+    // border: none;
 }
 
 .form-input-error {
@@ -132,7 +137,7 @@ input.effect:invalid ~ input[type="submit"] {
 }
 
 .err-input {
-  color: $color-primary;
+  color: $color-error;
 }
 
 

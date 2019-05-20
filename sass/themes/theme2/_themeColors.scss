@@ -1,27 +1,22 @@
-
-
 $theme-colors: (
     'primary': (
-        'base': #be0461,
-        'light': #ffd9ec,
-        'dark': #a50153
+        'base': #00b8ae,
+        'light': #00cec3,
+        'dark': #00857e
       ),
-      'accent': (
-        'base': #353535,
-        'light': #6e6e6e,
-        'dark': #111
-      ),
-      'foreground': (
-
+      'tertiary': (
         'base': #f8f5f5,
         'light': #fff,
         'dark': #ddd
-
+      ),
+      'foreground': (
+        'base': #f8f5f5,
+        'light': #fff,
+        'dark': #ddd
       ),
       'background': (
-        'base': #230063,
-        'light': #2f0086,
-        'dark': #1b004d
+        'base': #0d3754,
+        'light': #0f3f61,
+        'dark': #0b2e46
       )
-    
 );

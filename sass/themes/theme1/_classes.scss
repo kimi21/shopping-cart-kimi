@@ -1,0 +1,12 @@
+.card::after {
+    
+        content: "";
+        // background: radial-gradient(ellipse at center, theme-color('foreground', 'base')00 0%,theme-color('foreground', 'base')1 75%);
+        background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 75%);
+        height: 8px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 15px;
+     }
+    

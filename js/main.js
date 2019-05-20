@@ -18,6 +18,9 @@ const state = {};
 var cartData;
 
 (function() {
+    var hamburgerController = new HamburgerController();
+    hamburgerController.eventListener();
+    
     if (window.location.href.indexOf('home.html') > 0) {
         /**
          * Home(Categories) controller

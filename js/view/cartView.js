@@ -71,11 +71,14 @@ export default class CartView {
 
         if(elements.cartBillAmount)
             elements.cartBillAmount.innerHTML = `Rs. ${this.totalBill}`;
+       
+    }
+
+    updateCartModalHeader() {
         if(elements.countInCart) {
             elements.countInCart.innerHTML = `(${this.utility.getCartLength()} items)`;
         }
     }
-
 
     getProductClicked(event) {
         

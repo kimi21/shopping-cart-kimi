@@ -5,7 +5,7 @@ export default class HomeView {
 
     rendercategory (category ) {
         const markup = `
-            <section class="card card-shadow js-home-card" data-category="fruits">
+            <section class="card card-shadow js-home-card my-4" data-category="fruits">
                 <div class="card__img">
                     <img src="./.${category.imageUrl}" alt = "${category.name}"/>
                 </div>
