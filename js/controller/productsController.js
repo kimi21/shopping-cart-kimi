@@ -15,6 +15,17 @@ export default class ProductsController {
 
     initialize() {}
 
+    cartAnimation() {
+        this.utility.show(document.querySelector('.icon'));
+        document.querySelector('.icon').classList.add('bounce-in-top');
+
+        setTimeout(() => {
+            document.querySelector('.icon').classList.remove("bounceInDown");
+            this.utility.hide(document.querySelector('.icon'));
+        }, 1000);
+        
+
+    }
 
     async loadProducts() {
 
@@ -31,22 +42,8 @@ export default class ProductsController {
         
         //Also update # of products in cart in the header
         this.utility.updateHeaderNav(this.utility.getCartLength());
-
-        debugger;
-        // this.buyProduct();
-    }
-
-
-    wobleCart() {
-        elements.cartIconInHeader.style.webkitAnimationPlayState = "running";
-        elements.cartIconInHeader.style.animationPlayState = "running";
-    }
-
-    pauseWobleCart() {
-        elements.cartIconInHeader.style.webkitAnimationPlayState = "paused";
-        elements.cartIconInHeader.style.animationPlayState = "paused";
-    }
-
+    }   
+    
 
     buyProduct() {
         
@@ -66,15 +63,21 @@ export default class ProductsController {
                 let isProductAdded = this.model.addToCart(productData);
                 console.log("Is product added to cart ? " + isProductAdded);
     
-                //4. if the product is added to cart, update cart count in header AND 
-                //woble(animation) the cart icon in header
+                //4. if the product is added to cart:
                 if(isProductAdded) {
+                    //4.1  update cart count in header AND 
                     this.utility.updateHeaderNav(this.utility.getCartLength());
-                    setTimeout(this.wobleCart(), 1);
-                    setTimeout(this.pauseWobleCart(),4);
+
+                    this.cartAnimation();
+                    //4.2 woble(animation) on the cart icon in header
+                    // elements.cartImgInHeader.classList.add('bounceInDown');
+                    // console.log("Classes of cart image : ", elements.cartImgInHeader.classList);
+                    // setTimeout(()=> {elements.cartImgInHeader.classList.remove('bounceInDown')}, 1000);
                     // setTimeout(clearInterval(timeout),100);
-                    // pauseWobleCart
                 }
+
+
+
             });
         }
     }

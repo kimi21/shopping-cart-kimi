@@ -7,6 +7,8 @@ export const elements = {
     categoryCards: document.querySelectorAll('.js-home .js-home-card'),
     plpPageContent: document.querySelector('.js-plp-content'),
     cartIconInHeader: document.querySelector('.nav--right__cart-link'),
+    cartImgInHeader: document.querySelector('.nav--right__cart-link__img'),
+
     countOnCart: document.querySelector('.cart-head-light'),
     cartDynamic: document.querySelector('.cart-dynamic'),
     headerCartCountDiv: document.querySelector('.js-cart-count'),

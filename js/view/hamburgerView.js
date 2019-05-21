@@ -1,5 +1,5 @@
 import { elements } from './base';
-import { miscData } from './miscData'
+import { productCategory } from './productCategory'
 
 export default class HamburgerView {
     

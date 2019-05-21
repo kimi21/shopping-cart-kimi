@@ -1,5 +1,5 @@
 import { elements } from './base';
-import { miscData } from './miscData';
+import { productCategory } from './productCategory';
 
 export default class ProductsView {
     
@@ -63,8 +63,9 @@ export default class ProductsView {
        
         this.cartData = JSON.parse(localStorage.getItem('cartData'));
        
+        //filter cart data as per category
         const fruitItems = products.filter(function(item) {
-            return item.category == miscData.categoryFruits;
+            return item.category == productCategory.categoryFruits;
         });
 
         fruitItems.forEach(this.renderProduct);

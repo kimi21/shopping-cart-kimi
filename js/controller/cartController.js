@@ -98,7 +98,7 @@ export default class CartController {
 
         else {   //element's removed from cart since count reduced to 0
             this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
-            this.view.updateCartBillInfoUI(JSON.parse(localStorage.getItem('cartData')));
+            this.view.updateCartBillUI();
         } 
         
         this.utility.updateHeaderNav(this.utility.getCartLength());

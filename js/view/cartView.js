@@ -1,5 +1,5 @@
 import { elements } from './base';
-import { miscData } from './miscData';
+import { productCategory } from './productCategory';
 import Utility from '../Utility/utilities';
 
 export default class CartView {
@@ -70,6 +70,7 @@ export default class CartView {
     }
 
 
+    //updates total bill and total # of products in cart UI
     updateCartBillUI() {
         let totalBill = 0;
         let totalProducts = 0;
@@ -89,7 +90,7 @@ export default class CartView {
             elements.countInCart.innerHTML = `(${totalProducts} items)`;
         }
 
-        //Update total bill items in cart bottom
+        //Update total bill amount in cart bottom
         if(elements.cartBillAmount)
             elements.cartBillAmount.innerHTML = `Rs. ${totalBill}`;
        

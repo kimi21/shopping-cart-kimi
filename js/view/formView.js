@@ -1,5 +1,5 @@
 import { elements } from './base';
-import { miscData } from './miscData'
+import { productCategory } from './productCategory'
 import { errorNotifications } from './errorNotifs';
 import Utility from '../Utility/utilities';
 

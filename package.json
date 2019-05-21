@@ -25,6 +25,9 @@
     "webpack-cli": "^3.3.2"
   },
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "express": "^4.17.0",
+    "mongoose": "^5.5.10",
+    "validator": "^10.11.0"
   }
 }

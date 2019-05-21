@@ -1,4 +1,4 @@
-export const miscData = {
+export const productCategory = {
     categoryFruits: "5b6899953d1a866534f516e2",
     categoryBakery: "5b6899953d1a866534f516e2",
     categoryBeverages: "5b6899953d1a866534f516e2",

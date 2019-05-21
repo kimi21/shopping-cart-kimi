@@ -109,6 +109,7 @@
             display: flex; 
             align-items: center;
             background-color: theme-color('background','dark');
+            position: relative;
             // color: theme-color('foregorund', '');
 
             @include respond(tablet-portrait-up) { 
@@ -123,5 +124,25 @@
                 height: 3.4rem;
             }
         }
+    }
+}
+
+
+
+.icon {
+    position: absolute;
+    left: 15px; 
+    font-size: 3rem;
+    color: theme-color('primary','base');
+
+    &::before {
+        display: inline-block;
+        margin-right: .5em;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transform: translate(0, 0);
     }
 }
