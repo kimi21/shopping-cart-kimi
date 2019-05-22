@@ -5,7 +5,7 @@ export default class Products {
     
     async getProducts(){
         try {
-            const res = await axios(`../server/products/index.get.json`);
+            const res = await axios(`/products`);         //../server/products/index.get.json`);
             return res.data;
         } catch (err) {
             console.log(`Error fetching products : ${err}`);
@@ -20,6 +20,7 @@ export default class Products {
             //update this product in cart of local storage.
             this.updateProductInCart(product);
             return true;    //count increased successfully
+            
         } else {
             return false;   //count exceeded stock
         }
