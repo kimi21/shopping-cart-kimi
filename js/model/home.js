@@ -5,9 +5,7 @@ export default class Home {
 
     async getCategories() {
         try {
-             const res = await axios(`./server/categories/index.get.json`);
-            //const res = await axios(`/categories`);
-            // const result = res.data;
+            const res = await axios(`/categories`);
             return res.data;
         } catch (err) {
             alert(err);
@@ -16,7 +14,7 @@ export default class Home {
     
     async getCarousel() {
         try {
-            const res = await axios(`./server/banners/index.get.json`);
+            const res = await axios(`/banners`);      
             return res.data;
         } catch(err) {
             alert(err);

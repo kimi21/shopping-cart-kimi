@@ -25,15 +25,11 @@ export default class HomeView {
     }
 
     renderResults  (categories) {
-        //update cart count in the header
-        // var cartData;
-        // cartData = JSON.parse(localStorage.getItem('cartData'));
-        // if (cartData !== null)
-        //     elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
+        
         var categoryTemplate = require('../../partials/product-categories.hbs');
         console.log('categories',categories);
-        elements.homePageContent.innerHTML= categoryTemplate(categories);
-       // categories.forEach(this.rendercategory);
+        elements.homePageContent.innerHTML = categoryTemplate(categories);
+      
     }
 }
 
