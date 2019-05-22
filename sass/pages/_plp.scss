@@ -146,7 +146,7 @@
                         
                         @include respond(tablet-portrait-up) {    // @600px
                             flex: 1;
-                            background-color: theme-color('background', 'base');
+                            background-color: theme-color('tertiary', 'dark');                            
                             display: flex;
                             overflow: hidden;
                         }
@@ -155,6 +155,7 @@
                             display: flex;
                             margin-left: 0;
                             width: 100%;
+                           
                             /* height: 160px; */
                         }
         
@@ -164,7 +165,6 @@
                         flex-direction: column;
                         justify-content: flex-start;
                         margin-left: 2rem;
-                        background-color: theme-color('background', 'base');
                         color: theme-color('foreground', 'dark');
 
                         .plp-card__desc {
@@ -204,11 +204,7 @@
                                 font-size: 1.2rem;
                             }
                             flex: 1;
-                            // background-color: rgb(190, 4, 97);
-                            // width: 100%;
-                            // padding: 10px;
-                            // color: #fff;
-                            // text-align: center;
+                            
                         }
                     
                     }

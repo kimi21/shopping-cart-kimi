@@ -2178,12 +2178,11 @@ input.effect:invalid ~ input[type="submit"] {
         flex-direction: column;
         justify-content: flex-start;
         margin-left: 2rem;
-        background-color: #fcfcfc;
         color: #111; }
         @media (min-width: 37.5em) {
           .plp-content .plp-content__cards .plp-card__content__img-text .plp-card__desc-container {
             flex: 1;
-            background-color: #fcfcfc;
+            background-color: #dddddd;
             display: flex;
             overflow: hidden; } }
         @media (min-width: 50.0625em) {

@@ -5,7 +5,8 @@ export default class Home {
 
     async getCategories() {
         try {
-            const res = await axios(`./server/categories/index.get.json`);
+             const res = await axios(`./server/categories/index.get.json`);
+            //const res = await axios(`/categories`);
             // const result = res.data;
             return res.data;
         } catch (err) {

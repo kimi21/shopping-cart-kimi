@@ -1,0 +1,15 @@
+{{#each this}}
+    <section class="card card-shadow js-home-card my-4" data-category="fruits">
+        <div class="card__img">
+            <img src="{{imageUrl}}" alt = "{{name}}"/>
+        </div>
+
+        <div class="card__content">
+            <h2>{{name}}</h2>
+            <span>{{description}}</span>
+            <a href="#" class="btn btn-primary card__content__btn p-4">
+                Explore {{name}}
+            </a>
+        </div>
+    </section>
+{{/each}}

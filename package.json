@@ -4,30 +4,45 @@
   "description": "shopping cart project by Kimi",
   "main": "script.js",
   "scripts": {
+    "start": "nodemon ./bin/www",
     "compile:sass": "node-sass --watch sass/main.scss css/style1.css",
     "dev": "webpack --mode development -w",
     "build": "webpack --mode development",
     "unit": "karma start karma.conf.js",
-    "test": "npm run unit"
+    "test": "npm run unit",
+    "server": "nodemon app.js"
   },
   "author": "kimi",
   "license": "ISC",
   "devDependencies": {
+    "copy-webpack-plugin": "^5.0.3",
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
     "jasmine-core": "^3.4.0",
     "karma": "^4.1.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.2",
     "karma-jasmine": "^2.0.1",
     "karma-webpack": "^3.0.5",
+    "mini-css-extract-plugin": "^0.6.0",
     "node-sass": "^4.12.0",
+    "nodemon": "^1.19.0",
+    "sass-loader": "^7.1.0",
     "sinon": "^7.3.2",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2"
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "express": "^4.17.0",
+    "handlebars": "^4.1.2",
+    "handlebars-loader": "^1.7.1",
     "mongoose": "^5.5.10",
-    "validator": "^10.11.0"
+    "validator": "^10.11.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "hbs": "~4.0.4",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
   }
 }

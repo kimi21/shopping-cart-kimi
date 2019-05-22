@@ -4,7 +4,7 @@ export default class HomeView {
     constructor() {}
 
     rendercategory (category ) {
-        const markup = `
+        /*const markup = `
             <section class="card card-shadow js-home-card my-4" data-category="fruits">
                 <div class="card__img">
                     <img src="./.${category.imageUrl}" alt = "${category.name}"/>
@@ -18,7 +18,7 @@ export default class HomeView {
                     </a>
                 </div>
             </section>
-        `;
+        `;*/
         
         if (elements.homePageContent)
             elements.homePageContent.insertAdjacentHTML('beforeend', markup);
@@ -30,30 +30,10 @@ export default class HomeView {
         // cartData = JSON.parse(localStorage.getItem('cartData'));
         // if (cartData !== null)
         //     elements.headerCartCountDiv.textContent = cartData.length + (cartData.length === 1 ? ' item' : ' items');
-    
-        categories.forEach(this.rendercategory);
+        var categoryTemplate = require('../../partials/product-categories.hbs');
+        console.log('categories',categories);
+        elements.homePageContent.innerHTML= categoryTemplate(categories);
+       // categories.forEach(this.rendercategory);
     }
 }
 
-//Renders each category one by one
-
-
-
-export const renderCarousel = carouselImages => {
-    // carouselImages.forEach(renderCarouselImage);
-    // carouselImages.(renderCarouselImage);
-    // carouselImages[0].(renderCarouselImage);
-
-    const carouselImage = carouselImages[0];
-
-    const markup = `
-            <div id="main-carousel" class="main__carousel" >
-                <img src="./.${carouselImage.bannerImageUrl}" 
-                    alt="${carouselImage.bannerImageAlt}"
-                    class="main__carousel__img" />
-            </div>
-        `;
-    
-    if (elements.homePageContent)
-        elements.homePageContent.insertAdjacentHTML('afterbegin', markup);
-}

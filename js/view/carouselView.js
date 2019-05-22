@@ -64,14 +64,7 @@ export default class CarouselView {
     renderCarousel(carousel) {
         let num = 0;
         carousel.forEach(this.renderCarouselImage);
-
-        // for( var i = 0; i < carousel.length; i++) {
-        //     num++;
-        //     this.renderCarouselDots(carousel[i], num);
-            
-        // }
         carousel.forEach(this.renderCarouselDots);
-
     }
 
 }
