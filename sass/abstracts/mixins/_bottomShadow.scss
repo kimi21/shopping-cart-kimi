@@ -1,9 +1,5 @@
 
 @mixin bottom-shadow($top, $left, $blur, $spread, $color, $inset:false) {
-    // -webkit-box-shadow: 0px 3px 4px -1px $color-grey-medium;
-    //    -moz-box-shadow: 0px 3px 4px -1px $color-grey-medium;
-    //         box-shadow: 0px 3px 4px -1px $color-grey-medium;
-
     @if $inset {
 
         -webkit-box-shadow: $top $left $blur $spread $color #{$inset};//0px 3px 4px -1px $color-grey-medium;

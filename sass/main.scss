@@ -3,12 +3,9 @@
 @import "abstracts/variables";
 @import "abstracts/functions";
 @import "abstracts/mixin";
-// @import "abstracts/mixins/breakpoint";
-// @import "abstracts/mixins/mediaQueriesMixin";
-// @import "abstracts/mixins/colorsMixin";
-// @import "abstracts/mixins/pxToRemMixin";
 
-@import "themes/theme1/themeMain";
+
+@import "themes/theme2/themeMain";
 @import "utilities";
 
 @import "base/animations";
@@ -26,6 +23,10 @@
 @import "components/sidemenu";
 @import "components/cartModal";
 @import "components/hamburgerMenu";
+@import "components/plpSubNav";
+@import "components/plp";
+
+
 
 @import "layout/header";
 @import "layout/footer";
@@ -33,5 +34,4 @@
 @import "pages/cart";
 @import "pages/home";
 @import "pages/index";
-@import "pages/plp";
 @import "pages/register";

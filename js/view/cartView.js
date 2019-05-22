@@ -51,8 +51,8 @@ export default class CartView {
         
         if(elements.cartDynamic)
             elements.cartDynamic.insertAdjacentHTML('beforeend', markup);
-        
     }
+
 
     calculateBill(products) {
 
@@ -62,9 +62,48 @@ export default class CartView {
         this.totalBill += productBill;
     }
 
+
+    toggleFullCart(display) {
+        let fullCartDivs = document.querySelectorAll('.js-cart-full');
+
+        if(display) {
+            for(var i = 0; i < fullCartDivs.length; i++) {
+                this.utility.show(fullCartDivs[i]);
+            }
+        } else {
+            for(var i = 0; i < fullCartDivs.length; i++) {
+                this.utility.hide(fullCartDivs[i]);
+            }
+        }
+    }
+
+
+    toggleEmptyCart(display) {
+        let emptyCartDivs = document.querySelectorAll('.js-empty-cart')
+
+        if(display) {
+            for(var i = 0; i < emptyCartDivs.length; i++) {
+                this.utility.show(emptyCartDivs[i]);
+            }
+        } else {
+            for(var i = 0; i < emptyCartDivs.length; i++) {
+                this.utility.hide(emptyCartDivs[i]);
+            }
+        }
+    }
+
+    showEmptyCart() {
+        this.utility.show(elements.emptyCartContent);
+    }
+
+
+    hideEmptyCart() {
+        this.utility.hide(elements.emptyCartContent);
+    }
+
     renderResult(products) {
         
-        //emty the contents of cart dynamic div
+        //empty the contents of cart dynamic div
         elements.cartDynamic.innerHTML = "";
         products.forEach(this.renderProductOnCart);
     }
@@ -78,12 +117,12 @@ export default class CartView {
         let cartData = JSON.parse(localStorage.getItem('cartData'));
         let cartLength = 0;
 
-        if(cartData !== null) {
+        if(cartData !== '[]') {
             cartData.forEach((product) => {
                 totalProducts += +(product.productCurrentCount);
                 totalBill += (+(product.productCurrentCount)) * (+(product.productPrice));
             });
-        }
+        } 
 
         //Update # of items in cart header
         if(elements.countInCart) {
@@ -93,8 +132,8 @@ export default class CartView {
         //Update total bill amount in cart bottom
         if(elements.cartBillAmount)
             elements.cartBillAmount.innerHTML = `Rs. ${totalBill}`;
-       
     }
+
 
     getProductClicked(event) {
         

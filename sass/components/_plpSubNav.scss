@@ -1,0 +1,6 @@
+.nav-sub {
+    @include respond(tablet-portrait-up) {
+        display: inline-block;
+    }
+}
+

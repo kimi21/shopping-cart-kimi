@@ -32,7 +32,7 @@ module.exports = {
         filename: "../css/style.css"
         }),
         new CopyPlugin([
-            { from: 'static', to: '../static' },
+            {from: 'static', to: '../static' },
             {from: 'index.html', to: '../index.html'},
             {from: 'home.html', to: '../home.html'},
             {from: 'register.html', to: '../register.html'},

@@ -3,6 +3,22 @@
  **/
 
 
+.option-content {
+    padding: .5rem .5rem;
+}
+
+.option-content-tab-display {
+
+    @include respond(tablet-landscape-up) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+
 .dropdown-container {
     position: relative;
 
@@ -20,9 +36,8 @@
         border-radius: 0;
         border: none;
         padding: 2rem 1.4rem;
-        /* margin-bottom: 30px; */
-        background-color: rgb(190, 4, 97);
-        color: #fff;
+        background-color: theme-color('primary', 'base');
+        color: theme-color('tertiary', 'base');
         font-size: 1.6rem;
         font-weight: 600;
         /* position: absolute; */

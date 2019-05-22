@@ -28,14 +28,25 @@ export default class CartController {
 
     toggleCartDisplay() {
         let isDisplayed = this.utility.toggleDisplay(elements.cartModal);
+            
             //if cart is shown, and cart data is not null
             if(isDisplayed) {
                 this.displayModal();
 
-                if(localStorage.getItem('cartData') !== null)
+                if(localStorage.getItem('cartData') !== '[]') {
+
+                    this.view.toggleFullCart(true);     //true == display
+                    this.view.toggleEmptyCart(false);   //false == hide
+
                     this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
-                
-                this.view.updateCartBillUI();
+                    this.view.updateCartBillUI();
+                }
+                else {      //cart is empty
+                    this.view.toggleEmptyCart(true); 
+                    this.view.toggleFullCart(false);
+                }
+
+
             } else {
                 this.removeModal();
             }
@@ -97,8 +108,16 @@ export default class CartController {
             this.view.updateProductInCartUI(event, product);
 
         else {   //element's removed from cart since count reduced to 0
-            this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
-            this.view.updateCartBillUI();
+            
+            if(localStorage.getItem('cartData') == '[]') {
+                this.view.toggleEmptyCart(true); 
+                this.view.toggleFullCart(false);
+
+            } else {
+                this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
+                this.view.updateCartBillUI();
+            }
+            
         } 
         
         this.utility.updateHeaderNav(this.utility.getCartLength());
@@ -119,6 +138,10 @@ export default class CartController {
             }
             if(event.target.matches('.btn-close')) {
                 this.toggleCartDisplay();
+            }
+            if(event.target.matches('.js-start-shopping-btn')) {
+                this.toggleCartDisplay();
+                window.location.href = "plp.html";
             }
 
         });   

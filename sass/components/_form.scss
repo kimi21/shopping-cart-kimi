@@ -29,7 +29,8 @@ input.effect {
   border: none;
   padding-top: 3.4rem;
   width: 100%;
-  background: theme-color('foreground', 'base');//$color-black;
+  background: theme-color('background', 'base');
+  color: theme-color('foreground', 'dark');
   transition: padding-top 0.2s ease, margin-top 0.2s ease;
   overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
 }
@@ -57,26 +58,26 @@ input.effect:focus + label {
 
 input.effect:focus,
 input.effect:valid {
-  padding-top: 3.5rem; /* 35px */
+  padding-top: 3.5rem;
 }
 
 
 input.effect:focus + label > span,
 input.effect:valid + label > span {
-  top: -60px; /* -100px */
-  font-size: 12px; /* 22px which we see upwards*/
-  color: theme-color('primary', 'base'); /* #333; */
+  top: -60px; 
+  font-size: 12px; 
+  color: theme-color('primary', 'base');
 }
 
-input::placeholder, input::-ms-input-placeholder {
-  color:#fff;
-}
+// input::placeholder, input::-ms-input-placeholder {
+//   color:#fff;
+// }
 
 input.effect + label > span {
   font-weight: 300;
   margin: 0;
   position: absolute;
-  color: #fff;//theme-color('foreground', 'base');
+  // color: #fff;//theme-color('foreground', 'base');
   font-size: 16px; /* 48px */
   top: -40px; /* -66px */
   left: 0px;
