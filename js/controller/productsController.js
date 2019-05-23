@@ -44,7 +44,6 @@ export default class ProductsController {
     
         //2) get the products
         const products = await this.model.getProducts();
-        console.log("category in controller ", category);
          
         //3) render results on UI
         this.view.renderProducts(products, category);
@@ -82,21 +81,11 @@ export default class ProductsController {
         }
     }
 
-
-    loadCategory(category) {
-
-    }
-
-
     showCategoryFromDropdown() {
-        // $(function() {
-        //     $('#dropdown-list').change(function(){
-        //     $('.option-content').hide();
-        //     $('#' + $(this).val()).show();
-        //     });
-        // });
 
         if(elements.plpPageContent) {
+
+            //sidemenu click event listener
             document.querySelector('.sidemenu-container').addEventListener('click', (event) => {
                 let productData;
                 
@@ -106,9 +95,16 @@ export default class ProductsController {
                     console.log("Category : ", category);
                     
                     //2. send this category to the view
-                    this.loadProducts(category);
+                    this.loadProducts(category.value);
                 }
             });
+
+             //dropdown click event listener
+             elements.dropdown.addEventListener('change', (event) => {
+                 console.log(elements.dropdown.value);
+                this.loadProducts(elements.dropdown.value);
+            });
+
         }
     }
 

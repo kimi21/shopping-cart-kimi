@@ -17,11 +17,12 @@ export default class HamburgerController {
         if(elements.hamburgerMenuIcon) {
             elements.hamburgerMenuIcon.addEventListener('click', ()=> {
                 if(elements.hamburgerMenuDiv) {
-                   debugger;
-                        let isDisplayed = this.utility.toggleDisplay(elements.hamburgerMenuDiv);
-                } else {
-                    console.log('not found hamburger menu div');
-                }
+                    let isDisplayed = this.utility.toggleDisplay(elements.hamburgerMenuDiv);
+
+                    if(isDisplayed) {
+                        elements.hamburgerCartCount.innerHTML = `${this.utility.getCartLength()} items`; 
+                    }
+                } 
             });
         }
         

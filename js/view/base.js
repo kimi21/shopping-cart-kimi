@@ -8,7 +8,7 @@ export const elements = {
     plpPageContent: document.querySelector('.js-plp-content'),
     cartIconInHeader: document.querySelector('.nav--right__cart-link'),
     cartImgInHeader: document.querySelector('.nav--right__cart-link__img'),
-  
+    dropdown: document.getElementById('dropdown-list'),
     countOnCart: document.querySelector('.cart-head-light'),
     cartDynamic: document.querySelector('.cart-dynamic'),
     headerCartCountDiv: document.querySelector('.js-cart-count'),
@@ -24,7 +24,8 @@ export const elements = {
     addBtn: document.querySelector('.js-btn-add'),
     errorMsg: document.querySelector('.js-form__input-error'),
     closeCartBtn: document.querySelector('.cart-modal__head__btn-close'),
-    submitBtn : document.querySelector('.form__submit-btn')
+    submitBtn : document.querySelector('.form__submit-btn'),
+    hamburgerCartCount : document.querySelector('.js-hamburger-cart-count')
 };
 
 

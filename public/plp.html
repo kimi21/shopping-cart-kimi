@@ -6,23 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,800" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <!-- <link rel="stylesheet" href="css/queries.css" type="text/css"> -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <title>Sabkaa Bazaar - Shopping for everyone</title>
-
-    <script>
-    $(function() {
-        $('#dropdown-list').change(function(){
-        $('.option-content').hide();
-        $('#' + $(this).val()).show();
-        });
-    });
-    </script>
 </head>
 <body class="products-container body" >
     <div class="modal"></div>
@@ -132,7 +119,7 @@
                 <li class="hamburger-menu-body__cart">
                     <a href="#cart-body" class="hamburger-menu-body__cart-link anchor">
                         <img class="nav--right__cart-link__img cart-svg-alternate" src="static/images/cart-black.svg" alt="cart-svg">
-                        <span class="nav--right__cart-link__count js-cart-count">1000 item</span>
+                        <span class="nav--right__cart-link__count js-cart-count js-hamburger-cart-count"></span>
                     </a>
                 </li>
                 <li>

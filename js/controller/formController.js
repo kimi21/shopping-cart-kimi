@@ -24,7 +24,6 @@ export default class FormController {
 
 
     onSubmit() {
-
         if(this.form.name == 'index') {
             if(this.validEmail && this.validPassword ) {
                 window.location.assign("home.html");
@@ -116,15 +115,13 @@ export default class FormController {
             this.view.hideError( this.form['email']);
             this.validEmail = true;
         }
-        this.form['email'].focus();
     }
 
 
     formEventListener() {
-
          //listen for on 'blur' event of email input field
          if(this.form['email']) {
-            this.form['email'].addEventListener('input', () => {
+            this.form['email'].addEventListener('blur', () => {
             
                 let isEmailValid = this.view.validateEmail(this.form['email']);
                 this.getEmailMsg(isEmailValid);

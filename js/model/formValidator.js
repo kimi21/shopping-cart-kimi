@@ -15,8 +15,6 @@ export default class FormValidator {
     //on blur event of email input
     validateEmail() {
         this.form['email'].addEventListener('blur', (event) => {
-            
-
             if(this.form['email'].value == "") {
                 console.log();
             }    

@@ -11,15 +11,21 @@ export default class ProductsView {
 
 
     renderProducts (products, category) {
-        console.log("Category in View : ", category);
+        let categoryString;
         this.cartData = JSON.parse(localStorage.getItem('cartData'));
 
         //map category argument above to category present in productCategory
-        Object.keys(productCategory).forEach(e => console.log(`key=${e} value=${productCategory[e]}`));
+        Object.keys(productCategory).forEach( e =>  {
+            let cat = `${e}`;
+            if(cat.toLowerCase().indexOf(category) != -1) {
+                categoryString = `${productCategory[e]}`;
+                console.log(categoryString);
+            }
+        });
         
         //filter data as per category
         const categoryProducts = products.filter(function(item) {
-            return item.category == productCategory.categoryFruits;
+            return item.category == categoryString;
         });
 
         //fruitItems.forEach(this.renderProduct);

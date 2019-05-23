@@ -64,11 +64,11 @@ export default class CartController {
     toggleCartDisplayFromHamburgerMenu() {
         //listen for click on cart icon in hamburger Menu
         elements.cartIconInHamburgerMenu.addEventListener('click', (event) => {
-            
-            let isDisplayed = this.utility.toggleDisplay(elements.cartModal);
-            if(isDisplayed) {   //if cart is shown, load cart data
-                this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
-            }
+            this.toggleCartDisplay();
+            // let isDisplayed = this.utility.toggleDisplay(elements.cartModal);
+            // if(isDisplayed) {   //if cart is shown, load cart data
+            //     this.view.renderResult(JSON.parse(localStorage.getItem('cartData')));
+            // }
             
         });
     }
