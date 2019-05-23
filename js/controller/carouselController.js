@@ -9,18 +9,15 @@ export default class CarouselController {
         this.view = new CarouselView();
         this.model = new Carousel();
         this.utility = new Utility();
-        
     }
 
     async loadCarousel() {
-        //1) create new Home(model) object and add to state
-        // this.state.Carousel = this.model; 
-    
-        //2) get the carousel images 
+       
+        //1) get the carousel images 
         const carousel = await this.model.getCarousel();
-        console.log("Fetching carousel... LEngth = "+ carousel.length);
+        console.log("Fetching carousel... Length = " + carousel.length);
     
-        //3) render results on UI
+        //2) render results on UI
         this.view.renderCarousel(carousel);
         this.view.changeSlide();
 

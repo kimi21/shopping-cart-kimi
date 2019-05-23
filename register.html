@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <!-- <link rel="stylesheet" href="css/queries.css" type="text/css"> -->
 
-    <title>Sabkaa Bazaar</title>
+    <title>Sabkaa Bazaar - Shopping for everyone</title>
 </head>
 <body class="">
     <div class="modal"></div>
@@ -43,7 +43,7 @@
                  </div>
  
                  <div class="cart-modal__body__banner">
-                     <img src="static/images/lowest-price.png">
+                     <img src="static/images/lowest-price.png" alt="">
                      <span class="cart-modal__banner-text">You won't find it cheaper anywhere</span>
                  </div>
              </div>
@@ -97,7 +97,7 @@
 
                 <div class="float-right nav--right__cart-div hide-on-mobile show-on-tablet">
                     <a href="#" class="nav--right__cart-link anchor mt-sm-3 mt-lg-3 ">
-                        <img class="nav--right__cart-link__img cart-svg-alternate" src="static/images/cart.svg">
+                        <img class="nav--right__cart-link__img cart-svg-alternate" src="static/images/cart.svg" alt="cart-svg">
                         <span class="nav--right__cart-link__count js-cart-count">0 item</span>
                     </a>
                 </div>
@@ -113,8 +113,8 @@
         <div class="hamburger-menu-body" id="hamburger-menu-body">
             <ul class="menu-list">
                 <li class="hamburger-menu-body__cart">
-                    <a href="#cart-body" class="hamburger-menu-body__cart-link anchor"> <!-- class="nav--right__cart-link" -->
-                        <img class="nav--right__cart-link__img cart-svg-alternate" src="static/images/cart-black.svg">
+                    <a href="#cart-body" class="hamburger-menu-body__cart-link anchor">
+                        <img class="nav--right__cart-link__img cart-svg-alternate" src="static/images/cart-black.svg"  alt="cart-svg">
                         <span class="nav--right__cart-link__count js-cart-count">1000 item</span>
                     </a>
                 </li>
@@ -154,22 +154,22 @@
             <div class="flex-row">
                 <form class="form form-flex" name="register" id="registerForm" novalidate method="POST" action="home.html">
                     <div class="fname-container">
-                        <input type="text" name="fname" class="effect" id="fname-text" required autocomplete="off" />
-                        <label for="fname-text" class="effect">      
+                        <input type="text" name="fname" class="effect" id="fname" required autocomplete="off" />
+                        <label for="fname" class="effect">      
                             <span class="effect">First Name </span>
                         </label>
                     </div>
 
                     <div class="lname-container">
-                        <input type="text" name="lname" class="effect" id="lname-text" required autocomplete="off" />
-                        <label for="lname-text" class="effect">      
+                        <input type="text" name="lname" class="effect" id="lname" required autocomplete="off" />
+                        <label for="lname" class="effect">      
                             <span class="effect">Last Name </span>
                         </label>
                     </div>
 
                     <div class="email-container">
-                        <input type="email" name="email" class="effect" id="email form__input" required autocomplete="off" />
-                        <label for="email-text" class="effect">      
+                        <input type="email" name="email" class="effect form__input" id="email" required autocomplete="off" />
+                        <label for="email" class="effect">      
                             <span class="effect">Email </span>
                         </label>
                         <span class="form-input-error js-form__input-error hide"></span>

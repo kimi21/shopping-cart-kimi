@@ -1,7 +1,3 @@
-// import Products from './model/products';
-import { elements } from './view/base';
-
-// import * as cartView from './view/cartView';
 import HomeController from './controller/homeController';
 import ProductsController from './controller/productsController';
 import CartController from './controller/cartController';
@@ -10,12 +6,11 @@ import FormController from './controller/formController';
 
 
 /** Global state of the app
- * - Product Object
- * - Category Object
+ *  Product Object
+ *  Category Object
  */
 
 const state = {};
-var cartData;
 
 (function() {
     var hamburgerController = new HamburgerController();
@@ -44,6 +39,7 @@ var cartData;
          */
         console.log("The URL contains plp");
         var productsController = new ProductsController(state);
+        productsController.initialize();
         productsController.loadProducts();
         productsController.buyProduct();
 
@@ -59,15 +55,3 @@ var cartData;
         formController.formEventListener();
     } 
 })();
-
-
-/**
- * CART Controller
- */
-// var cartController = new CartController(state);
-
-
-// cartController.toggleCartDisplayFromHeader();
-// cartController.toggleCartDisplayFromHamburgerMenu();
-// cartController.cartEventHandler();
-

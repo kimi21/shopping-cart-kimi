@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700,800&display=swap);
 /*---------------------------------*\
     #MEDIA QUERY MANAGER
 
@@ -20,6 +20,15 @@
     1em = 16px
 
 \*---------------------------------*/
+.card::after {
+  content: "";
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 75%);
+  height: 8px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 15px; }
+
 /*---------------------------------*\
     #UTILITIES
 \*---------------------------------*/
@@ -1012,10 +1021,10 @@ auto - for classes that set the margin to auto
       background-color: #ebebeb; } }
 
 .active {
-  background-color: #00b8ae; }
+  background-color: #be0461; }
 
 .deactive {
-  background-color: #fff; }
+  background-color: #6e6e6e; }
 
 .dark-bg {
   background-color: #000; }
@@ -1250,9 +1259,9 @@ html {
       font-size: 75%; } }
 
 body {
-  font-family: "Cabin", sans-serif;
+  font-family: "Dosis", sans-serif;
   box-sizing: border-box;
-  background-color: #0f3f61; }
+  background-color: #fff; }
 
 .anchor, a {
   text-decoration: none; }
@@ -1296,15 +1305,15 @@ Login(index.html) and register.html
 
 .anchor:link,
 .anchor:visited {
-  color: #f8f5f5;
+  color: #353535;
   transition: color .15s ease-in-out; }
 
 .anchor:hover,
 .anchor:active {
-  color: #00b8ae; }
+  color: #be0461; }
 
 .anchor-primary {
-  color: #f8f5f5;
+  color: #353535;
   transition: color .15s ease-in-out; }
 
 .anchor-primary:hover {
@@ -1324,7 +1333,7 @@ Login(index.html) and register.html
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border: 1px solid #00b8ae;
+  border: 1px solid #be0461;
   padding: .8rem 1.4rem;
   font-size: 1.6rem;
   line-height: 1.5;
@@ -1332,12 +1341,12 @@ Login(index.html) and register.html
   text-decoration: none; }
 
 .btn-primary {
-  background-color: #00b8ae;
+  background-color: #be0461;
   color: #fff; }
 
 .btn:hover,
 .btn:active {
-  background-color: #00857e; }
+  background-color: #a50153; }
 
 .btn-lg {
   padding: .5rem 1rem;
@@ -1367,8 +1376,8 @@ Login(index.html) and register.html
 \*---------------------------------*/
 .nav {
   display: flex;
-  padding: 2rem;
-  color: #f8f5f5; }
+  padding: 0.1rem;
+  color: #353535; }
   @media (min-width: 37.5em) {
     .nav {
       font-size: 1.5rem; } }
@@ -1406,7 +1415,7 @@ Login(index.html) and register.html
       top: 2.2rem;
       right: 1.6rem;
       font-size: 3.6rem;
-      color: #f8f5f5; }
+      color: #353535; }
     .nav--right ul {
       display: none; }
       @media (min-width: 37.5em) {
@@ -1425,7 +1434,7 @@ Login(index.html) and register.html
       padding: .6rem 1rem 0;
       display: flex;
       align-items: center;
-      background-color: #0b2e46;
+      background-color: #ddd;
       position: relative; }
       .nav--right__cart-link__img {
         height: 3.4rem; }
@@ -1434,7 +1443,7 @@ Login(index.html) and register.html
   position: absolute;
   left: 15px;
   font-size: 3rem;
-  color: #00b8ae; }
+  color: #be0461; }
   .icon::before {
     display: inline-block;
     margin-right: .5em;
@@ -1472,8 +1481,8 @@ input.effect {
   border: none;
   padding-top: 3.4rem;
   width: 100%;
-  background: #0d3754;
-  color: #ddd;
+  background: #fcfcfc;
+  color: #111;
   transition: padding-top 0.2s ease, margin-top 0.2s ease;
   overflow-x: hidden;
   /* Hack to make "rows" attribute apply in Firefox. */ }
@@ -1486,7 +1495,7 @@ input.effect + label {
   padding: 0;
   margin: 0;
   width: 100%;
-  border-top: 1px solid #f8f5f5;
+  border-top: 1px solid #353535;
   -webkit-transition: width 0.4s ease, border-top 0.4s ease;
   transition: width 0.4s ease, border-top 0.4s ease;
   height: 0px; }
@@ -1504,7 +1513,7 @@ input.effect:focus + label > span,
 input.effect:valid + label > span {
   top: -60px;
   font-size: 12px;
-  color: #00b8ae; }
+  color: #be0461; }
 
 input.effect + label > span {
   font-weight: 300;
@@ -1663,7 +1672,7 @@ input.effect:invalid ~ input[type="submit"] {
   padding: 6rem 1rem;
   align-items: center;
   position: relative;
-  background-color: #0d3754;
+  background-color: #fcfcfc;
   -moz-border-radius: 4px 4px 4px 4px;
   /* FF1+ */
   -webkit-border-radius: 4px 4px 4px 4px;
@@ -1698,7 +1707,7 @@ input.effect:invalid ~ input[type="submit"] {
       font-weight: 600;
       margin: 0;
       text-transform: capitalize;
-      color: #ddd; }
+      color: #111; }
       @media (min-width: 37.5em) {
         .card__content h2 {
           font-size: 3.2rem; } }
@@ -1707,7 +1716,7 @@ input.effect:invalid ~ input[type="submit"] {
       font-weight: 400;
       margin: 1rem 1rem 2rem;
       text-align: center;
-      color: #ddd; }
+      color: #111; }
       @media (min-width: 37.5em) {
         .card__content span {
           margin: 1.4rem 1.4rem 2.4rem;
@@ -1784,7 +1793,7 @@ input.effect:invalid ~ input[type="submit"] {
     border-radius: 0;
     border: none;
     padding: 2rem 1.4rem;
-    background-color: #00b8ae;
+    background-color: #be0461;
     color: #f8f5f5;
     font-size: 1.6rem;
     font-weight: 600;
@@ -1798,7 +1807,7 @@ input.effect:invalid ~ input[type="submit"] {
     display: none; }
 
 .nav-sub {
-  background-color: #0b2e46; }
+  background-color: #ddd; }
 
 @media (min-width: 37.5em) {
   .sidemenu-container {
@@ -1811,15 +1820,15 @@ input.effect:invalid ~ input[type="submit"] {
 
 .sidemenu-container .side-menu li {
   padding: 2rem 1.6rem;
-  border-bottom: 1px solid #fff;
-  background-color: #0b2e46;
-  color: #0f3f61;
+  border-bottom: 1px solid #6e6e6e;
+  background-color: #ddd;
+  color: #fff;
   transition: all .3s ease; }
   .sidemenu-container .side-menu li:hover {
     cursor: pointer;
-    background-color: #00b8ae; }
+    background-color: #be0461; }
   .sidemenu-container .side-menu li:hover a {
-    color: #0f3f61; }
+    color: #fff; }
 
 @media (min-width: 50.0625em) {
   .cart {
@@ -1945,7 +1954,7 @@ input.effect:invalid ~ input[type="submit"] {
       width: 100%;
       text-align: center; }
     .cart-modal__bottom__btn {
-      background-color: #00b8ae;
+      background-color: #be0461;
       color: #fff;
       padding: 1rem;
       width: 100%;
@@ -1967,7 +1976,7 @@ input.effect:invalid ~ input[type="submit"] {
   justify-content: space-between;
   background-color: #262626;
   background-color: rgba(0, 0, 0, 0.85);
-  background-color: #0d3754;
+  background-color: #fcfcfc;
   /* IE 6-10 ignores this rgba format*/
   color: #fff;
   height: 100vh; }
@@ -1978,15 +1987,15 @@ input.effect:invalid ~ input[type="submit"] {
       width: 100%;
       padding: 2rem;
       position: relative;
-      color: #0f3f61;
+      color: #fff;
       transition: all .3s ease; }
       .hamburger-menu-body ul li:hover {
         cursor: pointer;
-        background-color: #00b8ae; }
+        background-color: #be0461; }
       .hamburger-menu-body ul li:hover a {
-        color: #0f3f61; }
+        color: #fff; }
       .hamburger-menu-body ul li:hover img {
-        color: #0f3f61; }
+        color: #fff; }
   .hamburger-menu-body__cart {
     display: flex;
     justify-content: space-around; }
@@ -2014,7 +2023,7 @@ input.effect:invalid ~ input[type="submit"] {
   display: flex;
   flex-direction: column;
   margin-bottom: 4rem;
-  border-bottom: 2px dashed #ddd;
+  border-bottom: 2px dashed #6e6e6e;
   padding: 1rem 1.4rem; }
   @media (min-width: 37.5em) {
     .plp-content .plp-content__cards .plp-card {
@@ -2028,7 +2037,7 @@ input.effect:invalid ~ input[type="submit"] {
       width: 23%;
       margin-right: 1rem; } }
   .plp-content .plp-content__cards .plp-card h2 {
-    color: #ddd;
+    color: #111;
     font-weight: bold;
     font-size: 2rem;
     text-transform: capitalize; }
@@ -2090,8 +2099,8 @@ input.effect:invalid ~ input[type="submit"] {
         flex-direction: column;
         justify-content: flex-start;
         margin-left: 2rem;
-        color: #ddd;
-        background-color: #0b2e46; }
+        color: #111;
+        background-color: #ddd; }
         @media (min-width: 37.5em) {
           .plp-content .plp-content__cards .plp-card__content__img-text .plp-card__desc-container {
             flex: 1;
@@ -2130,7 +2139,7 @@ input.effect:invalid ~ input[type="submit"] {
       .plp-content .plp-content__cards .plp-card__content__price .plp-card__cta-tabs {
         font-size: 1.2rem; } }
     .plp-content .plp-content__cards .plp-card__content__price .plp-card-price {
-      color: #ddd;
+      color: #111;
       flex: 1;
       font-weight: 600; }
       @media (min-width: 64.0625em) {
@@ -2157,12 +2166,12 @@ input.effect:invalid ~ input[type="submit"] {
     #HEADER
 \*---------------------------------*/
 .sb-header {
-  height: 10rem;
+  height: 6.8rem;
   text-transform: capitalize;
-  background-color: #0f3f61;
-  -webkit-box-shadow: 0px 1px 12px -1px #fff;
-  -moz-box-shadow: 0px 1px 12px -1px #fff;
-  box-shadow: 0px 1px 12px -1px #fff; }
+  background-color: #fcfcfc;
+  -webkit-box-shadow: 0px 1px 12px -1px #6e6e6e;
+  -moz-box-shadow: 0px 1px 12px -1px #6e6e6e;
+  box-shadow: 0px 1px 12px -1px #6e6e6e; }
   @media (min-width: 50.0625em) {
     .sb-header {
       font-size: 1.2rem; } }
@@ -2184,8 +2193,8 @@ input.effect:invalid ~ input[type="submit"] {
 .footer {
   text-align: center;
   font-size: 2.4rem;
-  background-color: #0b2e46;
-  color: #f8f5f5;
+  background-color: #ddd;
+  color: #353535;
   padding: 6px 0;
   width: 100%;
   bottom: 0;
@@ -2203,7 +2212,7 @@ input.effect:invalid ~ input[type="submit"] {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  color: #f8f5f5; }
+  color: #353535; }
   @media (min-width: 37.5em) {
     .login-content {
       width: 80%;
@@ -2218,9 +2227,9 @@ input.effect:invalid ~ input[type="submit"] {
           justify-content: center;
           align-items: flex-start; }
           .login-content .login-flex-container .login__header .main__heading {
-            color: #f8f5f5; }
+            color: #353535; }
           .login-content .login-flex-container .login__header .main__sub-text {
-            color: #fff; }
+            color: #6e6e6e; }
         .login-content .login-flex-container .flex-row {
           flex: 1;
           margin-left: 4rem; }
@@ -2228,7 +2237,7 @@ input.effect:invalid ~ input[type="submit"] {
             flex-direction: column; } }
 
 .login-content {
-  color: #f8f5f5; }
+  color: #353535; }
   @media (min-width: 37.5em) {
     .login-content .login-flex-container .register__header {
       flex: 1;
@@ -2238,7 +2247,7 @@ input.effect:invalid ~ input[type="submit"] {
       align-items: flex-start;
       margin-top: 2rem; }
       .login-content .login-flex-container .register__header .main__heading {
-        color: #f8f5f5; }
+        color: #353535; }
       .login-content .login-flex-container .register__header .main__sub-text {
-        color: #fff; } }
+        color: #6e6e6e; } }
 

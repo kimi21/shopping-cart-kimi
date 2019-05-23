@@ -10,19 +10,22 @@ export default class ProductsView {
     }
 
 
-    renderProducts ( products) {
-              
+    renderProducts (products, category) {
+        console.log("Category in View : ", category);
         this.cartData = JSON.parse(localStorage.getItem('cartData'));
-       
-        //filter cart data as per category
-        const fruitItems = products.filter(function(item) {
+
+        //map category argument above to category present in productCategory
+        Object.keys(productCategory).forEach(e => console.log(`key=${e} value=${productCategory[e]}`));
+        
+        //filter data as per category
+        const categoryProducts = products.filter(function(item) {
             return item.category == productCategory.categoryFruits;
         });
 
         //fruitItems.forEach(this.renderProduct);
         var productsTemplate = require('../../partials/products.hbs');
         console.log('products', products);
-        elements.plpPageContent.innerHTML = productsTemplate(fruitItems);
+        elements.plpPageContent.innerHTML = productsTemplate(categoryProducts);
     }
 
 
