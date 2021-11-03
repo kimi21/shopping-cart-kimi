@@ -42,7 +42,7 @@
     "handlebars": "^4.1.2",
     "handlebars-loader": "^1.7.1",
     "mongoose": "^5.5.10",
-    "validator": "^10.11.0",
+    "validator": "^13.7.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
